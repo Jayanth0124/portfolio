@@ -1142,7 +1142,7 @@ img {
   --bg-color: #323232;
   --main-color: #dedede;
   position: relative;
-  width: 158px;
+  width: 135px;
   height: 40px;
   cursor: pointer;
   display: flex;
@@ -1166,9 +1166,9 @@ img {
 
 .button .button__icon {
   position: absolute;
-  transform: translateX(109px);
+  transform: translateX(97px);
   height: 100%;
-  width: 39px;
+  width: 28px;
   background-color: var(--bg-color-sub);
   display: flex;
   align-items: center;
