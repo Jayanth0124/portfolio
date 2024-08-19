@@ -61,6 +61,7 @@
           <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-task"></i> <span>Projects</span></a></li>
           <li><a href="#education" class="nav-link scrollto"><i class="bx bx-book"></i> <span>Education</span></a></li>
           <li><a href="#awards" class="nav-link scrollto"><i class="bx bx-award"></i> <span>Awards</span></a></li>
+          <li><a href="#photos" class="nav-link scrollto"><i class="bx bx-heart"></i> <span>Photography</span></a></li>
           <li><a href="#interests" class="nav-link scrollto"><i class="bx bx-heart"></i> <span>Interests</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
@@ -518,6 +519,87 @@
 
       </div>
     </section><!-- End Awards Section -->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography Section</title>
+  <style>
+    /* CSS specific to the Photography Section */
+    #photos .portfolio-wrap {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #ddd; /* Optional: for visual separation */
+      padding: 0; /* Adjust if needed */
+    }
+
+    #photos .portfolio-wrap img {
+      width: 100%;
+      height: auto;
+    }
+
+    #photos .portfolio-links {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+    }
+
+    #photos .text-center.mt-2 {
+      margin-top: 10px; /* Adjust as needed */
+      text-align: center;
+    }
+
+    #photos .btn.btn-primary {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    #photos .btn.btn-primary:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- ======= Photography Section ======= -->
+  <section id="photos" class="photos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Photography</h2>
+        <p>A collection of moments captured through my lens.</p>
+      </div>
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+        <!-- Example Photo Item -->
+        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/my1.jpg" class="img-fluid" alt="">
+            <div class="portfolio-links">
+              <a href="assets/img/portfolio/my1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Photo 1"><i class="bx bx-plus"></i></a>
+              <a href="photo.html" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+            <!-- Move the button inside portfolio-wrap -->
+            <div class="text-center mt-2">
+              <a href="photo.html" class="btn btn-primary">Visit Photos</a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more photo items as needed -->
+      </div>
+    </div>
+  </section><!-- End Photography Section -->
+</body>
+</html>
+
+
 
   <!-- ======= Interests Section ======= -->
     <section id="interests" class="interests">
