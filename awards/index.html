@@ -792,138 +792,292 @@
       </div>
     </section><!-- End Awards Section -->
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photography Section</title>
-  <style>
-    /* CSS specific to the Photography Section */
-    #photos .portfolio-wrap {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid #ddd; /* Optional: for visual separation */
-      padding: 0; /* Adjust if needed */
-    }
-
-    #photos .portfolio-wrap img {
-      width: 100%;
-      height: auto;
-    }
-
-    #photos .portfolio-links {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 2;
-    }
-
-    #photos .text-center.mt-2 {
-      margin-top: 10px; /* Adjust as needed */
-      text-align: center;
-    }
-
-    #photos .btn.btn-primary {
-      background-color: #007bff;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    #photos .btn.btn-primary:hover {
-      background-color: #0056b3;
-    }
-  </style>
-</head>
-<body>
-  <!-- ======= Photography Section ======= -->
-  <section id="photos" class="photos">
-    <div class="container">
-      <div class="section-title">
-        <h2>Photography</h2>
-        <p>A collection of moments captured through my lens.</p>
-      </div>
-      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-        <!-- Example Photo Item -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/my1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-links">
-              <a href="assets/img/portfolio/my1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Photo 1"><i class="bx bx-plus"></i></a>
-              <a href="photo.html" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-            <!-- Move the button inside portfolio-wrap -->
-            <div class="text-center mt-2">
-              <a href="photo.html" class="btn btn-primary">Visit Photos</a>
-            </div>
+<!-- ======= Photography Section ======= -->
+<section id="photos" class="photos">
+  <div class="container">
+    <div class="section-title">
+      <h2>Photography</h2>
+      <p>A collection of moments captured through my lens.</p>
+    </div>
+    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+      <!-- Example Photo Item -->
+      <div class="col-lg-4 col-md-6 portfolio-item filter-photo">
+        <div class="portfolio-wrap" id="portfolio-wrap">
+          <img src="assets/img/portfolio/my1.jpg" class="img-fluid" alt="Description of Photo 1">
+          <div class="text-center mt-2">
+            <a href="photo.html" class="btn btn-primary">Visit Photos</a>
           </div>
         </div>
-        <!-- Add more photo items as needed -->
       </div>
+      <!-- Add more photo items as needed -->
     </div>
-  </section><!-- End Photography Section -->
-</body>
-</html>
+  </div>
+</section><!-- End Photography Section -->
+
+<!-- Inline CSS -->
+<style>
+  /* CSS specific to the Photography Section */
+  #photos .portfolio-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Adjusted rounded corners */
+    transition: border-color 0.6s ease; /* Smooth transition for border color */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Reduced shadow size */
+    border: 4px solid transparent; /* Adjusted border size */
+    width: 100%; /* Ensures responsive sizing */
+    max-width: 300px; /* Restricts max width of the image container */
+    margin: 0 auto; /* Centers the portfolio items */
+  }
+
+  #photos .portfolio-wrap img {
+    width: 100%; /* Ensures image fits within the container */
+    height: auto;
+    display: block; /* Removes extra space below image */
+  }
+
+  #photos .text-center.mt-2 {
+    margin-top: 5px; /* Reduced space above button */
+    text-align: center;
+  }
+
+  #photos .btn.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 6px 12px; /* Smaller button padding */
+    font-size: 12px; /* Smaller font size */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px; /* Rounded corners for button */
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  #photos .btn.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+
+  /* Additional styles for card and card2 elements */
+  .card {
+    width: 160px; /* Reduced card width */
+    height: 214px; /* Reduced card height */
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 10px; /* Matching rounded corners */
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card2 {
+    width: 150px; /* Reduced card width */
+    height: 200px; /* Reduced card height */
+    background-color: #1a1a1a;
+    border-radius: 10px; /* Matching rounded corners */
+    transition: all 0.2s;
+  }
+</style>
+
+<!-- Inline JavaScript -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const colors = ['#ff69b4', '#00ff00', '#ffa500', '#8a2be2', '#0000ff'];
+    const portfolioWrap = document.getElementById('portfolio-wrap');
+    let colorInterval;
+
+    function startColorChange() {
+      colorInterval = setInterval(() => {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        portfolioWrap.style.borderColor = randomColor;
+      }, 500);
+    }
+
+    function stopColorChange() {
+      clearInterval(colorInterval);
+      portfolioWrap.style.borderColor = 'transparent'; // Optional: Reset border color when not hovering
+    }
+
+    portfolioWrap.addEventListener('mouseover', startColorChange);
+    portfolioWrap.addEventListener('mouseout', stopColorChange);
+  });
+</script>
 
 
 
-  <!-- ======= Interests Section ======= -->
-    <section id="interests" class="interests">
-      <div class="container">
 
-        <div class="section-title">
-          <h2>Interests</h2>
-          <p>Explore my interests.</p>
-        </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+<!-- ======= Interests Section ======= -->
+  <section id="interests" class="interests-section">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Interests</h2>
+        <p>Explore my interests.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="interests-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-laptop"></i></div>
             <h4 class="title"><a href="#">Web Development</a></h4>
-            <p class="description">As a web development enthusiast, I'm passionate about crafting engaging and user-friendly digital experiences. From front-end design to back-end functionality, I enjoy diving into the intricacies of coding languages and frameworks to bring ideas to life on the web.
-            </p>
+            <p class="description">As a web development enthusiast, I'm passionate about crafting engaging and user-friendly digital experiences. From front-end design to back-end functionality, I enjoy diving into the intricacies of coding languages and frameworks to bring ideas to life on the web.</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="interests-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="bi bi-pencil"></i></div>
             <h4 class="title"><a href="#">Graphic Design</a></h4>
             <p class="description">Graphic design is my creative playground where I blend visual aesthetics with strategic thinking. I love exploring the interplay of colors, typography, and imagery to communicate messages effectively and leave a lasting impression.</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="interests-box" data-aos="fade-up" data-aos-delay="200">
             <div class="icon"><i class="bi bi-camera"></i></div>
             <h4 class="title"><a href="#">Photography</a></h4>
             <p class="description">Photography is my lens to capture the beauty and diversity of the world around us. Whether it's exploring new landscapes or finding the extraordinary in the ordinary, I'm constantly seeking to freeze moments in time and evoke emotions through my lens.</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="interests-box" data-aos="fade-up" data-aos-delay="300">
             <div class="icon"><i class="bi bi-globe"></i></div>
             <h4 class="title"><a href="#">Travel</a></h4>
             <p class="description">Traveling isn't just a hobby; it's a way of life for me. Exploring new cultures, cuisines, and landscapes ignites my sense of adventure and broadens my perspective. Each journey is an opportunity to embrace diversity, create unforgettable memories, and foster personal growth.</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bi bi-brightness-high"></i></div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="interests-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon"><i class="bi-palette"></i></div>
             <h4 class="title"><a href="#">UI/UX Design</a></h4>
             <p class="description">UI/UX design is where functionality meets aesthetics, and I thrive in finding the perfect balance between the two. From wireframing to prototyping, I enjoy crafting seamless and intuitive user experiences that resonate with audiences and elevate digital products to the next level.</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="interests-box" data-aos="fade-up" data-aos-delay="500">
             <div class="icon"><i class="bi bi-headset"></i></div>
             <h4 class="title"><a href="#">Music</a></h4>
-            <p class="description">Explore the world of music, from classical to contemporary genres. Discover new artists, albums, and songs. Learn about music theory, composition, and performance techniques</p>
+            <p class="description">Explore the world of music, from classical to contemporary genres. Discover new artists, albums, and songs. Learn about music theory, composition, and performance techniques.</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="interests-box" data-aos="fade-up" data-aos-delay="600">
             <div class="icon"><i class="bi bi-shield-check"></i></div>
             <h4 class="title"><a href="#">Ethical Hacking</a></h4>
             <p class="description">Learn about ethical hacking, cybersecurity, and penetration testing to protect digital assets and enhance security measures. Explore tools, techniques, and methodologies for identifying and mitigating security vulnerabilities.</p>
           </div>
-          
         </div>
-
       </div>
-    </section><!-- End Interests Section -->
+
+    </div>
+  </section>
+  <!-- End Interests Section -->
+
+
+
+
+  <style>
+    /* Interests Section Styling */
+    .interests-section {
+      background-color: #f8f9fa; /* Light background for the section */
+      padding: 60px 0;
+    }
+
+    .interests-section .section-title h2 {
+      font-size: 32px;
+      font-weight: bold;
+      color: #343a40; /* Dark color for the title */
+      margin-bottom: 20px;
+    }
+
+    .interests-section .section-title p {
+      font-size: 16px;
+      color: #6c757d; /* Light grey color for the description */
+      line-height: 1.6;
+    }
+
+    /* Ensure proper box sizing and responsiveness */
+    .interests-box {
+      background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+      border-radius: 15px;
+      padding: 20px;
+      color: #fff; /* White text color for better readability */
+      box-sizing: border-box;
+      height: 100%; /* Allow height to adjust based on content */
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: box-shadow 0.3s ease;
+      overflow: hidden; /* Ensure content does not overflow */
+    }
+
+    /* Ensure consistent icon size */
+    .interests-box .icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #00aaff; /* Adjust icon color to stand out */
+    }
+
+    /* Ensure heading and paragraph size are responsive */
+    .interests-box h4 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .interests-box p {
+      font-size: 16px;
+      color: #e0e0e0; /* Light grey text color for description */
+      margin: 0; /* Remove margin to prevent text overflow */
+      overflow: hidden; /* Prevent text from overflowing */
+      text-overflow: ellipsis; /* Show ellipsis if text overflows */
+      white-space: normal; /* Allow text to wrap */
+    }
+
+    /* Hover effect for glowing */
+    .interests-box:hover {
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Glowing effect */
+    }
+
+    /* Responsive adjustments */
+    @media (min-width: 992px) {
+      .interests-box {
+        margin: 0 15px; /* Ensure proper spacing between columns */
+      }
+    }
+
+    @media (max-width: 767px) {
+      .interests-box {
+        padding: 15px;
+        height: auto; /* Allow height to adjust based on content */
+      }
+
+      .interests-box .icon {
+        font-size: 36px;
+      }
+
+      .interests-box h4 {
+        font-size: 18px;
+      }
+
+      .interests-box p {
+        font-size: 14px;
+      }
+    }
+
+    /* Ensure columns have proper spacing */
+    .row {
+      margin: 0 -15px;
+    }
+
+    .col-lg-4, .col-md-6 {
+      padding: 0 15px;
+    }
+
+  </style>
 
     <!-- ======= Contact Section ======= -->
      
