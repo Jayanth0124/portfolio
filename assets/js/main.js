@@ -267,6 +267,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const textElements = Array.from(document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, .text-element"));
 
   function updateCursorPosition(e) {
+    // Skip updating the cursor position on mobile
+    if (window.innerWidth <= 768) {
+      cursor.style.display = 'none'; // Ensure cursor effect is hidden on mobile
+      document.body.classList.remove("cursor-active"); // Always show the flag cursor on mobile
+      return;
+    }
+
     cursor.style.left = `${e.pageX}px`;
     cursor.style.top = `${e.pageY}px`;
 
@@ -285,17 +292,27 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isHovering) {
       cursor.classList.add("hover");
       cursor.style.display = 'block'; // Show the circle
-      document.body.classList.add("cursor-active"); // Hide the heart cursor
+      document.body.classList.add("cursor-active"); // Hide the flag cursor
     } else {
       cursor.classList.remove("hover");
       cursor.style.display = 'none'; // Hide the circle
-      document.body.classList.remove("cursor-active"); // Show the heart cursor
+      document.body.classList.remove("cursor-active"); // Show the flag cursor
     }
   }
 
   let requestId;
   document.body.addEventListener("mousemove", (e) => {
-    if (requestId) cancelAnimationFrame(requestId);
-    requestId = requestAnimationFrame(() => updateCursorPosition(e));
+    if (window.innerWidth > 768) { // Only handle mousemove on desktop
+      if (requestId) cancelAnimationFrame(requestId);
+      requestId = requestAnimationFrame(() => updateCursorPosition(e));
+    }
+  });
+
+  // Handle touch events for mobile devices
+  document.body.addEventListener("touchstart", (e) => {
+    if (window.innerWidth <= 768) {
+      cursor.style.display = 'none'; // Ensure cursor effect is hidden on mobile touch
+    }
   });
 });
+
