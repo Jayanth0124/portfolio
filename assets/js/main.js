@@ -256,3 +256,46 @@
 
 })()
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cursor = document.createElement("div");
+  cursor.classList.add("cursor");
+  document.body.appendChild(cursor);
+
+  // Select text elements to increase cursor size when hovering
+  const textElements = Array.from(document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, .text-element"));
+
+  function updateCursorPosition(e) {
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+
+    // Check if the cursor is hovering over any text element
+    const isHovering = textElements.some(element => {
+      const rect = element.getBoundingClientRect();
+      return (
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom
+      );
+    });
+
+    // Manage cursor visibility and circle effect
+    if (isHovering) {
+      cursor.classList.add("hover");
+      cursor.style.display = 'block'; // Show the circle
+      document.body.classList.add("cursor-active"); // Hide the heart cursor
+    } else {
+      cursor.classList.remove("hover");
+      cursor.style.display = 'none'; // Hide the circle
+      document.body.classList.remove("cursor-active"); // Show the heart cursor
+    }
+  }
+
+  let requestId;
+  document.body.addEventListener("mousemove", (e) => {
+    if (requestId) cancelAnimationFrame(requestId);
+    requestId = requestAnimationFrame(() => updateCursorPosition(e));
+  });
+});

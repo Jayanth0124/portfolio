@@ -1198,3 +1198,36 @@ img {
   box-shadow: 0px 0px var(--main-color);
 }
 
+
+
+/* Set the heart symbol as the default cursor */
+body {
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">🤖🇮🇳</text></svg>') 16 16, auto; /* Use heart symbol as cursor */
+}
+
+/* Style for the custom cursor circle effect */
+.cursor {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white; /* Or any color */
+  mix-blend-mode: difference; /* Invert the text color under the circle */
+  pointer-events: none;
+  width: 40px; /* Default size for the circle */
+  height: 40px; /* Default size for the circle */
+  transform: translate(-50%, -50%); /* Center the circle on the cursor */
+  transition: width 0.3s, height 0.3s;
+  z-index: 1000;
+  display: none; /* Hide by default */
+}
+
+/* When hovering over text, the cursor size increases */
+.cursor.hover {
+  display: block; /* Show when hovering */
+  width: 60px; /* Larger size for the circle when hovering */
+  height: 60px; /* Larger size for the circle when hovering */
+}
+
+/* Hide the default cursor image when the circle is active */
+body.cursor-active {
+  cursor: none; /* Hide the default cursor */
+}
