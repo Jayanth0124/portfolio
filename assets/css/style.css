@@ -1200,9 +1200,9 @@ img {
 
 
 
-/* Set the heart symbol as the default cursor */
+/* Default cursor style for all devices */
 body {
-  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">🤖🇮🇳</text></svg>') 16 16, auto; /* Use heart symbol as cursor */
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">🤖</text></svg>') 16 16, auto; /* Indian flag emoji as cursor */
 }
 
 /* Style for the custom cursor circle effect */
@@ -1230,4 +1230,15 @@ body {
 /* Hide the default cursor image when the circle is active */
 body.cursor-active {
   cursor: none; /* Hide the default cursor */
+}
+
+/* Media query to hide the cursor effect on mobile devices */
+@media (max-width: 768px) {
+  .cursor {
+    display: none; /* Hide the cursor effect on screens smaller than 768px */
+  }
+  
+  body.cursor-active {
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">🤖</text></svg>') 16 16, auto; /* Use the emoji cursor on mobile */
+  }
 }
