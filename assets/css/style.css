@@ -227,7 +227,7 @@ h6 {
 .nav-menu a:focus {
   display: flex;
   align-items: center;
-  color: #a8a9b4;
+  color: #ffffff;
   padding: 12px 15px;
   margin-bottom: 8px;
   transition: 0.3s;
@@ -238,7 +238,7 @@ h6 {
 .nav-menu a:focus i {
   font-size: 24px;
   padding-right: 8px;
-  color: #6f7180;
+  color: #c9cfff;
 }
 
 .nav-menu a:hover,
