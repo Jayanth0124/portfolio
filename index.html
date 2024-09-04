@@ -627,30 +627,26 @@
     }
 
     .education .card {
-      width: 100%; /* Full width on small screens */
-      max-width: 360px; /* Maximum width for larger screens */
-      height: 400px; /* Fixed height for uniformity */
-      border-radius: 10px;
-      padding: 10px;
+      width: 360px; /* Adjusted width */
+      height: auto; /* Adjust height based on content */
+      border-radius: 10px; /* Updated border-radius */
+      padding: 20px; /* Increased padding */
       box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
       background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
-      margin: 15px 0; /* Margin adjusted for spacing */
+      margin: 10px; /* Margin adjusted */
+      display: inline-block;
+      vertical-align: top;
       box-sizing: border-box; /* Include padding and border in element's total width and height */
-      overflow: hidden; /* Ensure content does not overflow */
-      display: flex;
-      flex-direction: column;
     }
 
     .education .card__content {
       background: rgb(5, 6, 45);
-      border-radius: 10px;
+      border-radius: 10px; /* Match the border-radius with card */
       width: 100%;
-      height: 100%;
-      padding: 20px;
+      height: auto;
+      padding: 20px; /* Adjusted padding for better content separation */
       color: white;
       box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
     }
 
     .education .icon {
@@ -661,7 +657,7 @@
     .education .resume-item {
       display: flex;
       flex-direction: column;
-      flex: 1; /* Ensure that the content takes up remaining space */
+      height: 100%;
     }
 
     .education .resume-content {
@@ -679,11 +675,10 @@
     }
 
     /* Responsive design */
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
       .education .card {
-        display: inline-block;
-        vertical-align: top;
-        margin: 15px; /* Margin for spacing between cards */
+        width: 100%; /* Full width on small screens */
+        margin: 10px 0; /* Adjusted margin */
       }
     }
   </style>
@@ -752,6 +747,7 @@
 
   </div>
 </section><!-- End Education Section -->
+
 
 
 
