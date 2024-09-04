@@ -26,6 +26,110 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+<!-- Custom Neumorphic and Glassmorphism CSS -->
+<style>
+  /* Set gradient background and ensure it covers the entire viewport */
+  body {
+    background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        #3c3c3c 0 180deg
+      )
+      calc(0.5 * 200px) calc(0.5 * 200px * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      #1d1d1d 0 60deg,
+      #4e4f51 0 120deg,
+      #3c3c3c 0 180deg
+    );
+    background-size: 200px calc(200px * 0.577);
+    color: #fff;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    min-height: 100vh; /* Ensure it covers the full height of the viewport */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  /* General container padding */
+  .container {
+    padding: 20px; /* Add padding to the container */
+    box-sizing: border-box; /* Include padding in the element’s total width and height */
+  }
+
+  /* Glassmorphism effect for Awards Details Section */
+  #portfolio-details .neumorphic,
+  #portfolio-details .portfolio-info,
+  #portfolio-details .portfolio-description,
+  #breadcrumbs {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px; /* Add bottom margin for spacing between sections */
+    position: relative; /* Ensure elements are above the background */
+    z-index: 1; /* Ensure elements are above the gradient background */
+    overflow: hidden; /* Prevent child elements from overflowing */
+  }
+
+  /* Glassmorphism effect for Breadcrumbs */
+  #breadcrumbs {
+    padding: 10px 15px; /* Reduced padding for smaller size */
+    margin-bottom: 15px; /* Slightly reduced bottom margin */
+    box-sizing: border-box; /* Include padding in the element’s total width and height */
+    border-radius: 0px;
+  }
+
+  #breadcrumbs h2 {
+    font-size: 1.2rem; /* Reduced font size */
+    margin-bottom: 10px; /* Margin below heading */
+    
+  }
+
+  #breadcrumbs ol {
+    font-size: 0.9rem; /* Reduced font size for list items */
+  }
+
+  #breadcrumbs h2, #breadcrumbs ol {
+    color: #fff;
+  }
+
+  /* Adjust the size of the slider */
+  #portfolio-details .portfolio-details-slider {
+    width: 100%; /* Make sure slider is responsive */
+    max-width: 800px; /* Set a maximum width for the slider */
+    margin: 0 auto; /* Center align the slider */
+    overflow: hidden; /* Prevent overflow within the slider container */
+  }
+
+  /* Adjust the size of each slide */
+  #portfolio-details .portfolio-details-slider .swiper-slide {
+    width: 100%; /* Make sure slide takes the full width of the slider */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Adjusting the image inside the slider with glassmorphism */
+  #portfolio-details .portfolio-details-slider .swiper-slide img {
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Portfolio information section with glassmorphism */
+  #portfolio-details .portfolio-info {
+    margin-bottom: 20px;
+  }
+
+  /* Portfolio description section with glassmorphism */
+  #portfolio-details .portfolio-description {
+    margin-bottom: 20px;
+  }
+</style>
 </head>
 
 <body>
@@ -86,19 +190,19 @@
         <div class="row gy-4">
 
           <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
+            <div class="portfolio-details-slider swiper neumorphic">
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/g1.jpg" alt="">
+                  <img src="assets/img/portfolio/g1.jpg" alt="Garuda Certificate 1" class="img-fluid">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/g2.jpg" alt="">
+                  <img src="assets/img/portfolio/g2.jpg" alt="Garuda Certificate 2" class="img-fluid">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/g3.jpg" alt="">
+                  <img src="assets/img/portfolio/g3.jpg" alt="Garuda Certificate 3" class="img-fluid">
                 </div>
 
               </div>
@@ -107,8 +211,8 @@
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Certificate information</h3>
+            <div class="portfolio-info neumorphic">
+              <h3>Certificate Information</h3>
               <ul>
                 <li><strong>Category</strong>: Certificate</li>
                 <li><strong>Source</strong>: Garuda Aerospace</li>
@@ -116,11 +220,9 @@
                 <li><strong>Company Website</strong>: <a href="https://www.garudaaerospace.com/careers/">Garuda</a></li>
               </ul>
             </div>
-            <div class="portfolio-description">
+            <div class="portfolio-description neumorphic">
               <h2>Here are Some Pics of Garuda Internship</h2>
-              <h5> I acknowledges the successful completion of an internship with Garuda Aerospace, a leading drone technology company, as part of a national project organized under the Prime Minister's leadership. The internship provided hands-on experience in drone technology, including design, development, and deployment for various applications, contributing to national advancements in agriculture, disaster management, and surveillance.</h5>
-                
-                
+              <h5>I acknowledge the successful completion of an internship with Garuda Aerospace, a leading drone technology company, as part of a national project organized under the Prime Minister's leadership. The internship provided hands-on experience in drone technology, including design, development, and deployment for various applications, contributing to national advancements in agriculture, disaster management, and surveillance.</h5>
             </div>
           </div>
 
@@ -141,7 +243,7 @@
         Designed by <a href="https://www.jayanth.xyz/">Jayanth Donavalli</a>
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

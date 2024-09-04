@@ -617,61 +617,137 @@
 
 
 
-    <!-- ======= Education Section ======= -->
-    <section id="education" class="education">
-      <div class="container">
+<!-- ======= Education Section ======= -->
+<section id="education" class="education" style="padding: 40px 0;">
+  <style>
+    /* Specific styles for the Education section */
+    .education {
+      background-color: #f8f9fa; /* Light background for the section */
+    }
 
-        <div class="section-title">
-          <h2>Education</h2>
-          <p>Explore my educational background.</p>
-        </div>
+    .education .card {
+      width: 400px; /* Increased width */
+      height: auto; /* Adjust height based on content */
+      border-radius: 10px; /* Updated border-radius */
+      padding: 10px; /* Increased padding */
+      box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+      background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+      margin: 10px; /* Margin adjusted */
+      display: inline-block;
+      vertical-align: top;
+      box-sizing: border-box; /* Include padding and border in element's total width and height */
+    }
 
-        <div class="row">
-          <div class="col-md-12 icon-box" data-aos="fade-up">
+    .education .card__content {
+      background: rgb(5, 6, 45);
+      border-radius: 10px; /* Match the border-radius with card */
+      width: 100%;
+      height: auto;
+      padding: 20px; /* Adjusted padding for better content separation */
+      color: white;
+      box-sizing: border-box;
+    }
+
+    .education .icon {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .education .resume-item {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .education .resume-content {
+      margin-bottom: 15px; /* Space between content and date */
+    }
+
+    .education .resume-date {
+      text-align: right;
+      font-size: 16px;
+      color: #00DDEB; /* Adjusted color for date */
+    }
+
+    .education .text-primary {
+      color: #00DDEB;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .education .card {
+        width: 100%; /* Full width on small screens */
+        margin: 10px 0; /* Adjusted margin */
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="section-title">
+      <h2>Education</h2>
+      <p>Explore my educational background.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 icon-box" data-aos="fade-up">
+        <div class="card">
+          <div class="card__content">
             <div class="icon"><i class="bi bi-book"></i></div>
-            <div class="resume-item d-flex flex-column flex-md-row">
-              <div class="resume-content mr-auto">
+            <div class="resume-item">
+              <div class="resume-content">
                 <h3 class="mb-0">Bachelor of Engineering</h3>
                 <div>SIMATS Engineering College</div>
-                <div class="subheading mb-3">CGPA: 8.8</div>
+                <div class="subheading mb-3">CGPA: 8.6</div>
               </div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">2021 - 2025</span>
+              <div class="resume-date">
+                <span>2021 - 2025</span>
               </div>
             </div>
           </div>
-          
-          <div class="col-md-12 icon-box" data-aos="fade-up">
+        </div>
+      </div>
+
+      <div class="col-md-4 icon-box" data-aos="fade-up">
+        <div class="card">
+          <div class="card__content">
             <div class="icon"><i class="bi bi-book"></i></div>
-            <div class="resume-item d-flex flex-column flex-md-row">
-              <div class="resume-content mr-auto">
+            <div class="resume-item">
+              <div class="resume-content">
                 <h3 class="mb-0">Intermediate</h3>
                 <div>Narayana Junior College</div>
                 <div class="subheading mb-3">GPA: 92%</div>
               </div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">2019 - 2021</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-12 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-book"></i></div>
-            <div class="resume-item d-flex flex-column flex-md-row">
-              <div class="resume-content mr-auto">
-                <h3 class="mb-0">10th Class</h3>
-                <div>Sri Chaitanya School</div>
-                <div class="subheading mb-3">GPA: 9.8 Points</div>
-              </div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">2018 - 2019</span>
+              <div class="resume-date">
+                <span>2019 - 2021</span>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-    </section><!-- End Education Section -->
+
+      <div class="col-md-4 icon-box" data-aos="fade-up">
+        <div class="card">
+          <div class="card__content">
+            <div class="icon"><i class="bi bi-book"></i></div>
+            <div class="resume-item">
+              <div class="resume-content">
+                <h3 class="mb-0">10th Class</h3>
+                <div>Sri Chaitanya School</div>
+                <div class="subheading mb-3">GPA: 9.8 Points</div>
+              </div>
+              <div class="resume-date">
+                <span>2018 - 2019</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Education Section -->
+
+
 
 
 

@@ -26,6 +26,111 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+<!-- Custom Neumorphic and Glassmorphism CSS -->
+<style>
+  /* Set gradient background and ensure it covers the entire viewport */
+  body {
+    background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        #3c3c3c 0 180deg
+      )
+      calc(0.5 * 200px) calc(0.5 * 200px * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      #1d1d1d 0 60deg,
+      #4e4f51 0 120deg,
+      #3c3c3c 0 180deg
+    );
+    background-size: 200px calc(200px * 0.577);
+    color: #fff;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    min-height: 100vh; /* Ensure it covers the full height of the viewport */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  /* General container padding */
+  .container {
+    padding: 20px; /* Add padding to the container */
+    box-sizing: border-box; /* Include padding in the element’s total width and height */
+  }
+
+  /* Glassmorphism effect for Awards Details Section */
+  #portfolio-details .neumorphic,
+  #portfolio-details .portfolio-info,
+  #portfolio-details .portfolio-description,
+  #breadcrumbs {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px; /* Add bottom margin for spacing between sections */
+    position: relative; /* Ensure elements are above the background */
+    z-index: 1; /* Ensure elements are above the gradient background */
+    overflow: hidden; /* Prevent child elements from overflowing */
+  }
+
+  /* Glassmorphism effect for Breadcrumbs */
+  #breadcrumbs {
+    padding: 10px 15px; /* Reduced padding for smaller size */
+    margin-bottom: 15px; /* Slightly reduced bottom margin */
+    box-sizing: border-box; /* Include padding in the element’s total width and height */
+    border-radius: 0px;
+  }
+
+  #breadcrumbs h2 {
+    font-size: 1.2rem; /* Reduced font size */
+    margin-bottom: 10px; /* Margin below heading */
+    
+  }
+
+  #breadcrumbs ol {
+    font-size: 0.9rem; /* Reduced font size for list items */
+  }
+
+  #breadcrumbs h2, #breadcrumbs ol {
+    color: #fff;
+  }
+
+  /* Adjust the size of the slider */
+  #portfolio-details .portfolio-details-slider {
+    width: 100%; /* Make sure slider is responsive */
+    max-width: 800px; /* Set a maximum width for the slider */
+    margin: 0 auto; /* Center align the slider */
+    overflow: hidden; /* Prevent overflow within the slider container */
+  }
+
+  /* Adjust the size of each slide */
+  #portfolio-details .portfolio-details-slider .swiper-slide {
+    width: 100%; /* Make sure slide takes the full width of the slider */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Adjusting the image inside the slider with glassmorphism */
+  #portfolio-details .portfolio-details-slider .swiper-slide img {
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Portfolio information section with glassmorphism */
+  #portfolio-details .portfolio-info {
+    margin-bottom: 20px;
+  }
+
+  /* Portfolio description section with glassmorphism */
+  #portfolio-details .portfolio-description {
+    margin-bottom: 20px;
+  }
+</style> 
+
 </head>
 
 <body>
@@ -50,14 +155,14 @@
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-            <li><a href="index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-            <li><a href="index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-            <li><a href="index.html#projects" class="nav-link scrollto"><i class="bx bx-task"></i> <span>Projects</span></a></li>
-            <li><a href="index.html#education" class="nav-link scrollto"><i class="bx bx-book"></i> <span>Education</span></a></li>
-            <li><a href="index.html#awards" class="nav-link scrollto"><i class="bx bx-award"></i> <span>Awards</span></a></li>
-            <li><a href="index.html#interests" class="nav-link scrollto"><i class="bx bx-heart"></i> <span>Interests</span></a></li>
-            <li><a href="index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-          </ul>
+          <li><a href="index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="index.html#projects" class="nav-link scrollto"><i class="bx bx-task"></i> <span>Projects</span></a></li>
+          <li><a href="index.html#education" class="nav-link scrollto"><i class="bx bx-book"></i> <span>Education</span></a></li>
+          <li><a href="index.html#awards" class="nav-link scrollto"><i class="bx bx-award"></i> <span>Awards</span></a></li>
+          <li><a href="index.html#interests" class="nav-link scrollto"><i class="bx bx-heart"></i> <span>Interests</span></a></li>
+          <li><a href="index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
@@ -86,11 +191,11 @@
         <div class="row gy-4">
 
           <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
+            <div class="portfolio-details-slider swiper neumorphic">
               <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/oracle1.jpg" alt="">
+                <div class="swiper-slide neumorphic">
+                  <img src="assets/img/portfolio/oracle1.jpg" alt="Oracle certification badge image" class="img-fluid">
                 </div>
 
               </div>
@@ -99,20 +204,18 @@
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info">
+            <div class="portfolio-info neumorphic">
               <h3>Certificate information</h3>
               <ul>
                 <li><strong>Category</strong>: Certificate</li>
                 <li><strong>Source</strong>: Oracle University</li>
-                <li><strong>Date</strong>:Aug 2024</li>
+                <li><strong>Date</strong>: Aug 2024</li>
                 <li><strong>Certificate link</strong>: <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=1A41DD073A0D851F08C3A6E3CB0D97754FBCB029513C606966451ED08B6A591B">Oracle</a></li>
-               
               </ul>
             </div>
-            <div class="portfolio-description">
+            <div class="portfolio-description neumorphic">
               <h2>I am proud to say that I have earned the Oracle Cloud Infrastructure 2024 Certified AI Foundations Associate credential.</h2>
               <h4>Taking an Oracle Certification Exam requires preparation, hard work, and a high level of knowledge and skill. Oracle certifications enable professionals to demonstrate in-demand skills, shorten project turnaround time, and improve overall job performance.</h4>
-                
             </div>
           </div>
 

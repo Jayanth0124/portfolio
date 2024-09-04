@@ -66,13 +66,73 @@ h6 {
   left: 0;
   bottom: 0;
   width: 300px;
-  transition: all ease-in-out 0.5s;
+  transition: all 0.5s ease-in-out;
   z-index: 9997;
-  transition: all 0.5s;
   padding: 0 15px;
-  background: #040b14;
+  background: lightblue;
+  background: radial-gradient(
+      circle,
+      rgb(170, 162, 162),
+      #333 30%,
+      rgba(88, 84, 84, 0.226) 0%
+    ),
+    radial-gradient(
+      circle at 40px 40px,
+      rgb(233, 228, 228),
+      #333 30%,
+      rgba(88, 84, 84, 0) 0%
+    ),
+    radial-gradient(
+      circle at 600px 200px,
+      rgb(233, 228, 228),
+      #333 10%,
+      rgba(88, 84, 84, 0) 0%
+    ),
+    radial-gradient(
+      circle at 800px 100px,
+      rgb(233, 228, 228),
+      #333 10%,
+      rgba(88, 84, 84, 0) 0%
+    ),
+    radial-gradient(
+      circle at 700px 500px,
+      rgb(233, 228, 228),
+      #333 2%,
+      rgba(88, 84, 84, 0.123) 0%
+    ),
+    radial-gradient(
+      circle at 200px 400px,
+      rgb(233, 228, 228),
+      #333 1%,
+      rgba(88, 84, 84, 0) 0%
+    ),
+    radial-gradient(
+      circle at 300px 700px,
+      rgb(233, 228, 228),
+      #333 15%,
+      rgba(88, 84, 84, 0) 0%
+    ),
+    radial-gradient(
+      circle at 900px 500px,
+      rgb(233, 228, 228),
+      #333 20%,
+      rgba(88, 84, 84, 0) 0%
+    ),
+    radial-gradient(
+      circle at 650px 400px,
+      rgb(233, 228, 228),
+      #333 10%,
+      rgba(88, 84, 84, 0) 0%
+    ),
+    radial-gradient(
+      circle at 600px 600px,
+      rgb(233, 228, 228),
+      #333 1%,
+      rgba(88, 84, 84, 0.959) 0%
+    );
   overflow-y: auto;
 }
+
 
 #header .profile img {
   margin: 15px auto;
@@ -167,7 +227,7 @@ h6 {
 .nav-menu a:focus {
   display: flex;
   align-items: center;
-  color: #a8a9b4;
+  color: #ffffff;
   padding: 12px 15px;
   margin-bottom: 8px;
   transition: 0.3s;
@@ -178,7 +238,7 @@ h6 {
 .nav-menu a:focus i {
   font-size: 24px;
   padding-right: 8px;
-  color: #6f7180;
+  color: #c9cfff;
 }
 
 .nav-menu a:hover,
@@ -232,7 +292,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url("../img/bg1.jpg") top center;
   background-size: cover;
 }
 
@@ -1135,3 +1195,110 @@ img {
 }
 
 
+.button {
+  --main-focus: #2d8cf0;
+  --font-color: #dedede;
+  --bg-color-sub: #222;
+  --bg-color: #323232;
+  --main-color: #dedede;
+  position: relative;
+  width: 135px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(21px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(97px);
+  height: 100%;
+  width: 28px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 20px;
+  fill: var(--main-color);
+}
+
+.button:hover {
+  background: var(--bg-color);
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}
+
+
+
+/* Default cursor style for all devices */
+body {
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">🤖</text></svg>') 16 16, auto; /* Indian flag emoji as cursor */
+}
+
+/* Style for the custom cursor circle effect */
+.cursor {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white; /* Or any color */
+  mix-blend-mode: difference; /* Invert the text color under the circle */
+  pointer-events: none;
+  width: 40px; /* Default size for the circle */
+  height: 40px; /* Default size for the circle */
+  transform: translate(-50%, -50%); /* Center the circle on the cursor */
+  transition: width 0.3s, height 0.3s;
+  z-index: 1000;
+  display: none; /* Hide by default */
+}
+
+/* When hovering over text, the cursor size increases */
+.cursor.hover {
+  display: block; /* Show when hovering */
+  width: 60px; /* Larger size for the circle when hovering */
+  height: 60px; /* Larger size for the circle when hovering */
+}
+
+/* Hide the default cursor image when the circle is active */
+body.cursor-active {
+  cursor: none; /* Hide the default cursor */
+}
+
+/* Media query to hide the cursor effect on mobile devices */
+@media (max-width: 768px) {
+  .cursor {
+    display: none; /* Hide the cursor effect on screens smaller than 768px */
+  }
+  
+  body.cursor-active {
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">🤖</text></svg>') 16 16, auto; /* Use the emoji cursor on mobile */
+  }
+}
