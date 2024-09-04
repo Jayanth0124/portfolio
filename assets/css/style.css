@@ -1262,7 +1262,11 @@ img {
 
 /* Default cursor style for all devices */
 body {
+<<<<<<< HEAD
   cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">💛</text></svg>') 16 16, auto; /* Indian flag emoji as cursor */
+=======
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">🇮🇳</text></svg>') 16 16, auto; /* Indian flag emoji as cursor */
+>>>>>>> origin/web
 }
 
 /* Style for the custom cursor circle effect */
@@ -1299,6 +1303,10 @@ body.cursor-active {
   }
   
   body.cursor-active {
+<<<<<<< HEAD
     cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">💛</text></svg>') 16 16, auto; /* Use the emoji cursor on mobile */
+=======
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">🇮🇳</text></svg>') 16 16, auto; /* Use the emoji cursor on mobile */
+>>>>>>> origin/web
   }
 }
