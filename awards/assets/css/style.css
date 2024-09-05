@@ -622,6 +622,10 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border: 2px solid #ccc; /* Add border around each portfolio item */
+  padding: 10px; /* Add padding inside the border */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
 }
 
 .portfolio .portfolio-wrap::before {
@@ -678,6 +682,12 @@ section {
   opacity: 1;
   bottom: 0;
 }
+
+/* Optional: Hover effect to slightly zoom in the image */
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.05);
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio Details
@@ -1262,7 +1272,8 @@ img {
 
 /* Default cursor style for all devices */
 body {
-  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">🤖</text></svg>') 16 16, auto; /* Indian flag emoji as cursor */
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">💛</text></svg>') 16 16, auto; /* Indian flag emoji as cursor */
+
 }
 
 /* Style for the custom cursor circle effect */
@@ -1299,6 +1310,8 @@ body.cursor-active {
   }
   
   body.cursor-active {
-    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">🤖</text></svg>') 16 16, auto; /* Use the emoji cursor on mobile */
+
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">💛</text></svg>') 16 16, auto; /* Use the emoji cursor on mobile */
+
   }
 }

@@ -622,6 +622,10 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border: 2px solid #ccc; /* Add border around each portfolio item */
+  padding: 10px; /* Add padding inside the border */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
 }
 
 .portfolio .portfolio-wrap::before {
@@ -678,6 +682,12 @@ section {
   opacity: 1;
   bottom: 0;
 }
+
+/* Optional: Hover effect to slightly zoom in the image */
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.05);
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio Details

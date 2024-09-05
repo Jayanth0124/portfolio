@@ -360,213 +360,62 @@
 </style>
 
 
-    <!-- ======= Projects Section ======= -->
+<!-- ======= Projects Section ======= -->
 <section id="projects" class="projects">
   <div class="container">
-
     <div class="section-title">
       <h2>Projects</h2>
       <p>Explore my portfolio of projects.</p>
     </div>
 
-    <style>
-      .projects {
-        position: relative;
-        padding: 2em 1em; /* Adjusted padding for better spacing */
-      }
-    
-      .timeline {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5em; /* Increased gap for more spacing between items */
-        justify-content: space-between;
-      }
-    
-      .timeline-item {
-        flex: 1 1 calc(50% - 1.5em); /* Adjusted width with increased gap */
-        box-sizing: border-box;
-        min-width: 300px; /* Ensures boxes are not too small */
-      }
-    
-      .timeline-content {
-        position: relative;
-        padding: 1.5em; /* Increased padding for better content spacing */
-        background: #fff;
-        border: 1px solid #ddd;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        height: 250px; /* Set a fixed height to keep all boxes the same size */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-    
-      .timeline-content:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      }
-    
-      .timeline-content h3 {
-        margin-top: 0;
-        font-size: 1.2em; /* Slightly larger font for better visibility */
-      }
-    
-      .timeline-content .subheading {
-        margin-bottom: 1em;
-        font-size: 0.9em;
-        color: #555;
-      }
-    
-      .text-primary {
-        color: #007bff;
-      }
-    
-      /* Popup Styles */
-      .popup {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        max-width: 600px;
-        background: #fff;
-        border: 1px solid #ddd;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        padding: 2em;
-        z-index: 1000;
-        overflow: auto;
-        box-sizing: border-box;
-      }
-    
-      .popup.active {
-        display: block;
-      }
-    
-      .popup-close {
-        position: absolute;
-        top: 1em;
-        right: 1em;
-        cursor: pointer;
-        font-size: 1.5em;
-      }
-    
-      .popup-content {
-        margin-top: 2em;
-      }
-    </style>
-    
-    <style>
-  .popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) perspective(1000px) rotateX(0deg) rotateY(0deg);
-    background: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 2em;
-    z-index: 1000;
-    width: 80%;
-    max-width: 600px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 8px; /* Rounded corners for a softer look */
-  }
-
-  .popup.active {
-    display: block;
-    transform: translate(-50%, -50%) perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
-  }
-
-  .popup-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 1.5em;
-    color: #007bff; /* Change color to match your theme */
-  }
-
-  .popup-content {
-    position: relative;
-    z-index: 10;
-  }
-
-  .popup button {
-    margin-top: 1em;
-    background-color: #007bff; /* Button color to match theme */
-    color: #fff;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .popup button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-  }
-</style>
-
-    
-
-    <div class="timeline">
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-content" onclick="showPopup('popup1')">
-          <h2 class="mb-0">Enhancing Greenery Sustainable Analysis by Data Analysis and Data Visualization.</h2>
-          <div class="subheading mb-3"><h6>SIMATS Engineering core Project </h6><span class="text-primary">2024-2025</span></div>
-          <a onclick="showPopup('popup1')" style="color: #007bff; text-decoration: none;">View</a>
-
-
-
+    <div class="projects-timeline">
+      <div class="projects-timeline-item">
+        <div class="projects-card" onclick="showPopup('popup1')">
+          <span class="projects-card-title">Enhancing Greenery Sustainable Analysis</span>
+          <div class="projects-card-subtitle">SIMATS Engineering core Project</div>
+          <button type="button" onclick="event.stopPropagation(); showPopup('popup1')">View</button>
         </div>
       </div>
-      
-      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-        <div class="timeline-content" onclick="showPopup('popup2')">
-          <h2 class="mb-0">CGPA Calculator</h2>
-          <div class="subheading mb-3"><h5>For Simats Engineering College </h5><span class="text-primary">August 2024</span></div>
-          <a  onclick="showPopup('popup2')" style="color: #007bff; text-decoration: none;">View</a>
 
+      <div class="projects-timeline-item">
+        <div class="projects-card" onclick="showPopup('popup2')">
+          <span class="projects-card-title">CGPA Calculator</span>
+          <div class="projects-card-subtitle">For Simats Engineering College</div>
+          <button type="button" onclick="event.stopPropagation(); showPopup('popup2')">View</button>
         </div>
       </div>
-      
-      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-        <div class="timeline-content" onclick="showPopup('popup3')">
-          <h2 class="mb-0">AI Based Gas Level Detection And Automated LPG Cylinder Booking</h2>
-          <div class="subheading mb-3"><h6>AI with IoT </h6><span class="text-primary">March 2023</span></div>
-          <a onclick="showPopup('popup3')" style="color: #007bff; text-decoration: none;">View</a>
 
+      <div class="projects-timeline-item">
+        <div class="projects-card" onclick="showPopup('popup3')">
+          <span class="projects-card-title">AI Based Gas Level Detection</span>
+          <div class="projects-card-subtitle">AI with IoT</div>
+          <button type="button" onclick="event.stopPropagation(); showPopup('popup3')">View</button>
         </div>
       </div>
-      
-      <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-        <div class="timeline-content" onclick="showPopup('popup4')">
-          <h2 class="mb-0">WEBSITE TRANSLATION</h2>
-          <div class="subheading mb-3"><h5>For Foreign Clients </h5><span class="text-primary">May 2024</span></div>
-          <a onclick="showPopup('popup4')" style="color: #007bff; text-decoration: none;">View</a>
 
+      <div class="projects-timeline-item">
+        <div class="projects-card" onclick="showPopup('popup4')">
+          <span class="projects-card-title">Website Translation</span>
+          <div class="projects-card-subtitle">For Foreign Clients</div>
+          <button type="button" onclick="event.stopPropagation(); showPopup('popup4')">View</button>
         </div>
       </div>
     </div>
-
   </div>
 </section><!-- End Projects Section -->
 
 <!-- Popup Structure -->
-<div id="popup1" class="popup">
-  <span class="popup-close" onclick="hidePopup('popup1')">&times;</span>
-  <div class="popup-content">
-    <h3>Enhancing Greenery Sustainable Analysis by Data Analysis and Data Visualization.</h3>
+<div id="popup1" class="projects-popup">
+  <div class="projects-popup-content">
+    <span class="projects-popup-close" onclick="hidePopup('popup1')">&times;</span>
+    <h3>Enhancing Greenery Sustainable Analysis</h3>
     <p>The study assesses their capabilities in determining and enhancing the sustainability of greenery. The dataset comprises diverse environmental variables such as soil quality, water accessibility, and vegetation health, collected from various greenery sites.</p>
   </div>
 </div>
 
-<div id="popup2" class="popup">
-  <span class="popup-close" onclick="hidePopup('popup2')">&times;</span>
-  <div class="popup-content">
+<div id="popup2" class="projects-popup">
+  <div class="projects-popup-content">
+    <span class="projects-popup-close" onclick="hidePopup('popup2')">&times;</span>
     <h3>CGPA Calculator</h3>
     <p>Developed a sophisticated CGPA Calculator tailored to the specific weightage, rules, and methods used by Saveetha School of Engineering. This tool ensures accurate and efficient grade calculations, providing students with a reliable way to track their academic performance.</p>
     <ul>
@@ -575,44 +424,193 @@
   </div>
 </div>
 
-<div id="popup3" class="popup">
-  <span class="popup-close" onclick="hidePopup('popup3')">&times;</span>
-  <div class="popup-content">
-    <h3>AI Based Gas Level Detection And Automated LPG Cylinder Booking</h3>
+<div id="popup3" class="projects-popup">
+  <div class="projects-popup-content">
+    <span class="projects-popup-close" onclick="hidePopup('popup3')">&times;</span>
+    <h3>AI Based Gas Level Detection</h3>
     <p>Implemented an AI-powered system for LPG gas level detection and automated cylinder booking. This ensures efficient gas management and eliminates the risk of running out of fuel.</p>
-    <button type="button" class="button" onclick="window.location.href='assets/ai.pdf'">
-      <span class="button__text">Get PDF</span>
-      <span class="button__icon">
-        <svg class="svg" data-name="Layer 2" id="bdd05811-e15d-428c-bb53-8661459f9307" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path>
-          <path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path>
-          <path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path>
-        </svg>
-      </span>
-    </button>
+    <button type="button" onclick="window.location.href='assets/ai.pdf'">Get PDF</button>
   </div>
 </div>
 
-<div id="popup4" class="popup">
-  <span class="popup-close" onclick="hidePopup('popup4')">&times;</span>
-  <div class="popup-content">
-    <h3>WEBSITE TRANSLATION</h3>
-    <p>I worked on the Sreeson.ca website, where I translated the content from English to Arabic. I used JSON to manage and store the translations and modified JavaScript to ensure the content displayed correctly in both languages. Additionally, I updated the navigation links to ensure they redirected to the correct sections within the website, providing a smooth user experience. This project improved accessibility for Arabic-speaking users and enhanced the overall functionality of the site.</p>
+<div id="popup4" class="projects-popup">
+  <div class="projects-popup-content">
+    <span class="projects-popup-close" onclick="hidePopup('popup4')">&times;</span>
+    <h3>Website Translation</h3>
+    <p>I worked on the Sreeson.ca website, where I translated the content from English to Arabic. I used JSON to manage and store the translations and modified JavaScript to ensure the content displayed correctly in both languages. This project improved accessibility for Arabic-speaking users and enhanced the overall functionality of the site.</p>
     <ul>
       <li><strong>Website</strong>: <a href="https://www.sreeson.ca">Sreeson</a></li>
     </ul>
   </div>
 </div>
 
+<style>
+  .projects {
+    position: relative;
+    padding: 2em 1em;
+  }
+
+  .projects-timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-around;
+  }
+
+  .projects-timeline-item {
+    flex: 1 1 calc(50% - 2em);
+    box-sizing: border-box;
+    max-width: 600px;
+  }
+
+  /* Card with pink-to-blue gradient */
+  .projects-card {
+    width: 80%;
+    height: 200px;
+    background: linear-gradient(50deg, #03030c, #0a1e8e, #1a1919); /* Pink to blue */
+    border-radius: 15px;
+    
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projects-card:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 10px 80px 0px #9a99a96b;
+  }
+
+  .projects-card-title {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .projects-card-subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .projects-card button {
+    padding: 10px 30px;
+    border-radius: 8px;
+    border: none;
+    background: #6b64f3;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .projects-card button:hover {
+    background: #534bf3;
+  }
+
+  /* Popup Styles with black-to-blue gradient */
+  .projects-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: linear-gradient(135deg, #000000, #7e2ca1,#000000); /* Black to blue */
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+
+  .projects-popup.active {
+    display: block;
+  }
+
+  .projects-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #fff;
+  }
+
+  .projects-popup-content {
+    color: white;
+  }
+
+  .projects-popup button {
+    margin-top: 1em;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .projects-popup button:hover {
+    background-color: #0056b3;
+  }
+</style>
+
 <script>
+  let currentPopup = null;
+
   function showPopup(popupId) {
-    document.getElementById(popupId).classList.add('active');
+    // Close the currently open popup if any
+    if (currentPopup && currentPopup !== popupId) {
+      hidePopup(currentPopup);
+    }
+
+    // Show the new popup
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.classList.add('active');
+      currentPopup = popupId;
+      
+      // Add event listener to detect clicks outside the popup
+      document.addEventListener('click', outsideClickListener);
+    }
   }
 
   function hidePopup(popupId) {
-    document.getElementById(popupId).classList.remove('active');
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.classList.remove('active');
+      currentPopup = null;
+
+      // Remove the outside click listener when popup is closed
+      document.removeEventListener('click', outsideClickListener);
+    }
   }
+
+  function outsideClickListener(event) {
+    const activePopup = document.querySelector('.projects-popup.active');
+    if (activePopup && !activePopup.contains(event.target) && !event.target.closest('.projects-card')) {
+      hidePopup(activePopup.id);
+    }
+  }
+
+  document.querySelectorAll('.projects-popup-close').forEach(button => {
+    button.addEventListener('click', (event) => {
+      hidePopup(event.target.closest('.projects-popup').id);
+    });
+  });
 </script>
+
+
 
 
 
@@ -965,9 +963,9 @@
 
   /* Additional styles for card and card2 elements */
   .card {
-    width: 160px; /* Reduced card width */
+    width: 500px; /* Reduced card width */
     height: 214px; /* Reduced card height */
-    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    background-image: linear-gradient(163deg, #303030 0%, #3700ff 100%);
     border-radius: 10px; /* Matching rounded corners */
     transition: all 0.3s;
     display: flex;
