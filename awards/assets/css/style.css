@@ -1,6 +1,4 @@
-
---------------------------------------------------------------*/
-body {
+--------------------------------------------------------------*/ body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
 }
@@ -70,66 +68,46 @@ h6 {
   z-index: 9997;
   padding: 0 15px;
   background: lightblue;
-  background: radial-gradient(
-      circle,
+  background: radial-gradient(circle,
       rgb(170, 162, 162),
       #333 30%,
-      rgba(88, 84, 84, 0.226) 0%
-    ),
-    radial-gradient(
-      circle at 40px 40px,
+      rgba(88, 84, 84, 0.226) 0%),
+    radial-gradient(circle at 40px 40px,
       rgb(233, 228, 228),
       #333 30%,
-      rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-      circle at 600px 200px,
+      rgba(88, 84, 84, 0) 0%),
+    radial-gradient(circle at 600px 200px,
       rgb(233, 228, 228),
       #333 10%,
-      rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-      circle at 800px 100px,
+      rgba(88, 84, 84, 0) 0%),
+    radial-gradient(circle at 800px 100px,
       rgb(233, 228, 228),
       #333 10%,
-      rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-      circle at 700px 500px,
+      rgba(88, 84, 84, 0) 0%),
+    radial-gradient(circle at 700px 500px,
       rgb(233, 228, 228),
       #333 2%,
-      rgba(88, 84, 84, 0.123) 0%
-    ),
-    radial-gradient(
-      circle at 200px 400px,
+      rgba(88, 84, 84, 0.123) 0%),
+    radial-gradient(circle at 200px 400px,
       rgb(233, 228, 228),
       #333 1%,
-      rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-      circle at 300px 700px,
+      rgba(88, 84, 84, 0) 0%),
+    radial-gradient(circle at 300px 700px,
       rgb(233, 228, 228),
       #333 15%,
-      rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-      circle at 900px 500px,
+      rgba(88, 84, 84, 0) 0%),
+    radial-gradient(circle at 900px 500px,
       rgb(233, 228, 228),
       #333 20%,
-      rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-      circle at 650px 400px,
+      rgba(88, 84, 84, 0) 0%),
+    radial-gradient(circle at 650px 400px,
       rgb(233, 228, 228),
       #333 10%,
-      rgba(88, 84, 84, 0) 0%
-    ),
-    radial-gradient(
-      circle at 600px 600px,
+      rgba(88, 84, 84, 0) 0%),
+    radial-gradient(circle at 600px 600px,
       rgb(233, 228, 228),
       #333 1%,
-      rgba(88, 84, 84, 0.959) 0%
-    );
+      rgba(88, 84, 84, 0.959) 0%);
   overflow-y: auto;
 }
 
@@ -622,10 +600,14 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  border: 2px solid #ccc; /* Add border around each portfolio item */
-  padding: 10px; /* Add padding inside the border */
-  border-radius: 10px; /* Optional: Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
+  border: 2px solid #ccc;
+  /* Add border around each portfolio item */
+  padding: 10px;
+  /* Add padding inside the border */
+  border-radius: 10px;
+  /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optional: Shadow effect */
 }
 
 .portfolio .portfolio-wrap::before {
@@ -1224,7 +1206,9 @@ img {
   overflow: hidden;
 }
 
-.button, .button__icon, .button__text {
+.button,
+.button__icon,
+.button__text {
   transition: all 0.3s;
 }
 
@@ -1272,7 +1256,8 @@ img {
 
 /* Default cursor style for all devices */
 body {
-  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">💛</text></svg>') 16 16, auto; /* Indian flag emoji as cursor */
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">💛</text></svg>') 16 16, auto;
+  /* Indian flag emoji as cursor */
 
 }
 
@@ -1280,38 +1265,50 @@ body {
 .cursor {
   position: absolute;
   border-radius: 50%;
-  background-color: white; /* Or any color */
-  mix-blend-mode: difference; /* Invert the text color under the circle */
+  background-color: white;
+  /* Or any color */
+  mix-blend-mode: difference;
+  /* Invert the text color under the circle */
   pointer-events: none;
-  width: 40px; /* Default size for the circle */
-  height: 40px; /* Default size for the circle */
-  transform: translate(-50%, -50%); /* Center the circle on the cursor */
+  width: 40px;
+  /* Default size for the circle */
+  height: 40px;
+  /* Default size for the circle */
+  transform: translate(-50%, -50%);
+  /* Center the circle on the cursor */
   transition: width 0.3s, height 0.3s;
   z-index: 1000;
-  display: none; /* Hide by default */
+  display: none;
+  /* Hide by default */
 }
 
 /* When hovering over text, the cursor size increases */
 .cursor.hover {
-  display: block; /* Show when hovering */
-  width: 60px; /* Larger size for the circle when hovering */
-  height: 60px; /* Larger size for the circle when hovering */
+  display: block;
+  /* Show when hovering */
+  width: 60px;
+  /* Larger size for the circle when hovering */
+  height: 60px;
+  /* Larger size for the circle when hovering */
 }
 
 /* Hide the default cursor image when the circle is active */
 body.cursor-active {
-  cursor: none; /* Hide the default cursor */
+  cursor: none;
+  /* Hide the default cursor */
 }
 
 /* Media query to hide the cursor effect on mobile devices */
 @media (max-width: 768px) {
   .cursor {
-    display: none; /* Hide the cursor effect on screens smaller than 768px */
+    display: none;
+    /* Hide the cursor effect on screens smaller than 768px */
   }
-  
+
   body.cursor-active {
 
-    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">💛</text></svg>') 16 16, auto; /* Use the emoji cursor on mobile */
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">💛</text></svg>') 16 16, auto;
+    /* Use the emoji cursor on mobile */
 
   }
 }

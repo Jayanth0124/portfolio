@@ -14,7 +14,9 @@
   <link href="assets/img/jayanth.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -27,109 +29,127 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
- <!-- Custom Neumorphic and Glassmorphism CSS -->
-<style>
-  /* Set gradient background and ensure it covers the entire viewport */
-  body {
-    background: repeating-conic-gradient(
-        from 30deg,
-        #0000 0 120deg,
-        #3c3c3c 0 180deg
-      )
-      calc(0.5 * 200px) calc(0.5 * 200px * 0.577),
-    repeating-conic-gradient(
-      from 30deg,
-      #1d1d1d 0 60deg,
-      #4e4f51 0 120deg,
-      #3c3c3c 0 180deg
-    );
-    background-size: 200px calc(200px * 0.577);
-    color: #fff;
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    height: 100%;
-    min-height: 100vh; /* Ensure it covers the full height of the viewport */
-    overflow-x: hidden; /* Prevent horizontal overflow */
-  }
+  <!-- Custom Neumorphic and Glassmorphism CSS -->
+  <style>
+    /* Set gradient background and ensure it covers the entire viewport */
+    body {
+      background: repeating-conic-gradient(from 30deg,
+          #0000 0 120deg,
+          #3c3c3c 0 180deg) calc(0.5 * 200px) calc(0.5 * 200px * 0.577),
+        repeating-conic-gradient(from 30deg,
+          #1d1d1d 0 60deg,
+          #4e4f51 0 120deg,
+          #3c3c3c 0 180deg);
+      background-size: 200px calc(200px * 0.577);
+      color: #fff;
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      height: 100%;
+      min-height: 100vh;
+      /* Ensure it covers the full height of the viewport */
+      overflow-x: hidden;
+      /* Prevent horizontal overflow */
+    }
 
-  /* General container padding */
-  .container {
-    padding: 20px; /* Add padding to the container */
-    box-sizing: border-box; /* Include padding in the element’s total width and height */
-  }
+    /* General container padding */
+    .container {
+      padding: 20px;
+      /* Add padding to the container */
+      box-sizing: border-box;
+      /* Include padding in the element’s total width and height */
+    }
 
-  /* Glassmorphism effect for Awards Details Section */
-  #portfolio-details .neumorphic,
-  #portfolio-details .portfolio-info,
-  #portfolio-details .portfolio-description,
-  #breadcrumbs {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px; /* Add bottom margin for spacing between sections */
-    position: relative; /* Ensure elements are above the background */
-    z-index: 1; /* Ensure elements are above the gradient background */
-    overflow: hidden; /* Prevent child elements from overflowing */
-  }
+    /* Glassmorphism effect for Awards Details Section */
+    #portfolio-details .neumorphic,
+    #portfolio-details .portfolio-info,
+    #portfolio-details .portfolio-description,
+    #breadcrumbs {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      /* Add bottom margin for spacing between sections */
+      position: relative;
+      /* Ensure elements are above the background */
+      z-index: 1;
+      /* Ensure elements are above the gradient background */
+      overflow: hidden;
+      /* Prevent child elements from overflowing */
+    }
 
-  /* Glassmorphism effect for Breadcrumbs */
-  #breadcrumbs {
-    padding: 10px 15px; /* Reduced padding for smaller size */
-    margin-bottom: 15px; /* Slightly reduced bottom margin */
-    box-sizing: border-box; /* Include padding in the element’s total width and height */
-    border-radius: 0px;
-  }
+    /* Glassmorphism effect for Breadcrumbs */
+    #breadcrumbs {
+      padding: 10px 15px;
+      /* Reduced padding for smaller size */
+      margin-bottom: 15px;
+      /* Slightly reduced bottom margin */
+      box-sizing: border-box;
+      /* Include padding in the element’s total width and height */
+      border-radius: 0px;
+    }
 
-  #breadcrumbs h2 {
-    font-size: 1.2rem; /* Reduced font size */
-    margin-bottom: 10px; /* Margin below heading */
-    
-  }
+    #breadcrumbs h2 {
+      font-size: 1.2rem;
+      /* Reduced font size */
+      margin-bottom: 10px;
+      /* Margin below heading */
 
-  #breadcrumbs ol {
-    font-size: 0.9rem; /* Reduced font size for list items */
-  }
+    }
 
-  #breadcrumbs h2, #breadcrumbs ol {
-    color: #fff;
-  }
+    #breadcrumbs ol {
+      font-size: 0.9rem;
+      /* Reduced font size for list items */
+    }
 
-  /* Adjust the size of the slider */
-  #portfolio-details .portfolio-details-slider {
-    width: 100%; /* Make sure slider is responsive */
-    max-width: 800px; /* Set a maximum width for the slider */
-    margin: 0 auto; /* Center align the slider */
-    overflow: hidden; /* Prevent overflow within the slider container */
-  }
+    #breadcrumbs h2,
+    #breadcrumbs ol {
+      color: #fff;
+    }
 
-  /* Adjust the size of each slide */
-  #portfolio-details .portfolio-details-slider .swiper-slide {
-    width: 100%; /* Make sure slide takes the full width of the slider */
-    height: auto; /* Maintain aspect ratio */
-  }
+    /* Adjust the size of the slider */
+    #portfolio-details .portfolio-details-slider {
+      width: 100%;
+      /* Make sure slider is responsive */
+      max-width: 800px;
+      /* Set a maximum width for the slider */
+      margin: 0 auto;
+      /* Center align the slider */
+      overflow: hidden;
+      /* Prevent overflow within the slider container */
+    }
 
-  /* Adjusting the image inside the slider with glassmorphism */
-  #portfolio-details .portfolio-details-slider .swiper-slide img {
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ensure images are responsive */
-    height: auto; /* Maintain aspect ratio */
-  }
+    /* Adjust the size of each slide */
+    #portfolio-details .portfolio-details-slider .swiper-slide {
+      width: 100%;
+      /* Make sure slide takes the full width of the slider */
+      height: auto;
+      /* Maintain aspect ratio */
+    }
 
-  /* Portfolio information section with glassmorphism */
-  #portfolio-details .portfolio-info {
-    margin-bottom: 20px;
-  }
+    /* Adjusting the image inside the slider with glassmorphism */
+    #portfolio-details .portfolio-details-slider .swiper-slide img {
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      /* Ensure images are responsive */
+      height: auto;
+      /* Maintain aspect ratio */
+    }
 
-  /* Portfolio description section with glassmorphism */
-  #portfolio-details .portfolio-description {
-    margin-bottom: 20px;
-  }
-</style>
+    /* Portfolio information section with glassmorphism */
+    #portfolio-details .portfolio-info {
+      margin-bottom: 20px;
+    }
+
+    /* Portfolio description section with glassmorphism */
+    #portfolio-details .portfolio-description {
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 
 <body>
@@ -142,25 +162,35 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="assets/img/dp.jpg" alt="" class="img-fluid rounded-circle">
+        <img src="assets/img/dp.jpg" alt="" class="img-fluid square">
         <h1 class="text-light"><a href="index.html">Jayanth</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="https://twitter.com/jayanth0124?t=_89WgzqbBLLQTeqbkVQtwg&s=09" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://www.facebook.com/jayanth0124?mibextid=ZbWKwL" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://twitter.com/jayanth0124?t=_89WgzqbBLLQTeqbkVQtwg&s=09" class="twitter"><i
+              class="bx bxl-twitter"></i></a>
+          <a href="https://www.facebook.com/jayanth0124?mibextid=ZbWKwL" class="facebook"><i
+              class="bx bxl-facebook"></i></a>
           <a href="https://www.instagram.com/jayanth.chowdary__/" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/jayanth-donavalli-b835491b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app&original_referer=" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/jayanth-donavalli-b835491b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app&original_referer="
+            class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="index.html#projects" class="nav-link scrollto"><i class="bx bx-task"></i> <span>Projects</span></a></li>
-          <li><a href="index.html#education" class="nav-link scrollto"><i class="bx bx-book"></i> <span>Education</span></a></li>
-          <li><a href="index.html#awards" class="nav-link scrollto"><i class="bx bx-award"></i> <span>Awards</span></a></li>
-          <li><a href="index.html#interests" class="nav-link scrollto"><i class="bx bx-heart"></i> <span>Interests</span></a></li>
-          <li><a href="index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a href="index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i>
+              <span>Home</span></a></li>
+          <li><a href="index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a>
+          </li>
+          <li><a href="index.html#projects" class="nav-link scrollto"><i class="bx bx-task"></i>
+              <span>Projects</span></a></li>
+          <li><a href="index.html#education" class="nav-link scrollto"><i class="bx bx-book"></i>
+              <span>Education</span></a></li>
+          <li><a href="index.html#awards" class="nav-link scrollto"><i class="bx bx-award"></i> <span>Awards</span></a>
+          </li>
+          <li><a href="index.html#interests" class="nav-link scrollto"><i class="bx bx-heart"></i>
+              <span>Interests</span></a></li>
+          <li><a href="index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i>
+              <span>Contact</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -233,7 +263,8 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>

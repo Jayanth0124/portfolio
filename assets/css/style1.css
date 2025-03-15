@@ -3,9 +3,11 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  touch-action: none; /* For touch screen devices */
+  touch-action: none;
+  /* For touch screen devices */
 }
 
 body {
@@ -16,7 +18,8 @@ body {
   transform-style: preserve-3d;
 }
 
-#drag-container, #spin-container {
+#drag-container,
+#spin-container {
   position: relative;
   display: flex;
   margin: auto;
@@ -24,7 +27,8 @@ body {
   transform: rotateX(-10deg);
 }
 
-#drag-container img, #drag-container video {
+#drag-container img,
+#drag-container video {
   transform-style: preserve-3d;
   position: absolute;
   left: 0;
@@ -38,7 +42,8 @@ body {
   box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
 }
 
-#drag-container img:hover, #drag-container video:hover {
+#drag-container img:hover,
+#drag-container video:hover {
   box-shadow: 0 0 15px #fffd;
   box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
 }
@@ -71,7 +76,8 @@ body {
 @keyframes spin {
   from {
     transform: rotateY(0deg);
-  } 
+  }
+
   to {
     transform: rotateY(360deg);
   }
@@ -80,7 +86,8 @@ body {
 @keyframes spinRevert {
   from {
     transform: rotateY(360deg);
-  } 
+  }
+
   to {
     transform: rotateY(0deg);
   }

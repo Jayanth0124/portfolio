@@ -41,9 +41,9 @@ function playSpin(yes) {
 }
 
 var sX, sY, nX, nY, desX = 0,
-    desY = 0,
-    tX = 0,
-    tY = 10;
+  desY = 0,
+  tX = 0,
+  tY = 10;
 
 if (autoRotate) {
   var animationName = rotateSpeed > 0 ? 'spin' : 'spinRevert';
@@ -92,10 +92,10 @@ document.onpointerdown = function (e) {
 };
 
 // Handle zooming with mouse wheel or touch scroll
-document.onmousewheel = function(e) {
+document.onmousewheel = function (e) {
   e = e || window.event;
   var d = e.wheelDelta / 40 || -e.detail;
-  
+
   // Reduce zoom sensitivity for mobile devices
   radius += d * 2;
   init(1);
