@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Error not found</title>
+    <title>Error 404 Not Found</title>
     <style>
         body { margin: 0; overflow: hidden; background: #0a0a0a; }
         canvas { display: block; width: 100vw; height: 100vh; }
@@ -162,7 +162,7 @@
         const particleCount = window.innerWidth < 600 ? 200 : 500;
         const particleGeometry = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
-        const particleBounds = 200;
+        const particleBounds = 200; // Larger bounds for particles
         for (let i = 0; i < particleCount * 3; i++) {
             positions[i] = (Math.random() - 0.5) * particleBounds;
         }
@@ -182,6 +182,7 @@
                 const y = positions[i3 + 1];
                 const z = positions[i3 + 2];
 
+                // Reposition particles if they are too far from the camera
                 if (Math.abs(x - cameraPos.x) > particleBounds / 2) {
                     positions[i3] = x > cameraPos.x ? x - particleBounds : x + particleBounds;
                 }
@@ -248,13 +249,13 @@
         // Return Button Animation
         const returnButton = document.getElementById('returnButton');
         gsap.to(returnButton, { opacity: 0.7, yoyo: true, repeat: -1, duration: 1 });
-        returnButton.addEventListener('click', () => window.location.href = '/index.html');
+        returnButton.addEventListener('click', () => window.location.href = '/');
 
         // Animation Loop
         function animate() {
             requestAnimationFrame(animate);
             controls.update();
-            updateParticles();
+            updateParticles(); // Update particles for infinite effect
             composer.render();
         }
         animate();
@@ -267,6 +268,7 @@
             composer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
+            // Update "ERROR NOT FOUND" position on resize
             if (textMeshError) {
                 const errorTextX = window.innerWidth < 600 ? -40 * scaleFactor : -30 * scaleFactor;
                 textMeshError.position.set(errorTextX, -10 * scaleFactor, 0);
