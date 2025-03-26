@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Cyberpunk Error</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #0a0a0a; }
+        canvas { display: block; width: 100vw; height: 100vh; }
+        #returnButton {
+            position: absolute;
+            bottom: 5vh;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 16px;
+            background: none;
+            border: 2px solid #00ffcc;
+            color: #00ffcc;
+            font-family: 'Courier New', monospace;
+            font-size: clamp(12px, 2vw, 16px);
+            cursor: pointer;
+            z-index: 10;
+            white-space: nowrap;
+        }
+        #returnButton:hover { background: rgba(0, 255, 204, 0.2); }
+    </style>
+</head>
+<body>
+    <button id="returnButton">Return to Home</button>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+        import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+        import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+        import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+        import { GlitchPass } from 'three/addons/postprocessing/GlitchPass.js';
+
+        // Scene Setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        document.body.appendChild(renderer.domElement);
+
+        // Orbit Controls
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+
+        // Responsive Camera Position
+        function updateCameraPosition() {
+            const width = window.innerWidth;
+            camera.position.z = width < 600 ? 40 : 50;
+            camera.fov = width < 600 ? 90 : 75;
+            camera.updateProjectionMatrix();
+        }
+        updateCameraPosition();
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0x404040);
+        scene.add(ambientLight);
+        const neonLight = new THREE.PointLight(0x00ffcc, 2, 100);
+        neonLight.position.set(0, 20, 20);
+        scene.add(neonLight);
+
+        // Responsive Scaling Factor
+        const scaleFactor = Math.min(window.innerWidth / 1200, 1);
+
+        // 404 Text
+        const loader = new FontLoader();
+        let textMesh404, textMeshError;
+        loader.load('https://threejs.org/examples/fonts/helvetiker_bold.typeface.json', (font) => {
+            // 404 Text
+            const textGeometry404 = new TextGeometry('404', {
+                font: font,
+                size: 20 * scaleFactor,
+                height: 2 * scaleFactor,
+                curveSegments: 12,
+            });
+            const textMaterial = new THREE.MeshPhongMaterial({ color: 0x00ffcc, emissive: 0x00ffcc, emissiveIntensity: 0.5 });
+            textMesh404 = new THREE.Mesh(textGeometry404, textMaterial);
+            textMesh404.position.set(-30 * scaleFactor, 10 * scaleFactor, 0);
+            textMesh404.name = '404';
+            scene.add(textMesh404);
+
+            // Glitch Animation for 404
+            gsap.to(textMesh404.position, {
+                x: `-=${5 * scaleFactor}`,
+                yoyo: true,
+                repeat: -1,
+                duration: 0.1,
+                ease: 'power1.inOut',
+                onRepeat: () => {
+                    if (Math.random() > 0.9) textMesh404.position.x += 10 * scaleFactor;
+                }
+            });
+
+            // "ERROR NOT FOUND" Text
+            const textGeometryError = new TextGeometry('ERROR NOT FOUND', {
+                font: font,
+                size: 8 * scaleFactor,
+                height: 1 * scaleFactor,
+                curveSegments: 12,
+            });
+            textMeshError = new THREE.Mesh(textGeometryError, textMaterial);
+
+            // Adjust position based on screen size
+            const errorTextX = window.innerWidth < 600 ? -40 * scaleFactor : -30 * scaleFactor;
+            textMeshError.position.set(errorTextX, -10 * scaleFactor, 0);
+            textMeshError.name = 'error';
+            scene.add(textMeshError);
+
+            // Slight Glitch Animation for "ERROR NOT FOUND"
+            gsap.to(textMeshError.position, {
+                x: `-=${3 * scaleFactor}`,
+                yoyo: true,
+                repeat: -1,
+                duration: 0.15,
+                ease: 'power1.inOut',
+                onRepeat: () => {
+                    if (Math.random() > 0.95) textMeshError.position.x += 6 * scaleFactor;
+                }
+            });
+        });
+
+        // Floating Cyber Panels
+        const panelGeometry = new THREE.PlaneGeometry(20 * scaleFactor, 10 * scaleFactor);
+        const panelMaterial = new THREE.MeshBasicMaterial({ color: 0x00ffcc, transparent: true, opacity: 0.3, side: THREE.DoubleSide });
+        const panels = [];
+        for (let i = 0; i < 3; i++) {
+            const panel = new THREE.Mesh(panelGeometry, panelMaterial);
+            panel.position.set(
+                (Math.random() * 50 - 25) * scaleFactor,
+                (Math.random() * 30 - 15) * scaleFactor,
+                (Math.random() * 20 - 10) * scaleFactor
+            );
+            scene.add(panel);
+            panels.push(panel);
+
+            // Panel Animation
+            gsap.to(panel.position, {
+                y: `+=${5 * scaleFactor}`,
+                yoyo: true,
+                repeat: -1,
+                duration: 2 + Math.random(),
+                ease: 'sine.inOut'
+            });
+        }
+
+        // Infinite Particles (Digital Noise)
+        const particleCount = window.innerWidth < 600 ? 200 : 500;
+        const particleGeometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        const particleBounds = 200; // Larger bounds for particles
+        for (let i = 0; i < particleCount * 3; i++) {
+            positions[i] = (Math.random() - 0.5) * particleBounds;
+        }
+        particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particleMaterial = new THREE.PointsMaterial({ color: 0x00ffcc, size: 0.5 * scaleFactor, transparent: true });
+        const particles = new THREE.Points(particleGeometry, particleMaterial);
+        scene.add(particles);
+
+        // Function to make particles appear infinite
+        function updateParticles() {
+            const positions = particles.geometry.attributes.position.array;
+            const cameraPos = camera.position;
+
+            for (let i = 0; i < particleCount; i++) {
+                const i3 = i * 3;
+                const x = positions[i3];
+                const y = positions[i3 + 1];
+                const z = positions[i3 + 2];
+
+                // Reposition particles if they are too far from the camera
+                if (Math.abs(x - cameraPos.x) > particleBounds / 2) {
+                    positions[i3] = x > cameraPos.x ? x - particleBounds : x + particleBounds;
+                }
+                if (Math.abs(y - cameraPos.y) > particleBounds / 2) {
+                    positions[i3 + 1] = y > cameraPos.y ? y - particleBounds : y + particleBounds;
+                }
+                if (Math.abs(z - cameraPos.z) > particleBounds / 2) {
+                    positions[i3 + 2] = z > cameraPos.z ? z - particleBounds : z + particleBounds;
+                }
+            }
+            particles.geometry.attributes.position.needsUpdate = true;
+        }
+
+        // Background Grid
+        const gridHelper = new THREE.GridHelper(200 * scaleFactor, 50, 0x00ffcc, 0x00ffcc);
+        gridHelper.position.z = -50 * scaleFactor;
+        gridHelper.material.opacity = 0.2;
+        gridHelper.material.transparent = true;
+        scene.add(gridHelper);
+
+        // Post-processing (Glitch Effect)
+        const composer = new EffectComposer(renderer);
+        const renderPass = new RenderPass(scene, camera);
+        composer.addPass(renderPass);
+        const glitchPass = new GlitchPass();
+        glitchPass.goWild = false;
+        composer.addPass(glitchPass);
+
+        // Interactive Hover Effects
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            raycaster.setFromCamera(mouse, camera);
+
+            const objectsToIntersect = [...panels];
+            if (textMesh404) objectsToIntersect.push(textMesh404);
+            if (textMeshError) objectsToIntersect.push(textMeshError);
+
+            const intersects = raycaster.intersectObjects(objectsToIntersect);
+            intersects.forEach((intersect) => {
+                gsap.to(intersect.object.scale, { x: 1.1, y: 1.1, z: 1.1, duration: 0.3, yoyo: true, repeat: 1 });
+            });
+        });
+
+        // Touch Support for Mobile
+        window.addEventListener('touchmove', (event) => {
+            const touch = event.touches[0];
+            mouse.x = (touch.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(touch.clientY / window.innerHeight) * 2 + 1;
+            raycaster.setFromCamera(mouse, camera);
+
+            const objectsToIntersect = [...panels];
+            if (textMesh404) objectsToIntersect.push(textMesh404);
+            if (textMeshError) objectsToIntersect.push(textMeshError);
+
+            const intersects = raycaster.intersectObjects(objectsToIntersect);
+            intersects.forEach((intersect) => {
+                gsap.to(intersect.object.scale, { x: 1.1, y: 1.1, z: 1.1, duration: 0.3, yoyo: true, repeat: 1 });
+            });
+        });
+
+        // Return Button Animation
+        const returnButton = document.getElementById('returnButton');
+        gsap.to(returnButton, { opacity: 0.7, yoyo: true, repeat: -1, duration: 1 });
+        returnButton.addEventListener('click', () => window.location.href = '/');
+
+        // Animation Loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            updateParticles(); // Update particles for infinite effect
+            composer.render();
+        }
+        animate();
+
+        // Responsive Resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            updateCameraPosition();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            composer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            // Update "ERROR NOT FOUND" position on resize
+            if (textMeshError) {
+                const errorTextX = window.innerWidth < 600 ? -40 * scaleFactor : -30 * scaleFactor;
+                textMeshError.position.set(errorTextX, -10 * scaleFactor, 0);
+            }
+        });
+    </script>
+</body>
+</html>
