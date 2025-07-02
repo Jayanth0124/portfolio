@@ -281,30 +281,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const isHovering = textElements.some(element => {
       const rect = element.getBoundingClientRect();
       return (
-        e.clientX >= rect.left &&
-        e.clientX <= rect.right &&
-        e.clientY >= rect.top &&
-        e.clientY <= rect.bottom
+        e.clientX >= rect.left + 10 &&  // increased padding to avoid false positives
+        e.clientX <= rect.right - 10 &&
+        e.clientY >= rect.top + 10 &&
+        e.clientY <= rect.bottom - 10
       );
     });
 
     // Manage cursor visibility and circle effect
     if (isHovering) {
-      cursor.classList.add("hover");
-      cursor.style.display = 'block'; // Show the circle
-      document.body.classList.add("cursor-active"); // Hide the flag cursor
+      if (!cursor.classList.contains("hover")) {
+        cursor.classList.add("hover");
+        cursor.style.display = 'block'; // Show the circle
+        document.body.classList.add("cursor-active"); // Hide the flag cursor
+      }
     } else {
-      cursor.classList.remove("hover");
-      cursor.style.display = 'none'; // Hide the circle
-      document.body.classList.remove("cursor-active"); // Show the flag cursor
+      if (cursor.classList.contains("hover")) {
+        cursor.classList.remove("hover");
+        cursor.style.display = 'none'; // Hide the circle
+        document.body.classList.remove("cursor-active"); // Show the flag cursor
+      }
     }
   }
 
+  let lastMoveTime = 0;
   let requestId;
   document.body.addEventListener("mousemove", (e) => {
+    const now = performance.now();
     if (window.innerWidth > 768) { // Only handle mousemove on desktop
-      if (requestId) cancelAnimationFrame(requestId);
-      requestId = requestAnimationFrame(() => updateCursorPosition(e));
+      if (now - lastMoveTime > 16) { // throttle to ~60fps
+        if (requestId) cancelAnimationFrame(requestId);
+        requestId = requestAnimationFrame(() => updateCursorPosition(e));
+        lastMoveTime = now;
+      }
     }
   });
 
@@ -314,5 +323,32 @@ document.addEventListener("DOMContentLoaded", () => {
       cursor.style.display = 'none'; // Ensure cursor effect is hidden on mobile touch
     }
   });
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (Math.random() > 0.7) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = `${e.clientX}px`;
+        particle.style.top = `${e.clientY}px`;
+        particle.style.position = 'fixed';
+        particle.style.width = '10px';
+        particle.style.height = '10px';
+        particle.style.borderRadius = '50%';
+        particle.style.opacity = '0.8';
+        particle.style.boxShadow = '0 0 15px currentColor';
+        particle.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 75%)`;
+        document.body.appendChild(particle);
+
+        gsap.to(particle, {
+            x: (Math.random() - 0.5) * 200,
+            y: (Math.random() - 0.5) * 200,
+            opacity: 0,
+            scale: 0,
+            duration: 1.5,
+            ease: 'power1.out',
+            onComplete: () => particle.remove()
+        });
+    }
 });
 

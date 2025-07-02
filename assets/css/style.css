@@ -1,4 +1,4 @@
---------------------------------------------------------------*/ body {
+body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
 }
@@ -120,13 +120,24 @@ h6 {
 }
 
 #header .profile h1 {
-  font-size: 24px;
+  font-size: 40px;
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: normal;
   -moz-text-align-last: center;
   text-align-last: center;
   font-family: "Poppins", sans-serif;
+}
+
+@font-face {
+  font-family: 'Arsellia';
+  src: url('fonts/Arsellia.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#header .profile h1 a {
+  font-family: 'Arsellia', cursive;
 }
 
 #header .profile h1 a,
@@ -348,14 +359,26 @@ section {
   padding-bottom: 30px;
 }
 
+
+
+@font-face {
+  font-family: 'Hello Yesterday';
+  src: url('fonts/Hello\ Yesterday.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .section-title h2 {
+  font-family: 'Hello Yesterday', cursive !important;
   font-size: 32px;
-  font-weight: bold;
+  font-weight: normal; /* avoid bold for script fonts */
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
   color: #173b6c;
 }
+
 
 .section-title h2::after {
   content: "";
@@ -1311,4 +1334,16 @@ body.cursor-active {
     /* Use the emoji cursor on mobile */
 
   }
+}
+
+/* Particle effect styles */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-shadow: 0 0 15px currentColor;
+    background-color: hsl(0, 100%, 75%);
+    pointer-events: none;
 }
