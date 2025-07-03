@@ -1243,121 +1243,104 @@
       </div>
     </section><!-- End Awards Section -->
 
-    <!-- ======= Photography Section ======= -->
-    <section id="photos" class="photos">
-      <div class="container">
-        <div class="section-title">
-          <h2>Photo Gallery</h2>
-          <p>A collection of moments captured through my lens.</p>
-        </div>
-        <div class="row portfolio-container">
-          <!-- SVG Section -->
-          <div class="col-lg-6 col-md-12 svg-section">
-            <img src="assets/img/photography.svg" alt="SVG Icon" class="svg-icon">
-          </div>
-          <!-- Image Section -->
-          <div class="col-lg-6 col-md-12 image-section">
-            <div class="image-card">
-              <img src="assets/img/portfolio/my1.jpg" alt="Description of Photo 1" class="image">
-              <a href="photo.html" class="btn btn-primary">Visit Photos</a>
-            </div>
-          </div>
-        </div>
+    <!-- Photo Cover Section -->
+<section id="photos" style="padding: 60px 0; background: #f8f9fa;">
+  <div class="container">
+    <div class="section-title left-title">
+      <h2>Photos</h2>
+      <p>Explore my photo collection</p>
+    </div>
+    <div class="image-card">
+      <div class="parallax-container">
+        <img src="assets/img/portfolio/my2.jpg" alt="Cover Photo" class="image parallax-image" />
+        <a href="photo.html" class="btn overlay-btn">Hit Me Hard</a>
       </div>
-    </section><!-- End Photography Section -->
+    </div>
+  </div>
+</section>
 
+<!-- Styles -->
+<style>
+  #photos .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Section title aligned left */
+  #photos .left-title {
+    text-align: left;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    padding: 0 15px;
+  }
+  #photos .left-title h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  #photos .left-title p {
+    color: #555;
+    margin: 0;
+  }
 
-    <style>
-      /* CSS specific to the Photography Section */
-      #photos .portfolio-container {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-      }
+  /* Image Card */
+  #photos .image-card {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  #photos .parallax-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+  }
+  #photos .parallax-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+  }
 
-      #photos .svg-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        /* Full viewport height */
-      }
+  /* Button over image */
+  #photos .overlay-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  /* Hover animation */
+  #photos .overlay-btn:hover {
+    background-color: #0056b3;
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+</style>
 
-      #photos .svg-icon {
-        max-width: 100%;
-        height: auto;
-      }
+<!-- Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const parallaxImage = document.querySelector(".parallax-image");
 
-      #photos .image-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        /* Full viewport height */
-      }
+    window.addEventListener("scroll", function() {
+      const rect = parallaxImage.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const offset = rect.top - windowHeight / 2;
+      parallaxImage.style.transform = `translateY(${offset * 0.1}px)`;
+    });
+  });
+</script>
 
-      #photos .image-card {
-        position: relative;
-        width: 60%;
-        /* Adjust width as needed */
-        max-width: 600px;
-        /* Set a maximum width */
-        padding: 20px;
-        border-radius: 15px;
-        background: #e0e0e0;
-        /* Light background for neumorphism */
-        box-shadow: 8px 8px 16px #bcbcbc, -8px -8px 16px #ffffff;
-        /* Neumorphic shadow */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      #photos .image {
-        width: 100%;
-        /* Ensure image fits within the card */
-        height: auto;
-        border-radius: 10px;
-        object-fit: cover;
-      }
-
-      #photos .btn.btn-primary {
-        margin-top: 15px;
-        /* Space between image and button */
-        background-color: #007bff;
-        border: none;
-        color: white;
-        padding: 8px 16px;
-        font-size: 14px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: background-color 0.3s, transform 0.3s;
-      }
-
-      #photos .btn.btn-primary:hover {
-        background-color: #0056b3;
-        transform: scale(1.05);
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-
-        #photos .svg-section,
-        #photos .image-section {
-          height: auto;
-          /* Remove fixed height on small screens */
-          padding: 0 15px;
-        }
-
-        #photos .image-card {
-          width: 100%;
-          padding: 10px;
-        }
-      }
-    </style>
 
 
 
@@ -1456,7 +1439,7 @@
       .interests-section .section-title h2 {
         font-size: 32px;
         font-weight: bold;
-        color: #343a40;
+        color: #173b6c;
         /* Dark color for the title */
         margin-bottom: 20px;
       }
@@ -1638,7 +1621,7 @@
       .contact .section-title h2 {
         font-size: 32px;
         font-weight: bold;
-        color: #343a40;
+        color: #173b6c;
         /* Dark text color */
         margin-bottom: 20px;
       }
