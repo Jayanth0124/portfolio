@@ -302,10 +302,17 @@ h6 {
   min-width: 300px;
 }
 
+@font-face {
+  font-family: 'Magnite Lavingo';
+  src: url('fonts/Magnite\ Lavingo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 #hero h1 {
+  font-family: 'Magnite Lavingo', cursive;
   margin: 0 0 10px 0;
   font-size: 64px;
-  font-weight: 700;
+  font-weight: normal;
   line-height: 56px;
   color: #fff;
 }
