@@ -352,3 +352,41 @@ document.addEventListener('mousemove', (e) => {
     }
 });
 
+// Popup modal logic
+document.addEventListener("DOMContentLoaded", () => {
+  const popupModal = document.getElementById("popup-modal");
+  const popupClose = document.getElementById("popup-close");
+  const popupTimerCount = document.getElementById("popup-timer-count");
+
+  let countdown = 10;
+  let countdownInterval;
+
+  function showPopup() {
+    popupModal.style.display = "flex";
+    countdown = 10;
+    popupTimerCount.textContent = countdown;
+
+    countdownInterval = setInterval(() => {
+      countdown--;
+      popupTimerCount.textContent = countdown;
+      if (countdown <= 0) {
+        hidePopup();
+      }
+    }, 1000);
+  }
+
+  function hidePopup() {
+    popupModal.style.display = "none";
+    clearInterval(countdownInterval);
+  }
+
+  popupClose.addEventListener("click", () => {
+    hidePopup();
+  });
+
+  // Show popup 10 seconds after page load
+  setTimeout(() => {
+    showPopup();
+  }, 10000);
+});
+
