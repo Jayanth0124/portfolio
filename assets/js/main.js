@@ -258,135 +258,38 @@
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const cursor = document.createElement("div");
-  cursor.classList.add("cursor");
-  document.body.appendChild(cursor);
+const $bigBall = document.querySelector('.cursor__ball--big');
+const $smallBall = document.querySelector('.cursor__ball--small');
+const $cursor = document.querySelector('.cursor');
 
-  // Select text elements to increase cursor size when hovering
-  const textElements = Array.from(document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, .text-element"));
-
-  function updateCursorPosition(e) {
-    // Skip updating the cursor position on mobile
-    if (window.innerWidth <= 768) {
-      cursor.style.display = 'none'; // Ensure cursor effect is hidden on mobile
-      document.body.classList.remove("cursor-active"); // Always show the flag cursor on mobile
-      return;
-    }
-
-    cursor.style.left = `${e.pageX}px`;
-    cursor.style.top = `${e.pageY}px`;
-
-    // Check if the cursor is hovering over any text element
-    const isHovering = textElements.some(element => {
-      const rect = element.getBoundingClientRect();
-      return (
-        e.clientX >= rect.left + 10 &&  // increased padding to avoid false positives
-        e.clientX <= rect.right - 10 &&
-        e.clientY >= rect.top + 10 &&
-        e.clientY <= rect.bottom - 10
-      );
-    });
-
-    // Manage cursor visibility and circle effect
-    if (isHovering) {
-      if (!cursor.classList.contains("hover")) {
-        cursor.classList.add("hover");
-        cursor.style.display = 'block'; // Show the circle
-        document.body.classList.add("cursor-active"); // Hide the flag cursor
-      }
-    } else {
-      if (cursor.classList.contains("hover")) {
-        cursor.classList.remove("hover");
-        cursor.style.display = 'none'; // Hide the circle
-        document.body.classList.remove("cursor-active"); // Show the flag cursor
-      }
-    }
+document.body.addEventListener('mousemove', (e) => {
+  // Show cursor and add hover class
+  if ($cursor.style.display === 'none' || !$cursor.classList.contains('hover')) {
+    $cursor.style.display = 'block';
+    $cursor.classList.add('hover');
   }
 
-  let lastMoveTime = 0;
-  let requestId;
-  document.body.addEventListener("mousemove", (e) => {
-    const now = performance.now();
-    if (window.innerWidth > 768) { // Only handle mousemove on desktop
-      if (now - lastMoveTime > 16) { // throttle to ~60fps
-        if (requestId) cancelAnimationFrame(requestId);
-        requestId = requestAnimationFrame(() => updateCursorPosition(e));
-        lastMoveTime = now;
-      }
-    }
+  TweenMax.to($bigBall, 0.4, {
+    x: e.pageX - 15,
+    y: e.pageY - 15
   });
-
-  // Handle touch events for mobile devices
-  document.body.addEventListener("touchstart", (e) => {
-    if (window.innerWidth <= 768) {
-      cursor.style.display = 'none'; // Ensure cursor effect is hidden on mobile touch
-    }
+  TweenMax.to($smallBall, 0.1, {
+    x: e.pageX - 5,
+    y: e.pageY - 7
   });
 });
 
-document.addEventListener('mousemove', (e) => {
-    if (Math.random() > 0.7) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = `${e.clientX}px`;
-        particle.style.top = `${e.clientY}px`;
-        particle.style.position = 'fixed';
-        particle.style.width = '10px';
-        particle.style.height = '10px';
-        particle.style.borderRadius = '50%';
-        particle.style.opacity = '0.8';
-        particle.style.boxShadow = '0 0 15px currentColor';
-        particle.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 75%)`;
-        document.body.appendChild(particle);
-
-        gsap.to(particle, {
-            x: (Math.random() - 0.5) * 200,
-            y: (Math.random() - 0.5) * 200,
-            opacity: 0,
-            scale: 0,
-            duration: 1.5,
-            ease: 'power1.out',
-            onComplete: () => particle.remove()
-        });
-    }
+// Remove all of these sections:
+// - The old cursor implementation with $cursor
+// - The new cursor implementation including:
+//   - cursor and cursorFollower constants
+//   - mousemove event listener
+//   - querySelectorAll for interactive elements
+//   - mouseenter/mouseleave handlers
+document.body.addEventListener('mouseout', (e) => {
+  // Hide cursor and remove hover class when mouse leaves window
+  $cursor.style.display = 'none';
+  $cursor.classList.remove('hover');
 });
 
-// Popup modal logic
-document.addEventListener("DOMContentLoaded", () => {
-  const popupModal = document.getElementById("popup-modal");
-  const popupClose = document.getElementById("popup-close");
-  const popupTimerCount = document.getElementById("popup-timer-count");
-
-  let countdown = 10;
-  let countdownInterval;
-
-  function showPopup() {
-    popupModal.style.display = "flex";
-    countdown = 10;
-    popupTimerCount.textContent = countdown;
-
-    countdownInterval = setInterval(() => {
-      countdown--;
-      popupTimerCount.textContent = countdown;
-      if (countdown <= 0) {
-        hidePopup();
-      }
-    }, 1000);
-  }
-
-  function hidePopup() {
-    popupModal.style.display = "none";
-    clearInterval(countdownInterval);
-  }
-
-  popupClose.addEventListener("click", () => {
-    hidePopup();
-  });
-
-  // Show popup 10 seconds after page load
-  setTimeout(() => {
-    showPopup();
-  }, 10000);
-});
 

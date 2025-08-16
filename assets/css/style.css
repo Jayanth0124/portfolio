@@ -1,6 +1,42 @@
+:root {
+  --neon-blue: #00f3ff;
+  --neon-pink: #ff00ff;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
+  margin: 0;
+}
+
+.cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 243, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--neon-blue);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+    transition: width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+@media (pointer: coarse) {
+    .cursor, .cursor-follower {
+        display: none;
+    }
 }
 
 /* Popup Modal Styles */
@@ -1376,73 +1412,8 @@ img {
 
 
 
-/* Default cursor style for all devices */
 body {
-  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">⚡</text></svg>') 16 16, auto;
-  /* Indian flag emoji as cursor */
-
-}
-
-/* Style for the custom cursor circle effect */
-.cursor {
-  position: absolute;
-  border-radius: 50%;
-  background-color: white;
-  /* Or any color */
-  mix-blend-mode: difference;
-  /* Invert the text color under the circle */
-  pointer-events: none;
-  width: 40px;
-  /* Default size for the circle */
-  height: 40px;
-  /* Default size for the circle */
-  transform: translate(-50%, -50%);
-  /* Center the circle on the cursor */
-  transition: width 0.3s, height 0.3s;
-  z-index: 1000;
-  display: none;
-  /* Hide by default */
-}
-
-/* When hovering over text, the cursor size increases */
-.cursor.hover {
-  display: block;
-  /* Show when hovering */
-  width: 60px;
-  /* Larger size for the circle when hovering */
-  height: 60px;
-  /* Larger size for the circle when hovering */
-}
-
-/* Hide the default cursor image when the circle is active */
-body.cursor-active {
-  cursor: none;
-  /* Hide the default cursor */
-}
-
-/* Media query to hide the cursor effect on mobile devices */
-@media (max-width: 768px) {
-  .cursor {
-    display: none;
-    /* Hide the cursor effect on screens smaller than 768px */
-  }
-
-  body.cursor-active {
-
-    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><text x="0" y="20" font-size="20" fill="black">⚡</text></svg>') 16 16, auto;
-    /* Use the emoji cursor on mobile */
-
-  }
-}
-
-/* Particle effect styles */
-.particle {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    opacity: 0.8;
-    box-shadow: 0 0 15px currentColor;
-    background-color: hsl(0, 100%, 75%);
-    pointer-events: none;
+  font-family: "Open Sans", sans-serif;
+  color: #272829;
+  margin: 0;
 }
