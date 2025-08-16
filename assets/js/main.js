@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         modal.style.display = 'flex';
         startTimer();
-    }, 10000);
+    }, 15000);
 
     // Close modal function
     function closeModal() {
