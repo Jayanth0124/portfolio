@@ -257,39 +257,113 @@
 })()
 
 
+// Popup Modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('popup-modal');
+    const closeBtn = document.getElementById('popup-close');
+    const timerCount = document.getElementById('popup-timer-count');
+    let timeLeft = 10;
 
-const $bigBall = document.querySelector('.cursor__ball--big');
-const $smallBall = document.querySelector('.cursor__ball--small');
-const $cursor = document.querySelector('.cursor');
+    // Show modal after 5 seconds
+    setTimeout(() => {
+        modal.style.display = 'flex';
+        startTimer();
+    }, 10000);
 
-document.body.addEventListener('mousemove', (e) => {
-  // Show cursor and add hover class
-  if ($cursor.style.display === 'none' || !$cursor.classList.contains('hover')) {
-    $cursor.style.display = 'block';
-    $cursor.classList.add('hover');
-  }
+    // Close modal function
+    function closeModal() {
+        modal.style.display = 'none';
+    }
 
-  TweenMax.to($bigBall, 0.4, {
-    x: e.pageX - 15,
-    y: e.pageY - 15
-  });
-  TweenMax.to($smallBall, 0.1, {
-    x: e.pageX - 5,
-    y: e.pageY - 7
-  });
+    // Timer function
+    function startTimer() {
+        const timer = setInterval(() => {
+            timeLeft--;
+            timerCount.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                closeModal();
+            }
+        }, 1000);
+    }
+
+    // Close button click event
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
 });
 
-// Remove all of these sections:
-// - The old cursor implementation with $cursor
-// - The new cursor implementation including:
-//   - cursor and cursorFollower constants
-//   - mousemove event listener
-//   - querySelectorAll for interactive elements
-//   - mouseenter/mouseleave handlers
-document.body.addEventListener('mouseout', (e) => {
-  // Hide cursor and remove hover class when mouse leaves window
-  $cursor.style.display = 'none';
-  $cursor.classList.remove('hover');
+
+// Custom Cursor
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+
+// Store the target position (mouse position)
+let targetX = 0;
+let targetY = 0;
+
+// Store the follower's current position
+let followerX = 0;
+let followerY = 0;
+
+// Easing factor. A smaller value makes the follower looser.
+const easing = 0.1;
+
+// Update the target position whenever the mouse moves
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    
+    targetX = e.clientX;
+    targetY = e.clientY;
 });
+
+// Animation loop to smoothly move the follower
+const animateFollower = () => {
+    // Calculate the distance between the follower and the target
+    let dx = targetX - followerX;
+    let dy = targetY - followerY;
+
+    // Move the follower a fraction of the distance towards the target
+    followerX += dx * easing;
+    followerY += dy * easing;
+
+    // Apply the new position to the follower element
+    cursorFollower.style.left = followerX + 'px';
+    cursorFollower.style.top = followerY + 'px';
+
+    // Request the next frame to continue the animation
+    requestAnimationFrame(animateFollower);
+}
+
+// Start the animation loop
+animateFollower();
+
+
+// This part of the code remains exactly the same
+document.querySelectorAll('a, button, .skill-card, .matrix-item, .project-card, .certificate-card, .interest-item, .nav-dot, .modal-close').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+        cursor.style.backgroundColor = 'rgba(255, 0, 255, 0.5)';
+        cursorFollower.style.width = '30px';
+        cursorFollower.style.height = '30px';
+        cursorFollower.style.borderColor = 'var(--neon-pink)';
+    });
+    
+    el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.style.backgroundColor = 'rgba(0, 243, 255, 0.5)';
+        cursorFollower.style.width = '40px';
+        cursorFollower.style.height = '40px';
+        cursorFollower.style.borderColor = 'var(--neon-blue)';
+    });
+});
+
+
 
 

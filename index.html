@@ -94,7 +94,8 @@
 </head>
 
 <body>
-  
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
 
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
@@ -409,8 +410,8 @@
               </div>
             </div>
 
-            
-            
+
+
             <div class="progress">
               <span class="skill"><i class="fab fa-node-js"></i> Node.Js <i class="val">20%</i></span>
               <div class="progress-bar-wrap">
@@ -1265,102 +1266,108 @@
     </section><!-- End Awards Section -->
 
     <!-- Photo Cover Section -->
-<section id="photos" style="padding: 60px 0; background: #f8f9fa;">
-  <div class="container">
-    <div class="section-title left-title">
-      <h2>Photos</h2>
-      <p>Explore my photo collection</p>
-    </div>
-    <div class="image-card">
-      <div class="parallax-container">
-        <img src="assets/img/portfolio/my2.jpg" alt="Cover Photo" class="image parallax-image" />
-        <a href="photo.html" class="btn overlay-btn">Hit Me Hard</a>
+    <section id="photos" style="padding: 60px 0; background: #f8f9fa;">
+      <div class="container">
+        <div class="section-title left-title">
+          <h2>Photos</h2>
+          <p>Explore my photo collection</p>
+        </div>
+        <div class="image-card">
+          <div class="parallax-container">
+            <img src="assets/img/portfolio/my2.jpg" alt="Cover Photo" class="image parallax-image" />
+            <a href="photo.html" class="btn overlay-btn">Hit Me Hard</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Styles -->
-<style>
-  #photos .container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  /* Section title aligned left */
-  #photos .left-title {
-    text-align: left;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 30px auto;
-    padding: 0 15px;
-  }
-  #photos .left-title h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  #photos .left-title p {
-    color: #555;
-    margin: 0;
-  }
+    <!-- Styles -->
+    <style>
+      #photos .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-  /* Image Card */
-  #photos .image-card {
-    max-width: 500px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-  }
-  #photos .parallax-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    width: 100%;
-  }
-  #photos .parallax-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: transform 0.1s ease-out;
-    will-change: transform;
-  }
+      /* Section title aligned left */
+      #photos .left-title {
+        text-align: left;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto 30px auto;
+        padding: 0 15px;
+      }
 
-  /* Button over image */
-  #photos .overlay-btn {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 12px 24px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  /* Hover animation */
-  #photos .overlay-btn:hover {
-    background-color: #0056b3;
-    transform: translateX(-50%) scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-</style>
+      #photos .left-title h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
 
-<!-- Script -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const parallaxImage = document.querySelector(".parallax-image");
+      #photos .left-title p {
+        color: #555;
+        margin: 0;
+      }
 
-    window.addEventListener("scroll", function() {
-      const rect = parallaxImage.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const offset = rect.top - windowHeight / 2;
-      parallaxImage.style.transform = `translateY(${offset * 0.1}px)`;
-    });
-  });
-</script>
+      /* Image Card */
+      #photos .image-card {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      #photos .parallax-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        width: 100%;
+      }
+
+      #photos .parallax-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: transform 0.1s ease-out;
+        will-change: transform;
+      }
+
+      /* Button over image */
+      #photos .overlay-btn {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 24px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      /* Hover animation */
+      #photos .overlay-btn:hover {
+        background-color: #0056b3;
+        transform: translateX(-50%) scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+
+    <!-- Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const parallaxImage = document.querySelector(".parallax-image");
+
+        window.addEventListener("scroll", function () {
+          const rect = parallaxImage.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          const offset = rect.top - windowHeight / 2;
+          parallaxImage.style.transform = `translateY(${offset * 0.1}px)`;
+        });
+      });
+    </script>
 
 
 
@@ -1959,4 +1966,5 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 </body>
+
 </html>
