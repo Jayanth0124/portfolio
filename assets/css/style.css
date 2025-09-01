@@ -414,6 +414,12 @@ h6 {
   background-size: cover;
   background-position: center top; /* ensure consistent alignment */
 }
+/* Remove unwanted overlay at bottom of hero */
+#hero::after {
+  display: none !important;
+  background: none !important;
+  height: 0 !important;
+}
 
 
 #hero:before {
