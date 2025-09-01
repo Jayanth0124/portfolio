@@ -415,10 +415,17 @@ h6 {
   background-position: center top; /* ensure consistent alignment */
 }
 /* Remove unwanted overlay at bottom of hero */
+/* Fix hero overlay so it blends perfectly */
 #hero::after {
-  display: none !important;
-  background: none !important;
-  height: 0 !important;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px; /* adjust height to make fade smooth */
+
+  z-index: 2;
+  pointer-events: none; /* so it doesn’t block clicks */
 }
 
 
