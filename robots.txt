@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# Block unnecessary folders (vendor assets, temp files, etc.)
+Disallow: /assets/vendor/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /junk/
+
+# Sitemap location
 Sitemap: https://www.jayanth.site/sitemap.xml
