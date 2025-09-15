@@ -228,9 +228,7 @@
     }
   });
 
-  /**
-   * Animation on scroll
-   */
+
   window.addEventListener('load', () => {
     AOS.init({
       duration: 1000,
@@ -240,9 +238,7 @@
     })
   });
 
-  /**
-   * Initiate Pure Counter 
-   */
+
   new PureCounter();
 
 })()
