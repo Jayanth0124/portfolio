@@ -185,7 +185,7 @@
             scene.add(panel);
             panels.push(panel);
 
-            // Panel Animation
+         
             gsap.to(panel.position, {
                 y: `+=${5 * scaleFactor}`,
                 yoyo: true,
@@ -195,7 +195,6 @@
             });
         }
 
-        // Infinite Particles (Digital Noise)
         const particleCount = window.innerWidth < 600 ? 200 : 500;
         const particleGeometry = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
