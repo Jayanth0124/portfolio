@@ -10,16 +10,15 @@
   <meta content="" name="keywords">
   <link rel="canonical" href="https://www.jayanth.site/" />
 
-  <!-- Favicons -->
   <link href="assets/img/jayanth.png" rel="icon">
   <link href="assets/img/jayanth.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -27,12 +26,10 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="../../assets/css/style.css" rel="stylesheet">
 
-  <!-- Custom Neumorphic and Glassmorphism CSS -->
   <style>
-    /* Set gradient background and ensure it covers the entire viewport */
+    /* Restore the original dark body background for header/footer */
     body {
       background: repeating-conic-gradient(from 30deg,
           #0000 0 120deg,
@@ -42,123 +39,113 @@
           #4e4f51 0 120deg,
           #3c3c3c 0 180deg);
       background-size: 200px calc(200px * 0.577);
-      color: #fff;
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      height: 100%;
-      min-height: 100vh;
-      /* Ensure it covers the full height of the viewport */
-      overflow-x: hidden;
-      /* Prevent horizontal overflow */
     }
-
-    /* General container padding */
-    .container {
-      padding: 20px;
-      /* Add padding to the container */
-      box-sizing: border-box;
-      /* Include padding in the element’s total width and height */
+  
+    /* Apply the Letterpress theme ONLY to the main content area */
+    #main {
+      font-family: 'Lora', serif;
+      background-color: #fdfaf3;
+      /* Subtle paper texture */
+      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      color: #3d3d3d;
     }
-
-    /* Glassmorphism effect for Awards Details Section */
-    #portfolio-details .neumorphic,
-    #portfolio-details .portfolio-info,
-    #portfolio-details .portfolio-description,
-    #breadcrumbs {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin-bottom: 20px;
-      /* Add bottom margin for spacing between sections */
-      position: relative;
-      /* Ensure elements are above the background */
-      z-index: 1;
-      /* Ensure elements are above the gradient background */
-      overflow: hidden;
-      /* Prevent child elements from overflowing */
+  
+    /* === FIXES ARE HERE === */
+    
+    /* 1. Restore the header/breadcrumbs bar styling */
+    #main #breadcrumbs {
+      background: #f8f9fa; /* A clean, solid off-white background */
+      border-bottom: 1px solid #dee2e6; /* A subtle border */
+      margin-top: 0;
+      padding: 20px 0; /* Adjusted padding for better spacing */
     }
-
-    /* Glassmorphism effect for Breadcrumbs */
-    #breadcrumbs {
-      padding: 10px 15px;
-      /* Reduced padding for smaller size */
-      margin-bottom: 15px;
-      /* Slightly reduced bottom margin */
-      box-sizing: border-box;
-      /* Include padding in the element’s total width and height */
-      border-radius: 0px;
+  
+    /* 2. Restore the dark text color for the heading */
+    #main #breadcrumbs h2 {
+      color: #343a40;
     }
-
-    #breadcrumbs h2 {
-      font-size: 1.2rem;
-      /* Reduced font size */
-      margin-bottom: 10px;
-      /* Margin below heading */
-
+    
+    /* 3. Restore the original blue color for the "Home" link */
+    #main #breadcrumbs ol a {
+      color: #149ddd; /* The original template's blue link color */
+      font-weight: 600;
     }
-
-    #breadcrumbs ol {
-      font-size: 0.9rem;
-      /* Reduced font size for list items */
+    #main #breadcrumbs ol a:hover {
+      color: #3498db;
     }
-
-    #breadcrumbs h2,
-    #breadcrumbs ol {
-      color: #fff;
+    
+    /* Regular text in breadcrumbs */
+    #main #breadcrumbs ol li {
+      color: #6c757d;
     }
-
-    /* Adjust the size of the slider */
-    #portfolio-details .portfolio-details-slider {
+  
+    /* === END OF FIXES === */
+  
+  
+    #portfolio-details {
+      padding: 60px 0; /* Increased top padding to give space from breadcrumbs */
+    }
+  
+    .document-wrapper {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 50px;
+      background-color: #fff;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+      border: 1px solid #eee;
+    }
+  
+    .certificate-display {
+      margin-bottom: 40px;
+      padding: 10px;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) inset;
+    }
+  
+    .certificate-display img {
       width: 100%;
-      /* Make sure slider is responsive */
-      max-width: 800px;
-      /* Set a maximum width for the slider */
-      margin: 0 auto;
-      /* Center align the slider */
-      overflow: hidden;
-      /* Prevent overflow within the slider container */
     }
-
-    /* Adjust the size of each slide */
-    #portfolio-details .portfolio-details-slider .swiper-slide {
-      width: 100%;
-      /* Make sure slide takes the full width of the slider */
-      height: auto;
-      /* Maintain aspect ratio */
+  
+    .document-text h2 {
+      font-weight: 600;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2a2a2a;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
     }
-
-    /* Adjusting the image inside the slider with glassmorphism */
-    #portfolio-details .portfolio-details-slider .swiper-slide img {
-      border-radius: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      /* Ensure images are responsive */
-      height: auto;
-      /* Maintain aspect ratio */
+  
+    .document-text .intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e0e0e0;
     }
-
-    /* Portfolio information section with glassmorphism */
-    #portfolio-details .portfolio-info {
-      margin-bottom: 20px;
+  
+    .document-text ul {
+      list-style: none;
+      padding: 0;
     }
-
-    /* Portfolio description section with glassmorphism */
-    #portfolio-details .portfolio-description {
-      margin-bottom: 20px;
+  
+    .document-text ul li {
+      padding: 8px 0;
+      font-size: 1rem;
+    }
+  
+    .document-text ul li span {
+      display: inline-block;
+      min-width: 150px;
+      color: #777;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-  <!-- ======= Header ======= -->
   <header id="header">
     <div class="d-flex flex-column">
 
@@ -195,13 +182,9 @@
           <li><a href="../../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i>
               <span>Contact</span></a></li>
         </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-  </header><!-- End Header -->
+      </nav></div>
+  </header><main id="main">
 
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
@@ -214,62 +197,39 @@
         </div>
 
       </div>
-    </section><!-- End Breadcrumbs -->
-
-    <!-- ======= Awards Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
+    </section><section id="portfolio-details" class="portfolio-details">
       <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper neumorphic">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide neumorphic">
-                  <img src="assets/img/portfolio/c1.jpg" alt="Cyber Wave Labs Pvt Ltd Certificate" class="img-fluid">
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
+    
+        <div class="document-wrapper">
+          <div class="certificate-display">
+            <img src="assets/img/portfolio/c1.jpg" alt="Cyber Wave Labs Pvt Ltd Certificate">
           </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info neumorphic">
-              <h3>Certificate Information</h3>
-              <ul>
-                <li><strong>Category</strong>: Certificate</li>
-                <li><strong>Source</strong>: Cyber Wave Labs Pvt Ltd</li>
-                <li><strong>Date</strong>: 2022</li>
-              </ul>
-            </div>
-            <div class="portfolio-description neumorphic">
-              <h2>I successfully completed an internship in Frontend Development at Cyber Wave Labs Pvt Ltd.</h2>
-            </div>
+    
+          <div class="document-text">
+            <h2>Certificate of Achievement</h2>
+            <p class="intro">
+              This document certifies that <strong>Jayanth Donavalli</strong> has honorably met all the requirements for the
+              completion of the Frontend Development Internship program.
+            </p>
+            <ul>
+              <li><span>Issued By:</span> Cyber Wave Labs Pvt Ltd</li>
+              <li><span>Date of Issue:</span> 2022</li>
+              <li><span>Field of Study:</span> Frontend Development</li>
+            </ul>
           </div>
-
         </div>
-
+    
       </div>
-    </section><!-- End Awards Details Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
+    </section></main><footer id="footer">
     <div class="container">
 
       <div class="credits">
         Designed by <a href="https://www.jayanth.site">Jayanth Donavalli</a>
       </div>
     </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+  </footer><a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -280,7 +240,6 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
