@@ -162,7 +162,7 @@
       <nav id="navbar" class="nav-menu navbar">
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About <Menu></Menu></span></a>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About </span></a>
           </li>
           <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-task"></i> <span>Projects</span></a></li>
           <li><a href="#education" class="nav-link scrollto"><i class="bx bx-book"></i> <span>Education</span></a></li>
@@ -1795,6 +1795,24 @@
         outline: none;
         /* Remove default outline */
       }
+
+      .spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+        vertical-align: middle;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
     </style>
 
 
@@ -1804,31 +1822,47 @@
       document.getElementById("contact-form").addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent default form submission
 
-        let formData = new FormData(this);
-        console.log("Submitting form...");
+        // --- Get a reference to the button and messages ---
+        const submitButton = this.querySelector('button[type="submit"]');
+        const responseMessage = document.getElementById("response-message");
+        const errorMessage = document.getElementById("error-message");
 
-        fetch("https://getform.io/f/amdkgogb", { // ✅ Correct Getform URL
+        // --- Store the button's original text ---
+        const originalButtonText = submitButton.innerHTML;
+
+        // --- Start Loading State: Disable button and show sending message ---
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<span class="spinner"></span> The message is in the oven...';
+
+        let formData = new FormData(this);
+
+        fetch("https://getform.io/f/amdkgogb", {
           method: "POST",
           body: formData
         })
           .then(response => {
-            console.log("Response received:", response);
             if (!response.ok) throw new Error("Network response was not ok");
             return response.text();
           })
           .then(data => {
             console.log("Form submitted successfully!");
-            document.getElementById("response-message").style.display = "block";
-            document.getElementById("error-message").style.display = "none";
-            document.getElementById("contact-form").reset();
+            responseMessage.style.display = "block";
+            errorMessage.style.display = "none";
+            this.reset(); // 'this' refers to the form
 
             setTimeout(() => {
-              document.getElementById("response-message").style.display = "none";
+              responseMessage.style.display = "none";
             }, 5000);
           })
           .catch(error => {
             console.error("Error submitting form:", error);
-            document.getElementById("error-message").style.display = "block";
+            errorMessage.style.display = "block";
+            responseMessage.style.display = "none";
+          })
+          .finally(() => {
+            // --- End Loading State: Re-enable the button and restore its original text ---
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
           });
       });
     </script>
@@ -1983,7 +2017,7 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
   <script src='https://www.noupe.com/embed/0199aae804887d1aad563e556c4d77b2ab93.js'></script>
 
   <!-- Template Main JS File -->
