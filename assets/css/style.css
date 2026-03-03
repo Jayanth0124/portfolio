@@ -9,7 +9,7 @@ body {
   margin: 0;
 }
 
-.cursor {
+/* .cursor {
     position: fixed;
     width: 10px;
     height: 10px;
@@ -37,7 +37,7 @@ body {
     .cursor, .cursor-follower {
         display: none;
     }
-}
+} */
 
 /* Popup Modal Styles */
 .popup-modal {

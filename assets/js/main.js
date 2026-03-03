@@ -286,70 +286,70 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Custom Cursor
-const cursor = document.querySelector('.cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
+// // Custom Cursor
+// const cursor = document.querySelector('.cursor');
+// const cursorFollower = document.querySelector('.cursor-follower');
 
-// Store the target position (mouse position)
-let targetX = 0;
-let targetY = 0;
+// // Store the target position (mouse position)
+// let targetX = 0;
+// let targetY = 0;
 
-// Store the follower's current position
-let followerX = 0;
-let followerY = 0;
+// // Store the follower's current position
+// let followerX = 0;
+// let followerY = 0;
 
-// Easing factor. A smaller value makes the follower looser.
-const easing = 0.1;
+// // Easing factor. A smaller value makes the follower looser.
+// const easing = 0.1;
 
-// Update the target position whenever the mouse moves
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+// // Update the target position whenever the mouse moves
+// document.addEventListener('mousemove', (e) => {
+//     cursor.style.left = e.clientX + 'px';
+//     cursor.style.top = e.clientY + 'px';
     
-    targetX = e.clientX;
-    targetY = e.clientY;
-});
+//     targetX = e.clientX;
+//     targetY = e.clientY;
+// });
 
 // Animation loop to smoothly move the follower
-const animateFollower = () => {
-    // Calculate the distance between the follower and the target
-    let dx = targetX - followerX;
-    let dy = targetY - followerY;
+// const animateFollower = () => {
+//     // Calculate the distance between the follower and the target
+//     let dx = targetX - followerX;
+//     let dy = targetY - followerY;
 
-    // Move the follower a fraction of the distance towards the target
-    followerX += dx * easing;
-    followerY += dy * easing;
+//     // Move the follower a fraction of the distance towards the target
+//     followerX += dx * easing;
+//     followerY += dy * easing;
 
-    // Apply the new position to the follower element
-    cursorFollower.style.left = followerX + 'px';
-    cursorFollower.style.top = followerY + 'px';
+//     // Apply the new position to the follower element
+//     cursorFollower.style.left = followerX + 'px';
+//     cursorFollower.style.top = followerY + 'px';
 
-    // Request the next frame to continue the animation
-    requestAnimationFrame(animateFollower);
-}
+//     // Request the next frame to continue the animation
+//     // requestAnimationFrame(animateFollower);
+// }
 
-// Start the animation loop
-animateFollower();
+// // Start the animation loop
+// animateFollower();
 
 
 // This part of the code remains exactly the same
-document.querySelectorAll('a, button, .skill-card, .matrix-item, .project-card, .certificate-card, .interest-item, .nav-dot, .modal-close').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(2)';
-        cursor.style.backgroundColor = 'rgba(255, 0, 255, 0.5)';
-        cursorFollower.style.width = '30px';
-        cursorFollower.style.height = '30px';
-        cursorFollower.style.borderColor = 'var(--neon-pink)';
-    });
+// document.querySelectorAll('a, button, .skill-card, .matrix-item, .project-card, .certificate-card, .interest-item, .nav-dot, .modal-close').forEach(el => {
+//     el.addEventListener('mouseenter', () => {
+//         cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+//         cursor.style.backgroundColor = 'rgba(255, 0, 255, 0.5)';
+//         cursorFollower.style.width = '30px';
+//         cursorFollower.style.height = '30px';
+//         cursorFollower.style.borderColor = 'var(--neon-pink)';
+//     });
     
-    el.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-        cursor.style.backgroundColor = 'rgba(0, 243, 255, 0.5)';
-        cursorFollower.style.width = '40px';
-        cursorFollower.style.height = '40px';
-        cursorFollower.style.borderColor = 'var(--neon-blue)';
-    });
-});
+//     el.addEventListener('mouseleave', () => {
+//         cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+//         cursor.style.backgroundColor = 'rgba(0, 243, 255, 0.5)';
+//         cursorFollower.style.width = '40px';
+//         cursorFollower.style.height = '40px';
+//         cursorFollower.style.borderColor = 'var(--neon-blue)';
+//     });
+// });
 
 
 
