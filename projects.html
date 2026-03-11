@@ -322,8 +322,7 @@
                         <button class="filter-btn" data-filter="ai">AI</button>
                         <button class="filter-btn" data-filter="iot">IoT</button>
                         <button class="filter-btn" data-filter="python">Python</button>
-                        <!-- <button class="filter-btn" data-filter="mobile">Mobile</button> -->
-                    </div>
+                        </div>
                 </div>
 
                 <div class="projects-grid" id="projectsGrid">
@@ -354,6 +353,14 @@
                     techStack: ["Html", "CSS", "JavaScript", "TypeScript"], category: ["web"],
                     demoUrl: "https://texttimemachine.netlify.app/", githubUrl: "https://github.com/Jayanth0124/whatsapp-chat-parser",
                     githubRepo: "Jayanth0124/whatsapp-chat-parser"
+                },
+                {
+                    id: 13, title: "E-Commerce Development",
+                    description: "A comprehensive front-end development project featuring two distinct e-commerce experiences with tailored aesthetics and smooth performance. This showcase highlights the ability to adapt tech stacks to different brand identities, from high-end fashion to B2B manufacturing.",
+                    thumbnail: "assets/img/portfolio/ecom1.jpg",
+                    techStack: ["React", "GSAP", "Barba.js", "TypeScript"], category: ["web"],
+                    demoUrl: "https://sreefiles.netlify.app/", githubUrl: "https://vitoginglies.netlify.app/",
+                    
                 },
                 {
                     id: 11, title: "Smart Composting Cap with Automated Odor Control",
@@ -436,15 +443,15 @@
                     techStack: [ "TypeScript", "Tailwaind css", "API","Html"], category: ["web"],
                     demoUrl: "https://wordsage.netlify.app/", githubUrl: "https://github.com/Jayanth0124/dictionary",
                     githubRepo: "Jayanth0124/dictionary"
-                },
-                {
-                    id: 10, title: "Personal Fitness Tracker ",
-                    description: "A user-friendly mobile app for logging workouts, monitoring health metrics, and tracking your fitness journey. Stay motivated with progress insights and personalized fitness goals",
-                    thumbnail: "assets/img/portfolio/p9.jpg",
-                    techStack: [ "Python", "Streamlit","Git"], category: ["python"],
-                    demoUrl: "https://trackmygains.streamlit.app/", githubUrl: "https://github.com/Jayanth0124/fitness-tracker",
-                    githubRepo: "Jayanth0124/fitness-tracker"
                 }
+                // {
+                //     id: 10, title: "Personal Fitness Tracker ",
+                //     description: "A user-friendly mobile app for logging workouts, monitoring health metrics, and tracking your fitness journey. Stay motivated with progress insights and personalized fitness goals",
+                //     thumbnail: "assets/img/portfolio/p9.jpg",
+                //     techStack: [ "Python", "Streamlit","Git"], category: ["python"],
+                //     demoUrl: "https://trackmygains.streamlit.app/", githubUrl: "https://github.com/Jayanth0124/fitness-tracker",
+                //     githubRepo: "Jayanth0124/fitness-tracker"
+                // }
                 
             ];
 
@@ -453,6 +460,23 @@
 
             function createProjectCard(project) {
                 const techStackHTML = project.techStack.map(t => `<span class="tech-tag">${t}</span>`).join('');
+                
+                let buttonsHTML = '';
+                
+                if (project.id === 13) {
+                    buttonsHTML = `
+                        <a href="${project.demoUrl}" target="_blank" rel="noopener" class="btn btn-primary">🔗 Visit Sree.files</a>
+                        <a href="${project.githubUrl}" target="_blank" rel="noopener" class="btn btn-secondary">🔗 Visit Vito Ginglies</a>
+                    `;
+                } else {
+                    buttonsHTML = `
+                        <a href="${project.demoUrl}" target="_blank" rel="noopener" class="btn btn-primary">🔗 Visit</a>
+                        <a href="${project.githubUrl}" target="_blank" rel="noopener" class="btn btn-secondary" data-repo="${project.githubRepo}">
+                            ⭐ GitHub <span class="github-stars loading">...</span>
+                        </a>
+                    `;
+                }
+
                 return `
             <div class="project-card" data-aos="fade-up">
               <img src="${project.thumbnail}" alt="${project.title}" class="project-thumbnail">
@@ -460,10 +484,7 @@
               <div class="tech-stack">${techStackHTML}</div>
               <p class="project-description">${project.description}</p>
               <div class="project-buttons">
-                <a href="${project.demoUrl}" target="_blank" rel="noopener" class="btn btn-primary">🔗 Visit</a>
-                <a href="${project.githubUrl}" target="_blank" rel="noopener" class="btn btn-secondary" data-repo="${project.githubRepo}">
-                    ⭐ GitHub <span class="github-stars loading">...</span>
-                </a>
+                ${buttonsHTML}
               </div>
             </div>`;
             }
