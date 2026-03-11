@@ -279,22 +279,254 @@
     <!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section
-      id="hero"
-      class="d-flex flex-column justify-content-center align-items-center"
-    >
-      <div class="hero-container" data-aos="fade-in">
-        <h1>Donavalli Jayanth</h1>
-        <p>
-          I'm
-          <span
-            class="typed"
-            data-typed-items="Designer, Developer, Photographer"
-          ></span>
-        </p>
+    <section id="hero" class="anchor-hero">
+  
+  <div class="anchor-contrast-fade"></div>
+
+  <div class="anchor-container">
+    <div class="anchor-content">
+      
+      <div class="anchor-title-stack">
+        <h1 class="anchor-firstname">Donavalli</h1>
+        <h1 class="anchor-lastname">Jayanth<span class="anchor-dot">.</span></h1>
       </div>
-    </section>
-    <!-- End Hero -->
+      
+      <div class="anchor-plaque-wrapper">
+        <div class="plaque-drop-line"></div>
+        
+        <div class="anchor-plaque">
+          <div class="plaque-top">
+            <span class="plaque-sys">ROLE</span>
+            <span class="plaque-status">SOFTWARE ENGINEER</span>
+          </div>
+          <div class="plaque-bottom">
+            <span class="plaque-static">CURRENTLY OPERATING AS</span>
+            <h2 class="plaque-dynamic">
+              <span class="typed" data-typed-items="Designer, Developer, Photographer"></span>
+            </h2>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+  /* --- GOD OF FRONTEND: VERTICAL ANCHOR STYLES --- */
+
+  .anchor-hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Fade strictly on the left to make text pop, leaves the right side clear */
+  .anchor-contrast-fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .anchor-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Pushes content past the 300px sidebar on desktop and keeps it left-aligned */
+  .anchor-content {
+    padding-left: 350px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Forces everything to the left */
+    width: 100%;
+    max-width: 1200px; /* Prevents it from ever stretching too far right */
+  }
+
+  /* --- TYPOGRAPHY --- */
+  
+  .anchor-title-stack {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .anchor-firstname {
+    font-family: 'Magnite Lavingo', cursive;
+    font-size: clamp(4.5rem, 8vw, 9rem);
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 0.8;
+    margin: 0;
+    /* Fast load */
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fast-snap 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+  }
+
+  .anchor-lastname {
+    font-family: 'Magnite Lavingo', cursive;
+    font-size: clamp(5rem, 9vw, 11rem);
+    font-weight: normal;
+    color: #ffffff;
+    line-height: 0.8;
+    margin: 0;
+    margin-left: 3vw; /* Slight indent */
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fast-snap 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    animation-delay: 0.1s;
+  }
+
+  .anchor-dot {
+    color: #149ddd;
+    font-family: "Raleway", sans-serif;
+  }
+
+  @keyframes fast-snap {
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* --- VERTICAL PLAQUE WRAPPER --- */
+  
+  .anchor-plaque-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 4vw; /* Aligns with "Jayanth" */
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fast-snap-up 0.6s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes fast-snap-up {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Vertical connecting line */
+  .plaque-drop-line {
+    width: 2px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-left: 20px; /* Indents line slightly */
+  }
+
+  .anchor-plaque {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 15px 25px;
+    min-width: 280px;
+    border-left: 3px solid #149ddd;
+  }
+
+  .plaque-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+
+  .plaque-sys {
+    font-family: "Poppins", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .plaque-status {
+    font-family: "Poppins", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #149ddd;
+  }
+
+  .plaque-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .plaque-static {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 4px;
+  }
+
+  .plaque-dynamic {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .typed-cursor {
+    color: #149ddd;
+    font-weight: 300;
+    font-size: 1.7rem;
+    animation: typedjsBlink 1s infinite;
+  }
+
+  /* --- RESPONSIVE FIXES --- */
+
+  /* When sidebar disappears (1199px), reset padding completely */
+  @media (max-width: 1199px) {
+    .anchor-content {
+      padding-left: 5%; 
+      padding-right: 5%;
+    }
+  }
+
+  /* Tablets & Mobile */
+  @media (max-width: 768px) {
+    .anchor-contrast-fade {
+      /* Make fade stronger on mobile to ensure text reads over center of image */
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
+    }
+
+    .anchor-content {
+      padding-top: 100px; /* Push down slightly if needed */
+    }
+
+    .anchor-firstname {
+      font-size: 4rem;
+    }
+    
+    .anchor-lastname {
+      font-size: 5rem;
+      margin-left: 20px;
+    }
+
+    .anchor-plaque-wrapper {
+      margin-left: 25px;
+    }
+
+    .anchor-plaque {
+      min-width: 250px;
+    }
+
+    .plaque-dynamic {
+      font-size: 1.2rem;
+    }
+  }
+</style>
 
     <main id="main">
       <section id="about" class="about section-bg">
