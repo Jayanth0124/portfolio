@@ -988,13 +988,11 @@
         }
       </style>
 
-      <section id="projects" class="elite-projects-section">
-        <div class="container relative-z">
-          <div class="elite-section-header" data-aos="fade-up">
-            <h2 class="elite-heading">Projects</h2>
-            <p class="elite-subheading">
-              A glimpse into recent engineering and design.
-            </p>
+      <section id="projects" class="elite-projects-section section-bg">
+        <div class="container relative-z" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Projects</h2>
+            <p>A glimpse into recent engineering and design.</p>
           </div>
         </div>
 
@@ -1131,19 +1129,17 @@
         </div>
 
         <div class="container relative-z">
-          <a href="projects.html" class="elite-mega-link">
+          <a href="projects.html" class="elite-mega-link" data-aos="fade-up">
             <span class="link-text">Explore Full Archive</span>
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </section>
-
       <style>
-        /* --- ELITE PROJECTS SECTION STYLES --- */
+        /* --- THEME-INTEGRATED ELITE PROJECTS STYLES --- */
 
         .elite-projects-section {
-          padding: 100px 0;
-          background-color: #fff;
+          padding: 60px 0; /* Adjusted padding to match standard sections */
           overflow: hidden;
           position: relative;
         }
@@ -1153,31 +1149,6 @@
           z-index: 10;
         }
 
-        /* Header Typography */
-        .elite-section-header {
-          margin-bottom: 60px;
-          padding-left: 15px;
-        }
-
-        .elite-heading {
-          font-family: "Syne", sans-serif;
-          font-size: 4.5rem;
-          font-weight: 800;
-          line-height: 1;
-          text-transform: uppercase;
-          letter-spacing: -2px;
-          color: #000;
-          margin-bottom: 15px;
-        }
-
-        .elite-subheading {
-          font-family: "Inter", sans-serif;
-          font-size: 1.1rem;
-          font-weight: 400;
-          color: #666;
-          max-width: 400px;
-        }
-
         /* Straight Full-Bleed Marquee Wrapper */
         .straight-marquee-wrapper {
           width: 100vw;
@@ -1185,7 +1156,8 @@
           display: flex;
           flex-direction: column;
           gap: 30px;
-          margin-bottom: 80px;
+          margin-top: 20px; /* Space between title and marquee */
+          margin-bottom: 60px;
           padding: 20px 0;
         }
 
@@ -1241,82 +1213,88 @@
           width: 400px; /* Fixed width for uniform look */
           aspect-ratio: 16 / 9; /* Cinematic ratio */
           flex-shrink: 0;
+          border-radius: 8px; /* Slightly rounded to fit your theme */
+          overflow: hidden;
           transition:
             opacity 0.4s ease,
             filter 0.4s ease,
-            box-shadow 0.4s ease;
+            box-shadow 0.4s ease,
+            transform 0.4s ease;
         }
 
         .marquee-item img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          border-radius: 0; /* Brutalist sharp edges */
           display: block;
         }
 
         /* The "Dimming" Logic */
         .straight-marquee-wrapper:hover .marquee-item {
-          opacity: 0.25; /* Dim everything */
-          filter: grayscale(40%); /* Slightly desaturate background items */
+          opacity: 0.4; /* Dim everything */
+          filter: grayscale(40%); /* Slightly desaturate */
         }
 
         .straight-marquee-wrapper .marquee-item:hover {
           opacity: 1; /* Keep hovered item bright */
           filter: grayscale(0%);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Pop off the page */
+          box-shadow: 0 15px 30px rgba(5, 13, 24, 0.15);
+          transform: scale(1.03); /* Slight theme-friendly pop */
           z-index: 2;
         }
 
-        /* Elite Mega Link */
+        /* Elite Mega Link - Themed */
         .elite-mega-link {
           display: flex;
           align-items: center;
           justify-content: space-between;
           width: 100%;
-          padding: 30px 15px;
-          border-top: 2px solid #000;
-          border-bottom: 2px solid #000;
+          padding: 30px 20px;
+          border-top: 2px solid #149ddd; /* Your primary blue */
+          border-bottom: 2px solid #149ddd;
           text-decoration: none;
-          color: #000;
+          color: #173b6c; /* Your dark blue */
+          background-color: transparent;
+          border-radius: 8px;
           transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
         .elite-mega-link .link-text {
-          font-family: "Syne", sans-serif;
-          font-size: 2.5rem;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: -1px;
+          font-family: "Raleway", sans-serif; /* Your theme font */
+          font-size: 2rem;
+          font-weight: 700;
         }
 
         .elite-mega-link i {
-          font-size: 2.5rem;
+          font-size: 2rem;
+          color: #149ddd;
           transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
+        /* Hover interaction */
         .elite-mega-link:hover {
-          background-color: #000;
+          background-color: #149ddd; /* Fills with your primary blue */
           color: #fff;
         }
 
         .elite-mega-link:hover i {
+          color: #fff;
           transform: translateX(15px);
         }
 
         /* Mobile Adjustments */
         @media (max-width: 768px) {
-          .elite-heading {
-            font-size: 3rem;
-          }
           .marquee-item {
             width: 280px;
           }
           .elite-mega-link .link-text {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
           }
           .elite-mega-link i {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+          }
+          .elite-mega-link {
+            padding: 20px 15px;
           }
         }
       </style>
