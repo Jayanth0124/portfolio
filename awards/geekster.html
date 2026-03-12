@@ -5,19 +5,16 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Certification Details</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <link rel="canonical" href="https://www.jayanth.site/" />
-
+  <title>Geekster Certifications | Jayanth Donavalli</title>
+  <meta name="description" content="View Jayanth Donavalli's professional certifications from Geekster, including Mastering JavaScript, Complete Git and GitHub, and Responsive HTML/CSS.">
+  <meta name="keywords" content="Geekster, JavaScript Fundamentals, Git, GitHub, HTML, CSS, Certification, Jayanth Donavalli">
+  
   <link href="assets/img/jayanth.png" rel="icon">
   <link href="assets/img/jayanth.png" rel="apple-touch-icon">
 
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,144 +23,165 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <link href="../assets/css/style.css" rel="stylesheet">
-
   <style>
-    /* Restore the original dark body background for header/footer */
+    /* =========================================================
+     * EXACT MATCH: QUANTUM HUD HEADER + INDUSTRIAL BLUEPRINT
+     * All CSS is self-contained so it will never break!
+     * ========================================================= */
+
+    :root {
+      --canvas-bg: #ffffff;
+      --system-blue: #149ddd;
+      --system-dark: #173b6c;
+      --blueprint-line: rgba(23, 59, 108, 0.04);
+      --sidebar-bg: #02050a;
+    }
+
     body {
-      background: repeating-conic-gradient(from 30deg,
-          #0000 0 120deg,
-          #3c3c3c 0 180deg) calc(0.5 * 200px) calc(0.5 * 200px * 0.577),
-        repeating-conic-gradient(from 30deg,
-          #1d1d1d 0 60deg,
-          #4e4f51 0 120deg,
-          #3c3c3c 0 180deg);
-      background-size: 200px calc(200px * 0.577);
-    }
-
-    /* Apply the Letterpress theme ONLY to the main content area */
-    #main {
-      font-family: 'Lora', serif;
-      background-color: #fdfaf3;
-      /* Subtle paper texture */
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      color: #3d3d3d;
-    }
-
-    /* Style the breadcrumbs to work on the new light background */
-    #main #breadcrumbs {
-      background: #f8f9fa;
-      border-bottom: 1px solid #dee2e6;
-      margin-top: 0;
-      padding: 20px 0;
-    }
-
-    #main #breadcrumbs h2 {
-      color: #343a40;
-    }
-
-    #main #breadcrumbs ol a {
-      color: #149ddd;
-      font-weight: 600;
-    }
-
-    #main #breadcrumbs ol a:hover {
-      color: #3498db;
-    }
-
-    #main #breadcrumbs ol li {
-      color: #6c757d;
-    }
-
-    #portfolio-details {
-      padding: 40px 0;
-    }
-
-    .document-wrapper {
-      max-width: 1100px;
-      /* Increased max-width for the layout */
-      margin: 20px auto;
-      padding: 40px;
-      background-color: #fff;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-      border: 1px solid #eee;
-    }
-
-    .certificate-display {
-      padding: 10px;
-      border: 1px solid #e5e5e5;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) inset;
-    }
-
-    .certificate-display img {
-      width: 100%;
-    }
-
-    /* Make Swiper pagination visible on light background */
-    .swiper-pagination-bullet {
-      background-color: #aaa;
-    }
-
-    .swiper-pagination-bullet-active {
-      background-color: #3d3d3d;
-    }
-
-    .document-text h2,
-    .document-text h3 {
-      font-weight: 600;
-      color: #2a2a2a;
-      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
-    }
-    
-    .document-text h3 {
-      font-size: 1.5rem;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .document-text ul {
-      list-style: none;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--canvas-bg);
+      color: #333;
+      overflow-x: hidden;
+      margin: 0;
       padding: 0;
-      margin-bottom: 25px;
     }
-    
-    .document-text ul li {
+
+    a { text-decoration: none; }
+    h1, h2, h3, h4, h5, h6 { font-family: "Raleway", sans-serif; }
+
+    /* =========================================================
+     * 1. QUANTUM HUD SIDEBAR (LEFT SIDE)
+     * ========================================================= */
+    #header.quantum-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 300px;
+      background: var(--sidebar-bg);
+      border-right: 1px solid rgba(20, 157, 221, 0.15);
+      z-index: 9997;
+      overflow-y: auto;
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    #header.quantum-sidebar::-webkit-scrollbar { display: none; }
+
+    .sidebar-core {
+      padding: 50px 30px 20px 30px;
       display: flex;
-      align-items: baseline;
-      padding: 5px 0;
-      font-size: 1rem;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    .document-text ul li strong {
-      flex-shrink: 0;
-      min-width: 160px;
-      color: #555;
-    }
+    /* Profile Module */
+    .q-profile-module { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
+    .q-frame-wrapper { position: relative; width: 120px; height: 130px; margin-bottom: 25px; }
+    .q-wireframe { position: absolute; top: 8px; left: 8px; width: 100%; height: 100%; border: 1px solid var(--system-blue); z-index: 1; transition: 0.5s; }
+    .q-profile-img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2; border: 1px solid rgba(255,255,255,0.1); }
+    .q-target-corners { position: absolute; inset: -5px; background: linear-gradient(to right, var(--system-blue) 2px, transparent 2px) 0 0, linear-gradient(to right, var(--system-blue) 2px, transparent 2px) 0 100%, linear-gradient(to left, var(--system-blue) 2px, transparent 2px) 100% 0, linear-gradient(to left, var(--system-blue) 2px, transparent 2px) 100% 100%, linear-gradient(to bottom, var(--system-blue) 2px, transparent 2px) 0 0, linear-gradient(to bottom, var(--system-blue) 2px, transparent 2px) 100% 0, linear-gradient(to top, var(--system-blue) 2px, transparent 2px) 0 100%, linear-gradient(to top, var(--system-blue) 2px, transparent 2px) 100% 100%; background-repeat: no-repeat; background-size: 8px 8px; z-index: 3; opacity: 0; transition: 0.5s; }
+    .q-frame-wrapper:hover .q-target-corners { opacity: 1; inset: -10px; }
+    .q-frame-wrapper:hover .q-wireframe { transform: translate(-8px, -8px); }
+    
+    .q-signature { font-family: "Raleway", sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin: 0; color: #fff;}
+    
+    .q-status-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(20, 157, 221, 0.1); border: 1px solid rgba(20, 157, 221, 0.2); padding: 5px 12px; margin-top: 15px; }
+    .q-pulse-dot { width: 6px; height: 6px; background: var(--system-blue); border-radius: 50%; box-shadow: 0 0 10px var(--system-blue); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .q-status-txt { font-family: "Poppins", sans-serif; font-size: 9px; font-weight: 700; color: var(--system-blue); letter-spacing: 1px; }
 
-    .document-text h5 {
-      font-size: 1rem;
-      line-height: 1.6;
-      font-weight: 400; /* Regular weight for readability */
-      color: #3d3d3d;
-      margin-bottom: 12px;
-      padding-left: 1.5em; /* Indent for list effect */
+    /* Nav Menu */
+    .q-nav-menu ul { list-style: none; padding: 0; margin-top: 20px; }
+    .q-nav-menu a { display: flex; align-items: center; padding: 12px 0; color: rgba(255,255,255,0.4); font-family: "Poppins", sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; transition: 0.4s; }
+    .q-nav-menu i { font-size: 18px; margin-right: 20px; transition: 0.4s; }
+    .n-text { position: relative; padding: 0 10px; }
+    .n-text::before, .n-text::after { position: absolute; top: 50%; transform: translateY(-50%); color: var(--system-blue); opacity: 0; transition: 0.4s; }
+    .n-text::before { content: '['; left: -5px; }
+    .n-text::after { content: ']'; right: -5px; }
+    .q-nav-menu a:hover, .q-nav-menu .active { color: #fff; }
+    .q-nav-menu a:hover i, .q-nav-menu .active i { color: var(--system-blue); }
+    .q-nav-menu a:hover .n-text::before, .q-nav-menu .active .n-text::before { opacity: 1; left: 0; }
+    .q-nav-menu a:hover .n-text::after, .q-nav-menu .active .n-text::after { opacity: 1; right: 0; }
+
+    /* Footer inside Sidebar */
+    .sidebar-footer { margin-top: auto; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
+    .sidebar-footer p { font-family: 'Poppins', sans-serif; font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 2px; text-transform: uppercase; margin: 0; }
+    .sidebar-footer span { color: var(--system-blue); font-weight: 700; }
+
+    /* =========================================================
+     * 2. INDUSTRIAL EXHIBITION BODY (RIGHT SIDE)
+     * ========================================================= */
+    #main {
+      margin-left: 300px;
+      min-height: 100vh;
       position: relative;
     }
-    /* Add numbers before the list of courses */
-    .document-text h5::before {
-        counter-increment: h5-counter;
-        content: counter(h5-counter) ". ";
-        position: absolute;
-        left: 0;
-        font-weight: 600; /* Make number bold */
-        color: #3d3d3d;
-    }
-    .document-text {
-        counter-reset: h5-counter; /* Reset the counter */
+
+    .main-blueprint {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(var(--blueprint-line) 1px, transparent 1px), linear-gradient(90deg, var(--blueprint-line) 1px, transparent 1px);
+      background-size: 40px 40px; pointer-events: none; z-index: 0;
     }
 
+    .gallery-tracker { padding: 40px 10% 20px 10%; border-bottom: 1px solid rgba(0,0,0,0.05); position: relative; z-index: 1; }
+    .tracker-path { display: flex; align-items: center; gap: 15px; font-family: 'Poppins', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--system-dark); text-transform: uppercase; }
+    .tracker-path a { color: #888; transition: 0.3s; }
+    .tracker-path a:hover { color: var(--system-blue); }
+
+    .content-container { position: relative; z-index: 1; padding: 60px 10%; }
+
+    /* Mechanical Mount Frame */
+    .mount-system {
+      position: relative; background: #ffffff; padding: 30px;
+      border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 40px 100px rgba(23, 59, 108, 0.08);
+    }
+    
+    .mount-system::before, .mount-system::after, .frame-bottom::before, .frame-bottom::after {
+      content: ''; position: absolute; width: 35px; height: 35px; border: 4px solid var(--system-dark); z-index: 5; transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .mount-system::before { top: -12px; left: -12px; border-right: none; border-bottom: none; }
+    .mount-system::after { top: -12px; right: -12px; border-left: none; border-bottom: none; }
+    .frame-bottom::before { bottom: -12px; left: -12px; border-right: none; border-top: none; }
+    .frame-bottom::after { bottom: -12px; right: -12px; border-left: none; border-top: none; }
+
+    .mount-system:hover::before { transform: translate(-5px, -5px); }
+    .mount-system:hover::after { transform: translate(5px, -5px); }
+    .mount-system:hover .frame-bottom::before { transform: translate(-5px, 5px); }
+    .mount-system:hover .frame-bottom::after { transform: translate(5px, 5px); }
+
+    .cert-viewer { position: relative; overflow: hidden; background: #f9f9f9; border: 1px solid rgba(0,0,0,0.03); }
+    .cert-viewer img { width: 100%; display: block; transition: transform 0.8s ease; }
+    .mount-system:hover .cert-viewer img { transform: scale(1.02); }
+
+    .swiper-pagination-bullet { background: rgba(23, 59, 108, 0.3); opacity: 1; }
+    .swiper-pagination-bullet-active { background: var(--system-blue); width: 20px; border-radius: 5px; }
+
+    /* Data Slots */
+    .exhibition-title { font-family: 'Raleway', sans-serif; font-size: 3.5rem; font-weight: 900; color: var(--system-dark); line-height: 1; margin-bottom: 10px; letter-spacing: -2px; }
+    .exhibition-subtitle { font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--system-blue); text-transform: uppercase; margin-bottom: 40px; }
+
+    .data-matrix { margin-bottom: 40px; border-top: 2px solid var(--system-dark); }
+    .data-slot { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid rgba(0,0,0,0.06); transition: all 0.3s ease; }
+    .data-slot:hover { padding-left: 15px; border-bottom-color: var(--system-blue); background: rgba(20, 157, 221, 0.02); }
+    .slot-label { font-family: 'Poppins', sans-serif; font-size: 10px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+    .slot-value { font-family: 'Raleway', sans-serif; font-size: 15px; font-weight: 800; color: var(--system-dark); }
+    .slot-value a { color: var(--system-blue); }
+
+    /* Course List */
+    .sub-heading { font-family: 'Raleway', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--system-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: inline-block; border-bottom: 2px solid var(--system-blue); padding-bottom: 5px;}
+    .course-item { font-family: 'Open Sans', sans-serif; font-size: 0.95rem; font-weight: 600; color: #444; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; background: #fdfdfd; padding: 12px 15px; border-left: 3px solid transparent; border: 1px solid rgba(0,0,0,0.03); transition: 0.3s; }
+    .course-item:hover { border-left-color: var(--system-blue); transform: translateX(5px); box-shadow: 0 5px 15px rgba(23, 59, 108, 0.08); background: #fff;}
+    .course-idx { font-family: 'Poppins', sans-serif; font-size: 10px; font-weight: 700; color: var(--system-blue); background: rgba(20, 157, 221, 0.1); padding: 3px 6px; border-radius: 3px; }
+
+    /* Mobile Toggle */
+    .mobile-nav-toggle { position: fixed; right: 15px; top: 15px; z-index: 9999; border: 0; font-size: 28px; color: var(--system-blue); background: #02050a; padding: 5px 10px; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+    
+    @media (max-width: 1199px) {
+      #header.quantum-sidebar { left: -300px; }
+      #main { margin-left: 0; }
+      .mobile-nav-active #header.quantum-sidebar { left: 0; }
+      .content-container, .gallery-tracker { padding-left: 5%; padding-right: 5%; }
+      .exhibition-title { font-size: 2.5rem; }
+    }
   </style>
 </head>
 
@@ -171,117 +189,124 @@
 
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/dp1.jpg" alt="Profile Picture of Jayanth" class="img-fluid square">
-        <h1 class="text-light"><a href="index.html">Jayanth</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://twitter.com/jayanth0124?t=_89WgzqbBLLQTeqbkVQtwg&s=09" class="twitter"><i
-              class="bx bxl-twitter"></i></a>
-          <a href="https://www.facebook.com/jayanth0124?mibextid=ZbWKwL" class="facebook"><i
-              class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/jayanth.chowdary__/" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/jayanth-donavalli-b835491b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app&original_referer="
-            class="linkedin"><i class="bx bxl-linkedin"></i></a>
+  <header id="header" class="quantum-sidebar">
+    <div class="sidebar-core">
+      
+      <div class="q-profile-module">
+        <div class="q-frame-wrapper">
+          <div class="q-wireframe"></div>
+          <img src="assets/img/dp1.jpg" alt="Jayanth Donavalli" class="img-fluid q-profile-img">
+          <div class="q-target-corners"></div>
+        </div>
+        <h1 class="q-signature">JAYANTH.</h1>
+        <div class="q-status-badge">
+          <span class="q-pulse-dot"></span>
+          <span class="q-status-txt">SYS.ARCHITECT // ACTIVE</span>
         </div>
       </div>
 
-      <nav id="navbar" class="nav-menu navbar">
+      <nav id="navbar" class="q-nav-menu">
         <ul>
-          <li><a href="../index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i>
-              <span>Home</span></a></li>
-          <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a>
-          </li>
-          <li><a href="../index.html#projects" class="nav-link scrollto"><i class="bx bx-task"></i>
-              <span>Projects</span></a></li>
-          <li><a href="../index.html#education" class="nav-link scrollto"><i class="bx bx-book"></i>
-              <span>Education</span></a></li>
-          <li><a href="../index.html#awards" class="nav-link scrollto"><i class="bx bx-award"></i> <span>Awards</span></a>
-          </li>
-           
-          <li><a href="../index.html#interests" class="nav-link scrollto"><i class="bx bx-heart"></i>
-              <span>Interests</span></a></li>
-          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i>
-              <span>Contact</span></a></li>
+          <li><a href="../index.html#hero" class="nav-link scrollto"><i class="bx bx-home"></i><span class="n-text">Home</span></a></li>
+          <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i><span class="n-text">About</span></a></li>
+          <li><a href="../index.html#projects" class="nav-link scrollto"><i class="bx bx-task"></i><span class="n-text">Projects</span></a></li>
+          <li><a href="../index.html#education" class="nav-link scrollto"><i class="bx bx-book"></i><span class="n-text">Education</span></a></li>
+          <li><a href="../index.html#awards" class="nav-link scrollto active"><i class="bx bx-award"></i><span class="n-text">Awards</span></a></li>
+          <li><a href="../index.html#interests" class="nav-link scrollto"><i class="bx bx-heart"></i><span class="n-text">Interests</span></a></li>
+          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i><span class="n-text">Contact</span></a></li>
         </ul>
-      </nav></div>
-  </header><main id="main">
+      </nav>
 
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Awards Details</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Awards Details</li>
-          </ol>
-        </div>
-
+      <div class="sidebar-footer">
+        <p>DESIGN <span>JAYANTH.</span></p>
       </div>
-    </section><section id="portfolio-details" class="portfolio-details">
-      <div class="container">
-        <div class="document-wrapper">
-          <div class="row gy-4">
 
-            <div class="col-lg-8">
-              <div class="certificate-display">
-                <div class="portfolio-details-slider swiper">
-                  <div class="swiper-wrapper align-items-center">
+    </div>
+  </header>
 
-                    <div class="swiper-slide">
-                      <img src="assets/img/portfolio/geek1.jpg" alt="Geekster certification badge image"
-                        class="img-fluid">
-                    </div>
+  <main id="main">
+    <div class="main-blueprint"></div>
 
-                    <div class="swiper-slide">
-                      <img src="assets/img/portfolio/geek2.jpg" alt="Geekster certification badge image"
-                        class="img-fluid">
-                    </div>
+    <section class="gallery-tracker">
+      <div class="tracker-path">
+        <a href="../index.html">Index</a> 
+        <span style="color:rgba(0,0,0,0.2)">/</span>
+        <a href="../index.html#awards">Archive</a> 
+        <span style="color:rgba(0,0,0,0.2)">/</span>
+        <span>Geekster Certifications</span>
+      </div>
+    </section>
 
-                    <div class="swiper-slide">
-                      <img src="assets/img/portfolio/geek3.jpg" alt="Geekster certification badge image"
-                        class="img-fluid">
-                    </div>
-
+    <div class="content-container">
+      <div class="row gy-5 align-items-center">
+        
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="mount-system">
+            <div class="cert-viewer">
+              
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                  
+                  <div class="swiper-slide">
+                    <img src="assets/img/portfolio/geek1.jpg" alt="Mastering JavaScript Certificate" class="img-fluid">
                   </div>
-                  <div class="swiper-pagination"></div>
+                  <div class="swiper-slide">
+                    <img src="assets/img/portfolio/geek2.jpg" alt="Git and GitHub Certificate" class="img-fluid">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="assets/img/portfolio/geek3.jpg" alt="HTML CSS Landing Page Certificate" class="img-fluid">
+                  </div>
+
                 </div>
+                <div class="swiper-pagination" style="bottom: 10px;"></div>
               </div>
-            </div>
 
-            <div class="col-lg-4">
-              <div class="document-text">
-                <h3>Certificate Information</h3>
-                <ul>
-                  <li><strong>Category</strong>: Certificate</li>
-                  <li><strong>Source</strong>: Geekster</li>
-                  <li><strong>Date</strong>: May 2024</li>
-                  <li><strong>Certificate Link</strong>: <a href="https://www.geekster.in/short-courses/">Geekster</a>
-                  </li>
-                </ul>
-                
-                <h3>Completed Courses</h3>
-                <h5>Mastering JavaScript Fundamentals</h5>
-                <h5>Complete Git and GitHub Course</h5>
-                <h5>Building Responsive Landing Page using HTML and CSS</h5>
-              </div>
             </div>
-
+            <div class="frame-bottom"></div>
           </div>
         </div>
-      </div>
-    </section></main><footer id="footer">
-    <div class="container">
 
-      <div class="credits">
-        Designed by <a href="https://www.jayanth.site/">Donavalli Jayanth </a>
+        <div class="col-lg-5" data-aos="fade-left">
+          <h2 class="exhibition-title">Geekster</h2>
+          <div class="exhibition-subtitle">Professional Certifications</div>
+
+          <div class="data-matrix">
+            <div class="data-slot">
+              <span class="slot-label">Classification</span>
+              <span class="slot-value">Certificates</span>
+            </div>
+            <div class="data-slot">
+              <span class="slot-label">Issuing Entity</span>
+              <span class="slot-value">Geekster</span>
+            </div>
+            <div class="data-slot">
+              <span class="slot-label">Date Active</span>
+              <span class="slot-value">May, 2024</span>
+            </div>
+            <div class="data-slot">
+              <span class="slot-label">Verification</span>
+              <span class="slot-value"><a href="https://www.geekster.in/short-courses/" target="_blank" rel="noopener">Official Portal</a></span>
+            </div>
+          </div>
+
+          <h3 class="sub-heading">Completed Modules</h3>
+          <div class="course-list">
+            <div class="course-item">
+              <span class="course-idx">01</span> Mastering JavaScript Fundamentals
+            </div>
+            <div class="course-item">
+              <span class="course-idx">02</span> Complete Git and GitHub Course
+            </div>
+            <div class="course-item">
+              <span class="course-idx">03</span> Building Responsive Landing Page (HTML/CSS)
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
-  </footer><a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  </main>
 
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -289,12 +314,35 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. INITIALIZE ANIMATIONS (This makes your content visible!)
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
 
-  <script src="assets/js/main.js"></script>
+      // 2. INITIALIZE SWIPER (Image Slider)
+      new Swiper('.portfolio-details-slider', {
+        speed: 600,
+        loop: true,
+        autoplay: { delay: 4000, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', type: 'bullets', clickable: true }
+      });
 
+      // 3. MOBILE NAV TOGGLE LOGIC
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', function(e) {
+          document.querySelector('body').classList.toggle('mobile-nav-active');
+          this.classList.toggle('bi-list');
+          this.classList.toggle('bi-x');
+        });
+      }
+    });
+  </script>
 </body>
-
 </html>
