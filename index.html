@@ -280,253 +280,270 @@
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="anchor-hero">
-  
-  <div class="anchor-contrast-fade"></div>
+      <div class="anchor-contrast-fade"></div>
 
-  <div class="anchor-container">
-    <div class="anchor-content">
-      
-      <div class="anchor-title-stack">
-        <h1 class="anchor-firstname">Donavalli</h1>
-        <h1 class="anchor-lastname">Jayanth<span class="anchor-dot">.</span></h1>
-      </div>
-      
-      <div class="anchor-plaque-wrapper">
-        <div class="plaque-drop-line"></div>
-        
-        <div class="anchor-plaque">
-          <div class="plaque-top">
-            <span class="plaque-sys">ROLE</span>
-            <span class="plaque-status">SOFTWARE ENGINEER</span>
+      <div class="anchor-container">
+        <div class="anchor-content">
+          <div class="anchor-title-stack">
+            <h1 class="anchor-firstname">Donavalli</h1>
+            <h1 class="anchor-lastname">
+              Jayanth<span class="anchor-dot">.</span>
+            </h1>
           </div>
-          <div class="plaque-bottom">
-            <span class="plaque-static">CURRENTLY OPERATING AS</span>
-            <h2 class="plaque-dynamic">
-              <span class="typed" data-typed-items="Designer, Developer, Photographer"></span>
-            </h2>
+
+          <div class="anchor-plaque-wrapper">
+            <div class="plaque-drop-line"></div>
+
+            <div class="anchor-plaque">
+              <div class="plaque-top">
+                <span class="plaque-sys">ROLE</span>
+                <span class="plaque-status">SOFTWARE ENGINEER</span>
+              </div>
+              <div class="plaque-bottom">
+                <span class="plaque-static">CURRENTLY OPERATING AS</span>
+                <h2 class="plaque-dynamic">
+                  <span
+                    class="typed"
+                    data-typed-items="Designer, Developer, Photographer"
+                  ></span>
+                </h2>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
+    <style>
+      /* --- GOD OF FRONTEND: VERTICAL ANCHOR STYLES --- */
 
-    </div>
-  </div>
-</section>
-<style>
-  /* --- GOD OF FRONTEND: VERTICAL ANCHOR STYLES --- */
+      .anchor-hero {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
 
-  .anchor-hero {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-  }
+      /* Fade strictly on the left to make text pop, leaves the right side clear */
+      .anchor-contrast-fade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.85) 0%,
+          rgba(0, 0, 0, 0.5) 40%,
+          rgba(0, 0, 0, 0) 70%
+        );
+        z-index: 1;
+        pointer-events: none;
+      }
 
-  /* Fade strictly on the left to make text pop, leaves the right side clear */
-  .anchor-contrast-fade {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 70%);
-    z-index: 1;
-    pointer-events: none;
-  }
+      .anchor-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+      }
 
-  .anchor-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-  }
+      /* Pushes content past the 300px sidebar on desktop and keeps it left-aligned */
+      .anchor-content {
+        padding-left: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; /* Forces everything to the left */
+        width: 100%;
+        max-width: 1200px; /* Prevents it from ever stretching too far right */
+      }
 
-  /* Pushes content past the 300px sidebar on desktop and keeps it left-aligned */
-  .anchor-content {
-    padding-left: 350px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; /* Forces everything to the left */
-    width: 100%;
-    max-width: 1200px; /* Prevents it from ever stretching too far right */
-  }
+      /* --- TYPOGRAPHY --- */
 
-  /* --- TYPOGRAPHY --- */
-  
-  .anchor-title-stack {
-    display: flex;
-    flex-direction: column;
-  }
+      .anchor-title-stack {
+        display: flex;
+        flex-direction: column;
+      }
 
-  .anchor-firstname {
-    font-family: 'Magnite Lavingo', cursive;
-    font-size: clamp(4.5rem, 8vw, 9rem);
-    font-weight: normal;
-    color: rgba(255, 255, 255, 0.95);
-    line-height: 0.8;
-    margin: 0;
-    /* Fast load */
-    opacity: 0;
-    transform: translateX(-30px);
-    animation: fast-snap 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
-  }
+      .anchor-firstname {
+        font-family: "Magnite Lavingo", cursive;
+        font-size: clamp(4.5rem, 8vw, 9rem);
+        font-weight: normal;
+        color: rgba(255, 255, 255, 0.95);
+        line-height: 0.8;
+        margin: 0;
+        /* Fast load */
+        opacity: 0;
+        transform: translateX(-30px);
+        animation: fast-snap 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+      }
 
-  .anchor-lastname {
-    font-family: 'Magnite Lavingo', cursive;
-    font-size: clamp(5rem, 9vw, 11rem);
-    font-weight: normal;
-    color: #ffffff;
-    line-height: 0.8;
-    margin: 0;
-    margin-left: 3vw; /* Slight indent */
-    opacity: 0;
-    transform: translateX(-30px);
-    animation: fast-snap 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
-    animation-delay: 0.1s;
-  }
+      .anchor-lastname {
+        font-family: "Magnite Lavingo", cursive;
+        font-size: clamp(5rem, 9vw, 11rem);
+        font-weight: normal;
+        color: #ffffff;
+        line-height: 0.8;
+        margin: 0;
+        margin-left: 3vw; /* Slight indent */
+        opacity: 0;
+        transform: translateX(-30px);
+        animation: fast-snap 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+        animation-delay: 0.1s;
+      }
 
-  .anchor-dot {
-    color: #149ddd;
-    font-family: "Raleway", sans-serif;
-  }
+      .anchor-dot {
+        color: #149ddd;
+        font-family: "Raleway", sans-serif;
+      }
 
-  @keyframes fast-snap {
-    to { opacity: 1; transform: translateX(0); }
-  }
+      @keyframes fast-snap {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
 
-  /* --- VERTICAL PLAQUE WRAPPER --- */
-  
-  .anchor-plaque-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 4vw; /* Aligns with "Jayanth" */
-    margin-top: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fast-snap-up 0.6s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
-    animation-delay: 0.2s;
-  }
+      /* --- VERTICAL PLAQUE WRAPPER --- */
 
-  @keyframes fast-snap-up {
-    to { opacity: 1; transform: translateY(0); }
-  }
+      .anchor-plaque-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 4vw; /* Aligns with "Jayanth" */
+        margin-top: 10px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fast-snap-up 0.6s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+        animation-delay: 0.2s;
+      }
 
-  /* Vertical connecting line */
-  .plaque-drop-line {
-    width: 2px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.3);
-    margin-left: 20px; /* Indents line slightly */
-  }
+      @keyframes fast-snap-up {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-  .anchor-plaque {
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-    padding: 15px 25px;
-    min-width: 280px;
-    border-left: 3px solid #149ddd;
-  }
+      /* Vertical connecting line */
+      .plaque-drop-line {
+        width: 2px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.3);
+        margin-left: 20px; /* Indents line slightly */
+      }
 
-  .plaque-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 8px;
-    margin-bottom: 10px;
-  }
+      .anchor-plaque {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        padding: 15px 25px;
+        min-width: 280px;
+        border-left: 3px solid #149ddd;
+      }
 
-  .plaque-sys {
-    font-family: "Poppins", sans-serif;
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.5);
-  }
+      .plaque-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+      }
 
-  .plaque-status {
-    font-family: "Poppins", sans-serif;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #149ddd;
-  }
+      .plaque-sys {
+        font-family: "Poppins", sans-serif;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        color: rgba(255, 255, 255, 0.5);
+      }
 
-  .plaque-bottom {
-    display: flex;
-    flex-direction: column;
-  }
+      .plaque-status {
+        font-family: "Poppins", sans-serif;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #149ddd;
+      }
 
-  .plaque-static {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 4px;
-  }
+      .plaque-bottom {
+        display: flex;
+        flex-direction: column;
+      }
 
-  .plaque-dynamic {
-    font-family: "Raleway", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0;
-    line-height: 1.2;
-    text-transform: uppercase;
-  }
+      .plaque-static {
+        font-family: "Poppins", sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 4px;
+      }
 
-  .typed-cursor {
-    color: #149ddd;
-    font-weight: 300;
-    font-size: 1.7rem;
-    animation: typedjsBlink 1s infinite;
-  }
+      .plaque-dynamic {
+        font-family: "Raleway", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
 
-  /* --- RESPONSIVE FIXES --- */
+      .typed-cursor {
+        color: #149ddd;
+        font-weight: 300;
+        font-size: 1.7rem;
+        animation: typedjsBlink 1s infinite;
+      }
 
-  /* When sidebar disappears (1199px), reset padding completely */
-  @media (max-width: 1199px) {
-    .anchor-content {
-      padding-left: 5%; 
-      padding-right: 5%;
-    }
-  }
+      /* --- RESPONSIVE FIXES --- */
 
-  /* Tablets & Mobile */
-  @media (max-width: 768px) {
-    .anchor-contrast-fade {
-      /* Make fade stronger on mobile to ensure text reads over center of image */
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
-    }
+      /* When sidebar disappears (1199px), reset padding completely */
+      @media (max-width: 1199px) {
+        .anchor-content {
+          padding-left: 5%;
+          padding-right: 5%;
+        }
+      }
 
-    .anchor-content {
-      padding-top: 100px; /* Push down slightly if needed */
-    }
+      /* Tablets & Mobile */
+      @media (max-width: 768px) {
+        .anchor-contrast-fade {
+          /* Make fade stronger on mobile to ensure text reads over center of image */
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.4) 100%
+          );
+        }
 
-    .anchor-firstname {
-      font-size: 4rem;
-    }
-    
-    .anchor-lastname {
-      font-size: 5rem;
-      margin-left: 20px;
-    }
+        .anchor-content {
+          padding-top: 100px; /* Push down slightly if needed */
+        }
 
-    .anchor-plaque-wrapper {
-      margin-left: 25px;
-    }
+        .anchor-firstname {
+          font-size: 4rem;
+        }
 
-    .anchor-plaque {
-      min-width: 250px;
-    }
+        .anchor-lastname {
+          font-size: 5rem;
+          margin-left: 20px;
+        }
 
-    .plaque-dynamic {
-      font-size: 1.2rem;
-    }
-  }
-</style>
+        .anchor-plaque-wrapper {
+          margin-left: 25px;
+        }
+
+        .anchor-plaque {
+          min-width: 250px;
+        }
+
+        .plaque-dynamic {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
 
     <main id="main">
       <section id="about" class="about section-bg">
@@ -1907,287 +1924,299 @@
       </style>
 
       <section id="education" class="education section-bg">
-  <div class="container" data-aos="fade-up">
-
-    <div class="section-title">
-      <h2>Education</h2>
-      <p>My academic foundation mapped through strict performance metrics.</p>
-    </div>
-
-    <div class="academic-matrix">
-      
-      <div class="matrix-col" data-aos="fade-up" data-aos-delay="0">
-        <div class="matrix-year">2025</div>
-        
-        <div class="matrix-content">
-          <div class="matrix-header">
-            <span class="timeline-bracket">[</span>
-            <span class="timeline-range">2021 &mdash; 2025</span>
-            <span class="timeline-bracket">]</span>
-          </div>
-          
-          <h3 class="matrix-degree">Bachelor of Engineering</h3>
-          <p class="matrix-institute">SIMATS Engineering College</p>
-          
-          <div class="matrix-score">
-            <span class="score-lbl">CGPA</span>
-            <span class="score-val">8.75</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="matrix-col" data-aos="fade-up" data-aos-delay="100">
-        <div class="matrix-year">2021</div>
-        
-        <div class="matrix-content">
-          <div class="matrix-header">
-            <span class="timeline-bracket">[</span>
-            <span class="timeline-range">2019 &mdash; 2021</span>
-            <span class="timeline-bracket">]</span>
-          </div>
-          
-          <h3 class="matrix-degree">Intermediate</h3>
-          <p class="matrix-institute">Narayana Junior College</p>
-          
-          <div class="matrix-score">
-            <span class="score-lbl">GPA</span>
-            <span class="score-val">92%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="matrix-col" data-aos="fade-up" data-aos-delay="200">
-        <div class="matrix-year">2019</div>
-        
-        <div class="matrix-content">
-          <div class="matrix-header">
-            <span class="timeline-bracket">[</span>
-            <span class="timeline-range">2018 &mdash; 2019</span>
-            <span class="timeline-bracket">]</span>
-          </div>
-          
-          <h3 class="matrix-degree">10th Class</h3>
-          <p class="matrix-institute">Sri Chaitanya School</p>
-          
-          <div class="matrix-score">
-            <span class="score-lbl">GPA</span>
-            <span class="score-val">9.8 Pts</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<style>
-  /* --- GOD OF FRONTEND: STRICT TYPOGRAPHIC MATRIX --- */
-
-  .education {
-    padding: 80px 0;
-  }
-
-  /* The Unbreakable Grid - Capped top and bottom for print-style layout */
-  .academic-matrix {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background: transparent;
-    border-top: 2px solid #173b6c; /* Theme dark blue */
-    border-bottom: 2px solid #173b6c;
-    margin-top: 40px;
-  }
-
-  .matrix-col {
-    padding: 40px 30px;
-    border-right: 1px solid rgba(23, 59, 108, 0.15);
-    display: flex;
-    flex-direction: column;
-    transition: background 0.4s ease;
-    cursor: default;
-  }
-
-  .matrix-col:last-child {
-    border-right: none;
-  }
-
-  .matrix-col:hover {
-    background: rgba(20, 157, 221, 0.03); /* Extremely faint, solid tint. Zero glow. */
-  }
-
-  /* --- STROKE-TO-SOLID TYPOGRAPHY --- */
-  .matrix-year {
-    font-family: "Raleway", sans-serif;
-    font-size: 5.5rem;
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 20px;
-    /* Renders as a pure wireframe by default */
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgba(23, 59, 108, 0.2);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  /* Physically fills with ink on hover (No extra layers) */
-  .matrix-col:hover .matrix-year {
-    color: #149ddd; /* Theme primary blue */
-    -webkit-text-stroke: 0px;
-    transform: translateX(5px); /* Slight mechanical shift */
-  }
-
-  /* --- CONTENT TYPOGRAPHY --- */
-  .matrix-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-
-  .matrix-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 25px;
-  }
-
-  .timeline-bracket {
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: #149ddd;
-    transition: transform 0.4s ease;
-  }
-
-  .timeline-range {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #173b6c;
-  }
-
-  /* Brackets push outward mechanically on hover */
-  .matrix-col:hover .timeline-bracket:first-child { transform: translateX(-3px); }
-  .matrix-col:hover .timeline-bracket:last-child { transform: translateX(3px); }
-
-  .matrix-degree {
-    font-family: "Raleway", sans-serif;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #173b6c;
-    line-height: 1.2;
-    margin-bottom: 10px;
-    transition: color 0.4s ease;
-  }
-
-  .matrix-institute {
-    font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 40px; /* Pushes the score to the bottom */
-  }
-
-  .matrix-col:hover .matrix-degree {
-    color: #149ddd;
-  }
-
-  /* --- STRUCTURAL METRIC LINE (No tags, no double layers) --- */
-  .matrix-score {
-    margin-top: auto; /* Locks to the bottom of the grid cell */
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-top: 15px;
-    border-top: 1px solid rgba(23, 59, 108, 0.15);
-    position: relative;
-  }
-
-  /* The top border physically thickens and changes color (No ::before elements) */
-  .matrix-score {
-    transition: border-color 0.4s ease;
-  }
-
-  .matrix-col:hover .matrix-score {
-    border-top: 2px solid #149ddd;
-  }
-
-  .score-lbl {
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #888;
-    transition: color 0.4s ease;
-  }
-
-  .score-val {
-    font-family: "Raleway", sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: #173b6c;
-    line-height: 1;
-    transition: color 0.4s ease;
-  }
-
-  .matrix-col:hover .score-lbl { color: #173b6c; }
-  .matrix-col:hover .score-val { color: #149ddd; }
-
-  /* --- SIBLING DIMMING (Text only, no blurry filters) --- */
-  @media (hover: hover) {
-    .academic-matrix:hover .matrix-col {
-      opacity: 0.3;
-    }
-    .academic-matrix .matrix-col:hover {
-      opacity: 1;
-    }
-  }
-
-  /* --- MOBILE OPTIMIZATION --- */
-  @media (max-width: 991px) {
-    .academic-matrix {
-      grid-template-columns: 1fr;
-      border-bottom: none; /* Removed to prevent double borders on mobile */
-    }
-
-    .matrix-col {
-      border-right: none;
-      border-bottom: 2px solid #173b6c; /* Acts as the divider on mobile */
-      padding: 40px 15px;
-    }
-
-    .matrix-year {
-      font-size: 4.5rem;
-    }
-
-    .matrix-degree {
-      font-size: 1.6rem;
-    }
-  }
-</style>
-
-      <!-- ======= Awards Section ======= -->
-      <section id="awards" class="portfolio section-bg">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <h2>Awards and Certifications</h2>
+            <h2>Education</h2>
             <p>
-              I have earned several awards and certifications through online
-              courses, primarily focused on web development and frontend
-              technologies. These accomplishments highlight my proficiency in
-              HTML, CSS, JavaScript, and various frameworks such as React and
-              Angular. My dedication to continuous learning and professional
-              growth is evident through these certifications, demonstrating my
-              expertise in creating dynamic and responsive web applications.
+              My academic foundation mapped through strict performance metrics.
+            </p>
+          </div>
+
+          <div class="academic-matrix">
+            <div class="matrix-col" data-aos="fade-up" data-aos-delay="0">
+              <div class="matrix-year">2025</div>
+
+              <div class="matrix-content">
+                <div class="matrix-header">
+                  <span class="timeline-bracket">[</span>
+                  <span class="timeline-range">2021 &mdash; 2025</span>
+                  <span class="timeline-bracket">]</span>
+                </div>
+
+                <h3 class="matrix-degree">Bachelor of Engineering</h3>
+                <p class="matrix-institute">SIMATS Engineering College</p>
+
+                <div class="matrix-score">
+                  <span class="score-lbl">CGPA</span>
+                  <span class="score-val">8.75</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="matrix-col" data-aos="fade-up" data-aos-delay="100">
+              <div class="matrix-year">2021</div>
+
+              <div class="matrix-content">
+                <div class="matrix-header">
+                  <span class="timeline-bracket">[</span>
+                  <span class="timeline-range">2019 &mdash; 2021</span>
+                  <span class="timeline-bracket">]</span>
+                </div>
+
+                <h3 class="matrix-degree">Intermediate</h3>
+                <p class="matrix-institute">Narayana Junior College</p>
+
+                <div class="matrix-score">
+                  <span class="score-lbl">GPA</span>
+                  <span class="score-val">92%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="matrix-col" data-aos="fade-up" data-aos-delay="200">
+              <div class="matrix-year">2019</div>
+
+              <div class="matrix-content">
+                <div class="matrix-header">
+                  <span class="timeline-bracket">[</span>
+                  <span class="timeline-range">2018 &mdash; 2019</span>
+                  <span class="timeline-bracket">]</span>
+                </div>
+
+                <h3 class="matrix-degree">10th Class</h3>
+                <p class="matrix-institute">Sri Chaitanya School</p>
+
+                <div class="matrix-score">
+                  <span class="score-lbl">GPA</span>
+                  <span class="score-val">9.8 Pts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        /* --- GOD OF FRONTEND: STRICT TYPOGRAPHIC MATRIX --- */
+
+        .education {
+          padding: 80px 0;
+        }
+
+        /* The Unbreakable Grid - Capped top and bottom for print-style layout */
+        .academic-matrix {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          background: transparent;
+          border-top: 2px solid #173b6c; /* Theme dark blue */
+          border-bottom: 2px solid #173b6c;
+          margin-top: 40px;
+        }
+
+        .matrix-col {
+          padding: 40px 30px;
+          border-right: 1px solid rgba(23, 59, 108, 0.15);
+          display: flex;
+          flex-direction: column;
+          transition: background 0.4s ease;
+          cursor: default;
+        }
+
+        .matrix-col:last-child {
+          border-right: none;
+        }
+
+        .matrix-col:hover {
+          background: rgba(
+            20,
+            157,
+            221,
+            0.03
+          ); /* Extremely faint, solid tint. Zero glow. */
+        }
+
+        /* --- STROKE-TO-SOLID TYPOGRAPHY --- */
+        .matrix-year {
+          font-family: "Raleway", sans-serif;
+          font-size: 5.5rem;
+          font-weight: 900;
+          line-height: 1;
+          margin-bottom: 20px;
+          /* Renders as a pure wireframe by default */
+          color: transparent;
+          -webkit-text-stroke: 1.5px rgba(23, 59, 108, 0.2);
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Physically fills with ink on hover (No extra layers) */
+        .matrix-col:hover .matrix-year {
+          color: #149ddd; /* Theme primary blue */
+          -webkit-text-stroke: 0px;
+          transform: translateX(5px); /* Slight mechanical shift */
+        }
+
+        /* --- CONTENT TYPOGRAPHY --- */
+        .matrix-content {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+        }
+
+        .matrix-header {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 25px;
+        }
+
+        .timeline-bracket {
+          font-family: "Raleway", sans-serif;
+          font-size: 16px;
+          font-weight: 300;
+          color: #149ddd;
+          transition: transform 0.4s ease;
+        }
+
+        .timeline-range {
+          font-family: "Poppins", sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          color: #173b6c;
+        }
+
+        /* Brackets push outward mechanically on hover */
+        .matrix-col:hover .timeline-bracket:first-child {
+          transform: translateX(-3px);
+        }
+        .matrix-col:hover .timeline-bracket:last-child {
+          transform: translateX(3px);
+        }
+
+        .matrix-degree {
+          font-family: "Raleway", sans-serif;
+          font-size: 1.8rem;
+          font-weight: 800;
+          color: #173b6c;
+          line-height: 1.2;
+          margin-bottom: 10px;
+          transition: color 0.4s ease;
+        }
+
+        .matrix-institute {
+          font-family: "Open Sans", sans-serif;
+          font-size: 1rem;
+          color: #555;
+          margin-bottom: 40px; /* Pushes the score to the bottom */
+        }
+
+        .matrix-col:hover .matrix-degree {
+          color: #149ddd;
+        }
+
+        /* --- STRUCTURAL METRIC LINE (No tags, no double layers) --- */
+        .matrix-score {
+          margin-top: auto; /* Locks to the bottom of the grid cell */
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          padding-top: 15px;
+          border-top: 1px solid rgba(23, 59, 108, 0.15);
+          position: relative;
+        }
+
+        /* The top border physically thickens and changes color (No ::before elements) */
+        .matrix-score {
+          transition: border-color 0.4s ease;
+        }
+
+        .matrix-col:hover .matrix-score {
+          border-top: 2px solid #149ddd;
+        }
+
+        .score-lbl {
+          font-family: "Poppins", sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          color: #888;
+          transition: color 0.4s ease;
+        }
+
+        .score-val {
+          font-family: "Raleway", sans-serif;
+          font-size: 2rem;
+          font-weight: 800;
+          color: #173b6c;
+          line-height: 1;
+          transition: color 0.4s ease;
+        }
+
+        .matrix-col:hover .score-lbl {
+          color: #173b6c;
+        }
+        .matrix-col:hover .score-val {
+          color: #149ddd;
+        }
+
+        /* --- SIBLING DIMMING (Text only, no blurry filters) --- */
+        @media (hover: hover) {
+          .academic-matrix:hover .matrix-col {
+            opacity: 0.3;
+          }
+          .academic-matrix .matrix-col:hover {
+            opacity: 1;
+          }
+        }
+
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 991px) {
+          .academic-matrix {
+            grid-template-columns: 1fr;
+            border-bottom: none; /* Removed to prevent double borders on mobile */
+          }
+
+          .matrix-col {
+            border-right: none;
+            border-bottom: 2px solid #173b6c; /* Acts as the divider on mobile */
+            padding: 40px 15px;
+          }
+
+          .matrix-year {
+            font-size: 4.5rem;
+          }
+
+          .matrix-degree {
+            font-size: 1.6rem;
+          }
+        }
+      </style>
+
+      <section id="awards" class="portfolio section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Awards & Certifications</h2>
+            <p>
+              An archival record of continuous learning, professional growth,
+              and technical mastery.
             </p>
           </div>
 
           <div class="row" data-aos="fade-up">
             <div class="col-lg-12 d-flex justify-content-center">
-              <ul id="portfolio-flters">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-app">Online Courses</li>
-                <li data-filter=".filter-card">Internship</li>
-                <li data-filter=".filter-web">Symposiums</li>
-                <!-- <li data-filter=".filter-shop">Workshop</li> -->
+              <ul id="portfolio-flters" class="slash-filters">
+                <li data-filter="*" class="filter-active">
+                  <span class="f-text">All</span>
+                </li>
+                <li data-filter=".filter-app">
+                  <span class="f-text">Courses</span>
+                </li>
+                <li data-filter=".filter-card">
+                  <span class="f-text">Internships</span>
+                </li>
+                <li data-filter=".filter-web">
+                  <span class="f-text">Symposiums</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -2198,581 +2227,868 @@
             data-aos-delay="100"
           >
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/great.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/great.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Great Learning"
-                    ><i class="bx bx-plus"></i
-                  ></a>
-                  <a href="awards/great-learning.html" title="More Details"
-                    ><i class="bx bx-expand-alt"></i
-                  ></a>
+              <div class="archive-card">
+                <div class="archive-meta">
+                  <span class="meta-tag">Online Course</span>
+                  <span class="meta-status">VERIFIED</span>
+                </div>
+                <div class="archive-visual">
+                  <img
+                    src="assets/img/portfolio/great.jpg"
+                    class="img-fluid cert-img"
+                    alt="Great Learning"
+                  />
+                </div>
+                <div class="archive-footer">
+                  <h3 class="archive-title">Great Learning</h3>
+                  <div class="archive-actions">
+                    <a
+                      href="assets/img/portfolio/great.jpg"
+                      data-gallery="portfolioGallery"
+                      class="portfolio-lightbox action-btn"
+                      title="Great Learning"
+                      ><i class="bx bx-zoom-in"></i
+                    ></a>
+                    <a
+                      href="awards/great-learning.html"
+                      class="action-btn"
+                      title="More Details"
+                      ><i class="bx bx-right-arrow-alt"></i
+                    ></a>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/nptel.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/nptel.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="NPTEL"
-                    ><i class="bx bx-plus"></i
-                  ></a>
-                  <a href="awards/nptel.html" title="More Details"
-                    ><i class="bx bx-expand-alt"></i
-                  ></a>
+              <div class="archive-card">
+                <div class="archive-meta">
+                  <span class="meta-tag">Online Course</span>
+                  <span class="meta-status">VERIFIED</span>
+                </div>
+                <div class="archive-visual">
+                  <img
+                    src="assets/img/portfolio/nptel.jpg"
+                    class="img-fluid cert-img"
+                    alt="NPTEL"
+                  />
+                </div>
+                <div class="archive-footer">
+                  <h3 class="archive-title">NPTEL</h3>
+                  <div class="archive-actions">
+                    <a
+                      href="assets/img/portfolio/nptel.jpg"
+                      data-gallery="portfolioGallery"
+                      class="portfolio-lightbox action-btn"
+                      title="NPTEL"
+                      ><i class="bx bx-zoom-in"></i
+                    ></a>
+                    <a
+                      href="awards/nptel.html"
+                      class="action-btn"
+                      title="More Details"
+                      ><i class="bx bx-right-arrow-alt"></i
+                    ></a>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/hacker.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/hacker.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Hacker Rank"
-                    ><i class="bx bx-plus"></i
-                  ></a>
-                  <a href="awards/hacker_rank.html" title="More Details"
-                    ><i class="bx bx-expand-alt"></i
-                  ></a>
+              <div class="archive-card">
+                <div class="archive-meta">
+                  <span class="meta-tag">Online Course</span>
+                  <span class="meta-status">VERIFIED</span>
                 </div>
-              </div>
-            </div>
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/forage.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/forage.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Forage"><i class="bx bx-plus"></i></a>
-                <a href="awards/forage.html" title="More Details"><i class="bx bx-expand-alt"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/geekster.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/geekster.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Geekster"
-                    ><i class="bx bx-plus"></i
-                  ></a>
-                  <a href="awards/geekster.html" title="More Details"
-                    ><i class="bx bx-expand-alt"></i
-                  ></a>
+                <div class="archive-visual">
+                  <img
+                    src="assets/img/portfolio/hacker.jpg"
+                    class="img-fluid cert-img"
+                    alt="Hacker Rank"
+                  />
+                </div>
+                <div class="archive-footer">
+                  <h3 class="archive-title">Hacker Rank</h3>
+                  <div class="archive-actions">
+                    <a
+                      href="assets/img/portfolio/hacker.jpg"
+                      data-gallery="portfolioGallery"
+                      class="portfolio-lightbox action-btn"
+                      title="Hacker Rank"
+                      ><i class="bx bx-zoom-in"></i
+                    ></a>
+                    <a
+                      href="awards/hacker_rank.html"
+                      class="action-btn"
+                      title="More Details"
+                      ><i class="bx bx-right-arrow-alt"></i
+                    ></a>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/saylor.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/saylor.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Saylor"
-                    ><i class="bx bx-plus"></i
-                  ></a>
-                  <a href="awards/saylor.html" title="More Details"
-                    ><i class="bx bx-expand-alt"></i
-                  ></a>
+              <div class="archive-card">
+                <div class="archive-meta">
+                  <span class="meta-tag">Online Course</span>
+                  <span class="meta-status">VERIFIED</span>
+                </div>
+                <div class="archive-visual">
+                  <img
+                    src="assets/img/portfolio/geekster.jpg"
+                    class="img-fluid cert-img"
+                    alt="Geekster"
+                  />
+                </div>
+                <div class="archive-footer">
+                  <h3 class="archive-title">Geekster</h3>
+                  <div class="archive-actions">
+                    <a
+                      href="assets/img/portfolio/geekster.jpg"
+                      data-gallery="portfolioGallery"
+                      class="portfolio-lightbox action-btn"
+                      title="Geekster"
+                      ><i class="bx bx-zoom-in"></i
+                    ></a>
+                    <a
+                      href="awards/geekster.html"
+                      class="action-btn"
+                      title="More Details"
+                      ><i class="bx bx-right-arrow-alt"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="archive-card">
+                <div class="archive-meta">
+                  <span class="meta-tag">Online Course</span>
+                  <span class="meta-status">VERIFIED</span>
+                </div>
+                <div class="archive-visual">
+                  <img
+                    src="assets/img/portfolio/saylor.jpg"
+                    class="img-fluid cert-img"
+                    alt="Saylor"
+                  />
+                </div>
+                <div class="archive-footer">
+                  <h3 class="archive-title">Saylor Academy</h3>
+                  <div class="archive-actions">
+                    <a
+                      href="assets/img/portfolio/saylor.jpg"
+                      data-gallery="portfolioGallery"
+                      class="portfolio-lightbox action-btn"
+                      title="Saylor"
+                      ><i class="bx bx-zoom-in"></i
+                    ></a>
+                    <a
+                      href="awards/saylor.html"
+                      class="action-btn"
+                      title="More Details"
+                      ><i class="bx bx-right-arrow-alt"></i
+                    ></a>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/saveetha.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/saveetha.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Saveetha School of Engineering"
-                    ><i class="bx bx-plus"></i
-                  ></a>
-                  <a href="awards/simats.html" title="More Details"
-                    ><i class="bx bx-expand-alt"></i
-                  ></a>
+              <div class="archive-card">
+                <div class="archive-meta">
+                  <span class="meta-tag">Symposium</span>
+                  <span class="meta-status">AWARDED</span>
+                </div>
+                <div class="archive-visual">
+                  <img
+                    src="assets/img/portfolio/saveetha.jpg"
+                    class="img-fluid cert-img"
+                    alt="Saveetha Symposium"
+                  />
+                </div>
+                <div class="archive-footer">
+                  <h3 class="archive-title">Saveetha Eng.</h3>
+                  <div class="archive-actions">
+                    <a
+                      href="assets/img/portfolio/saveetha.jpg"
+                      data-gallery="portfolioGallery"
+                      class="portfolio-lightbox action-btn"
+                      title="Saveetha Symposium"
+                      ><i class="bx bx-zoom-in"></i
+                    ></a>
+                    <a
+                      href="awards/simats.html"
+                      class="action-btn"
+                      title="More Details"
+                      ><i class="bx bx-right-arrow-alt"></i
+                    ></a>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/oracle.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/oracle.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Oracle University"
-                    ><i class="bx bx-plus"></i
-                  ></a>
-                  <a href="awards/oracle.html" title="More Details"
-                    ><i class="bx bx-expand-alt"></i
-                  ></a>
+              <div class="archive-card">
+                <div class="archive-meta">
+                  <span class="meta-tag">Online Course</span>
+                  <span class="meta-status">VERIFIED</span>
+                </div>
+                <div class="archive-visual">
+                  <img
+                    src="assets/img/portfolio/oracle.jpg"
+                    class="img-fluid cert-img"
+                    alt="Oracle"
+                  />
+                </div>
+                <div class="archive-footer">
+                  <h3 class="archive-title">Oracle University</h3>
+                  <div class="archive-actions">
+                    <a
+                      href="assets/img/portfolio/oracle.jpg"
+                      data-gallery="portfolioGallery"
+                      class="portfolio-lightbox action-btn"
+                      title="Oracle"
+                      ><i class="bx bx-zoom-in"></i
+                    ></a>
+                    <a
+                      href="awards/oracle.html"
+                      class="action-btn"
+                      title="More Details"
+                      ><i class="bx bx-right-arrow-alt"></i
+                    ></a>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/mindluster.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/mindluster.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Mind Luster"
-                    ><i class="bx bx-plus"></i
-                  ></a>
-                  <a href="awards/mindluster.html" title="More Details"
-                    ><i class="bx bx-expand-alt"></i
-                  ></a>
+              <div class="archive-card">
+                <div class="archive-meta">
+                  <span class="meta-tag">Online Course</span>
+                  <span class="meta-status">VERIFIED</span>
+                </div>
+                <div class="archive-visual">
+                  <img
+                    src="assets/img/portfolio/mindluster.jpg"
+                    class="img-fluid cert-img"
+                    alt="Mind Luster"
+                  />
+                </div>
+                <div class="archive-footer">
+                  <h3 class="archive-title">Mind Luster</h3>
+                  <div class="archive-actions">
+                    <a
+                      href="assets/img/portfolio/mindluster.jpg"
+                      data-gallery="portfolioGallery"
+                      class="portfolio-lightbox action-btn"
+                      title="Mind Luster"
+                      ><i class="bx bx-zoom-in"></i
+                    ></a>
+                    <a
+                      href="awards/mindluster.html"
+                      class="action-btn"
+                      title="More Details"
+                      ><i class="bx bx-right-arrow-alt"></i
+                    ></a>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/simplilearn.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/simplilearn.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="simpli learn"><i class="bx bx-plus"></i></a>
-                <a href="awards/simplilearn.html" title="More Details"><i class="bx bx-expand-alt"></i></a>
-              </div>
-            </div>
-          </div> -->
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/garuda.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <a
-                    href="assets/img/portfolio/garuda.jpg"
-                    data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
-                    title="Garuda"
-                    ><i class="bx bx-plus"></i
-                  ></a>
-                  <a href="awards/garuda.html" title="More Details"
-                    ><i class="bx bx-expand-alt"></i
-                  ></a>
+              <div class="archive-card">
+                <div class="archive-meta">
+                  <span class="meta-tag">Internship</span>
+                  <span class="meta-status">COMPLETED</span>
+                </div>
+                <div class="archive-visual">
+                  <img
+                    src="assets/img/portfolio/garuda.jpg"
+                    class="img-fluid cert-img"
+                    alt="Garuda"
+                  />
+                </div>
+                <div class="archive-footer">
+                  <h3 class="archive-title">Garuda</h3>
+                  <div class="archive-actions">
+                    <a
+                      href="assets/img/portfolio/garuda.jpg"
+                      data-gallery="portfolioGallery"
+                      class="portfolio-lightbox action-btn"
+                      title="Garuda"
+                      ><i class="bx bx-zoom-in"></i
+                    ></a>
+                    <a
+                      href="awards/garuda.html"
+                      class="action-btn"
+                      title="More Details"
+                      ><i class="bx bx-right-arrow-alt"></i
+                    ></a>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <!-- 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/cyber.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/cyber.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Cyber Wave"><i class="bx bx-plus"></i></a>
-                <a href="awards/cyber.html" title="More Details"><i class="bx bx-expand-alt"></i></a>
-              </div> 
-            </div>
-          </div>-->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/other_clg.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/other_clg.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Others"><i class="bx bx-plus"></i></a>
-                <a href="awards/other.html" title="More Details"><i class="bx bx-expand-alt"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-            <!-- 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-shop">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/workshop.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/workshop.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Workshop"><i class="bx bx-plus"></i></a>
-                <a href="awards/workshop.html" title="More Details"><i class="bx bx-expand-alt"></i></a>
-              </div>
-            </div>
-          </div>-->
           </div>
         </div>
       </section>
-      <!-- End Awards Section -->
+
+      <style>
+        /* --- GOD OF FRONTEND: EDITORIAL SLASH & FULL COLOR ARCHIVE --- */
+
+        .portfolio {
+          padding: 80px 0;
+        }
+
+        /* =========================================================
+   * THE MASTERPIECE: EDITORIAL SLASH FILTER
+   * Zero boxes. Zero scrolling. Flawless text wrapping.
+   * ========================================================= */
+
+        .slash-filters {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          list-style: none;
+          padding: 0;
+          margin: 0 auto 50px auto;
+          gap: 12px; /* Spacing that applies naturally if items wrap */
+        }
+
+        .slash-filters li {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+
+        .f-text {
+          font-family: "Poppins", sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #888;
+          position: relative;
+          padding: 5px 0;
+          transition: color 0.3s ease;
+        }
+
+        /* The Slash Separator */
+        .slash-filters li:not(:last-child)::after {
+          content: "/";
+          color: rgba(23, 59, 108, 0.3);
+          margin-left: 16px;
+          font-size: 18px;
+          font-weight: 300;
+          pointer-events: none;
+        }
+
+        /* Hover & Active States */
+        .slash-filters li.filter-active .f-text,
+        .slash-filters li:hover .f-text {
+          color: #173b6c; /* Theme dark blue */
+        }
+
+        /* The active underline indicator */
+        .slash-filters li.filter-active .f-text::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: #149ddd; /* Theme primary blue */
+        }
+
+        /* =========================================================
+   * RESTORED: THE FULL COLOR ARCHIVE CARDS
+   * ========================================================= */
+
+        .archive-card {
+          position: relative;
+          background: #ffffff;
+          border: 1px solid rgba(23, 59, 108, 0.1);
+          padding: 25px;
+          margin-bottom: 30px;
+          transition:
+            border-color 0.4s ease,
+            transform 0.4s ease,
+            box-shadow 0.4s ease;
+        }
+
+        .archive-card:hover {
+          border-color: #149ddd;
+          transform: translateY(-5px);
+          box-shadow: 0 15px 30px rgba(5, 13, 24, 0.05);
+        }
+
+        /* Structural Metadata Bar */
+        .archive-meta {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 15px;
+          border-bottom: 1px dashed rgba(23, 59, 108, 0.15);
+          margin-bottom: 20px;
+        }
+
+        .meta-tag {
+          font-family: "Poppins", sans-serif;
+          font-size: 11px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          color: #888;
+          text-transform: uppercase;
+        }
+
+        .meta-status {
+          font-family: "Poppins", sans-serif;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          color: #149ddd;
+        }
+
+        /* The Visual Frame */
+        .archive-visual {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4/3;
+          overflow: hidden;
+          background: #f8f9fa;
+          border: 1px solid rgba(23, 59, 108, 0.05);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .cert-img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          /* Absolutely no grayscale, loads in 100% full color instantly */
+          transform: scale(0.95);
+          transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        /* Subtle structural zoom on hover */
+        .archive-card:hover .cert-img {
+          transform: scale(1);
+        }
+
+        /* The Persistent Architecture Footer */
+        .archive-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 25px;
+        }
+
+        .archive-title {
+          font-family: "Raleway", sans-serif;
+          font-size: 1.2rem;
+          font-weight: 800;
+          color: #173b6c;
+          margin: 0;
+          transition: color 0.4s ease;
+        }
+
+        .archive-card:hover .archive-title {
+          color: #149ddd;
+        }
+
+        /* Structural Buttons */
+        .archive-actions {
+          display: flex;
+          gap: 10px;
+        }
+
+        .action-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 35px;
+          height: 35px;
+          border: 1px solid rgba(23, 59, 108, 0.15);
+          color: #173b6c;
+          font-size: 18px;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+          background: #149ddd;
+          border-color: #149ddd;
+          color: #ffffff;
+        }
+
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 768px) {
+          /* The slash filter effortlessly scales down for mobile */
+          .f-text {
+            font-size: 12px;
+            letter-spacing: 1px;
+          }
+
+          .slash-filters li:not(:last-child)::after {
+            margin-left: 10px;
+          }
+
+          .archive-card {
+            padding: 15px;
+          }
+
+          .archive-title {
+            font-size: 1rem;
+          }
+
+          .action-btn {
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+          }
+        }
+      </style>
 
       <section id="interests" class="interests section-bg">
-  <div class="container" data-aos="fade-up">
-    <div class="section-title">
-      <h2>Interests</h2>
-      <p>The technical and creative pillars that drive my curiosity and growth.</p>
-    </div>
-
-    <div class="interests-editorial-stack">
-      
-      <div class="interest-strip">
-        <div class="strip-header">
-          <div class="strip-num">01</div>
-          <div class="strip-title-wrap">
-            <i class="bi bi-robot"></i>
-            <h3 class="strip-title">AI & Machine Learning</h3>
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Interests</h2>
+            <p>
+              The technical and creative pillars that drive my curiosity and
+              growth.
+            </p>
           </div>
-          <i class="bi bi-plus strip-plus"></i>
-        </div>
-        <div class="strip-body">
-          <p>
-            Leveraging AI to solve practical problems. I specialize in
-            building applications with TensorFlow.js and OpenAI API,
-            bridging the gap between raw data and meaningful user
-            experiences.
-          </p>
-          <div class="strip-watermark"><i class="bi bi-robot"></i></div>
-        </div>
-      </div>
 
-      <div class="interest-strip">
-        <div class="strip-header">
-          <div class="strip-num">02</div>
-          <div class="strip-title-wrap">
-            <i class="bi bi-camera"></i>
-            <h3 class="strip-title">Photography</h3>
+          <div class="interests-editorial-stack">
+            <div class="interest-strip">
+              <div class="strip-header">
+                <div class="strip-num">01</div>
+                <div class="strip-title-wrap">
+                  <i class="bi bi-robot"></i>
+                  <h3 class="strip-title">AI & Machine Learning</h3>
+                </div>
+                <i class="bi bi-plus strip-plus"></i>
+              </div>
+              <div class="strip-body">
+                <p>
+                  Leveraging AI to solve practical problems. I specialize in
+                  building applications with TensorFlow.js and OpenAI API,
+                  bridging the gap between raw data and meaningful user
+                  experiences.
+                </p>
+                <div class="strip-watermark"><i class="bi bi-robot"></i></div>
+              </div>
+            </div>
+
+            <div class="interest-strip">
+              <div class="strip-header">
+                <div class="strip-num">02</div>
+                <div class="strip-title-wrap">
+                  <i class="bi bi-camera"></i>
+                  <h3 class="strip-title">Photography</h3>
+                </div>
+                <i class="bi bi-plus strip-plus"></i>
+              </div>
+              <div class="strip-body">
+                <p>
+                  Capturing life’s diverse stories through a lens. From
+                  expansive landscapes to microscopic details, I use photography
+                  to freeze moments and evoke emotions that words cannot reach.
+                </p>
+                <div class="strip-watermark"><i class="bi bi-camera"></i></div>
+              </div>
+            </div>
+
+            <div class="interest-strip">
+              <div class="strip-header">
+                <div class="strip-num">03</div>
+                <div class="strip-title-wrap">
+                  <i class="bi bi-globe"></i>
+                  <h3 class="strip-title">Global Travel</h3>
+                </div>
+                <i class="bi bi-plus strip-plus"></i>
+              </div>
+              <div class="strip-body">
+                <p>
+                  Broadening perspectives through cultural immersion. Exploring
+                  diverse cuisines and landscapes fuels my curiosity and fosters
+                  personal growth in a connected world.
+                </p>
+                <div class="strip-watermark"><i class="bi bi-globe"></i></div>
+              </div>
+            </div>
+
+            <div class="interest-strip">
+              <div class="strip-header">
+                <div class="strip-num">04</div>
+                <div class="strip-title-wrap">
+                  <i class="bi bi-palette"></i>
+                  <h3 class="strip-title">UI/UX Design</h3>
+                </div>
+                <i class="bi bi-plus strip-plus"></i>
+              </div>
+              <div class="strip-body">
+                <p>
+                  Merging functionality with aesthetic beauty. I craft intuitive
+                  interfaces and prototypes that elevate digital products into
+                  seamless and memorable user journeys.
+                </p>
+                <div class="strip-watermark"><i class="bi bi-palette"></i></div>
+              </div>
+            </div>
+
+            <div class="interest-strip">
+              <div class="strip-header">
+                <div class="strip-num">05</div>
+                <div class="strip-title-wrap">
+                  <i class="bi bi-headset"></i>
+                  <h3 class="strip-title">Music Theory</h3>
+                </div>
+                <i class="bi bi-plus strip-plus"></i>
+              </div>
+              <div class="strip-body">
+                <p>
+                  Exploring the universal language of rhythm and melody. I study
+                  compositions and performance techniques to understand the
+                  harmony that bridges cultures.
+                </p>
+                <div class="strip-watermark"><i class="bi bi-headset"></i></div>
+              </div>
+            </div>
+
+            <div class="interest-strip">
+              <div class="strip-header">
+                <div class="strip-num">06</div>
+                <div class="strip-title-wrap">
+                  <i class="bi bi-fingerprint"></i>
+                  <h3 class="strip-title">Ethical Hacking</h3>
+                </div>
+                <i class="bi bi-plus strip-plus"></i>
+              </div>
+              <div class="strip-body">
+                <p>
+                  Safeguarding digital ecosystems. I study penetration testing
+                  and system vulnerabilities to build stronger defenses and
+                  ensure robust information security.
+                </p>
+                <div class="strip-watermark">
+                  <i class="bi bi-fingerprint"></i>
+                </div>
+              </div>
+            </div>
           </div>
-          <i class="bi bi-plus strip-plus"></i>
         </div>
-        <div class="strip-body">
-          <p>
-            Capturing life’s diverse stories through a lens. From
-            expansive landscapes to microscopic details, I use photography
-            to freeze moments and evoke emotions that words cannot reach.
-          </p>
-          <div class="strip-watermark"><i class="bi bi-camera"></i></div>
-        </div>
-      </div>
+      </section>
 
-      <div class="interest-strip">
-        <div class="strip-header">
-          <div class="strip-num">03</div>
-          <div class="strip-title-wrap">
-            <i class="bi bi-globe"></i>
-            <h3 class="strip-title">Global Travel</h3>
-          </div>
-          <i class="bi bi-plus strip-plus"></i>
-        </div>
-        <div class="strip-body">
-          <p>
-            Broadening perspectives through cultural immersion. Exploring
-            diverse cuisines and landscapes fuels my curiosity and fosters
-            personal growth in a connected world.
-          </p>
-          <div class="strip-watermark"><i class="bi bi-globe"></i></div>
-        </div>
-      </div>
+      <style>
+        /* --- THEME-INTEGRATED EDITORIAL STYLES --- */
 
-      <div class="interest-strip">
-        <div class="strip-header">
-          <div class="strip-num">04</div>
-          <div class="strip-title-wrap">
-            <i class="bi bi-palette"></i>
-            <h3 class="strip-title">UI/UX Design</h3>
-          </div>
-          <i class="bi bi-plus strip-plus"></i>
-        </div>
-        <div class="strip-body">
-          <p>
-            Merging functionality with aesthetic beauty. I craft intuitive
-            interfaces and prototypes that elevate digital products into
-            seamless and memorable user journeys.
-          </p>
-          <div class="strip-watermark"><i class="bi bi-palette"></i></div>
-        </div>
-      </div>
+        .interests-editorial-stack {
+          display: flex;
+          flex-direction: column;
+          border-top: 1px solid rgba(23, 59, 108, 0.1);
+          margin-top: 40px;
+        }
 
-      <div class="interest-strip">
-        <div class="strip-header">
-          <div class="strip-num">05</div>
-          <div class="strip-title-wrap">
-            <i class="bi bi-headset"></i>
-            <h3 class="strip-title">Music Theory</h3>
-          </div>
-          <i class="bi bi-plus strip-plus"></i>
-        </div>
-        <div class="strip-body">
-          <p>
-            Exploring the universal language of rhythm and melody. I
-            study compositions and performance techniques to understand
-            the harmony that bridges cultures.
-          </p>
-          <div class="strip-watermark"><i class="bi bi-headset"></i></div>
-        </div>
-      </div>
+        .interest-strip {
+          position: relative;
+          border-bottom: 1px solid rgba(23, 59, 108, 0.1);
+          overflow: hidden;
+          cursor: pointer;
+          background: #fff;
+          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-      <div class="interest-strip">
-        <div class="strip-header">
-          <div class="strip-num">06</div>
-          <div class="strip-title-wrap">
-            <i class="bi bi-fingerprint"></i>
-            <h3 class="strip-title">Ethical Hacking</h3>
-          </div>
-          <i class="bi bi-plus strip-plus"></i>
-        </div>
-        <div class="strip-body">
-          <p>
-            Safeguarding digital ecosystems. I study penetration testing
-            and system vulnerabilities to build stronger defenses and
-            ensure robust information security.
-          </p>
-          <div class="strip-watermark"><i class="bi bi-fingerprint"></i></div>
-        </div>
-      </div>
+        /* Strip Header */
+        .strip-header {
+          display: flex;
+          align-items: center;
+          padding: 30px 20px;
+          position: relative;
+          z-index: 2;
+        }
 
-    </div>
-  </div>
-</section>
+        .strip-num {
+          font-family: "Poppins", sans-serif;
+          font-size: 14px;
+          font-weight: 700;
+          color: #149ddd;
+          width: 40px;
+        }
 
-<style>
-  /* --- THEME-INTEGRATED EDITORIAL STYLES --- */
+        .strip-title-wrap {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          flex: 1;
+          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-  .interests-editorial-stack {
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid rgba(23, 59, 108, 0.1);
-    margin-top: 40px;
-  }
+        .strip-title-wrap i {
+          font-size: 24px;
+          color: #173b6c;
+        }
 
-  .interest-strip {
-    position: relative;
-    border-bottom: 1px solid rgba(23, 59, 108, 0.1);
-    overflow: hidden; 
-    cursor: pointer;
-    background: #fff;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
+        .strip-title {
+          font-family: "Raleway", sans-serif;
+          font-size: 22px;
+          font-weight: 700;
+          color: #173b6c;
+          margin: 0;
+        }
 
-  /* Strip Header */
-  .strip-header {
-    display: flex;
-    align-items: center;
-    padding: 30px 20px;
-    position: relative;
-    z-index: 2;
-  }
+        .strip-plus {
+          font-size: 24px;
+          color: #149ddd;
+          transition:
+            transform 0.5s ease,
+            color 0.3s ease;
+        }
 
-  .strip-num {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: #149ddd; 
-    width: 40px;
-  }
+        /* The Hidden Body */
+        .strip-body {
+          max-height: 0;
+          opacity: 0;
+          padding: 0 60px;
+          transition:
+            max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.4s ease,
+            padding 0.5s ease;
+          position: relative;
+          z-index: 2;
+        }
 
-  .strip-title-wrap {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex: 1;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
+        .strip-body p {
+          font-family: "Open Sans", sans-serif;
+          font-size: 16px;
+          line-height: 1.8;
+          color: #444;
+          max-width: 700px;
+          margin-bottom: 0;
+        }
 
-  .strip-title-wrap i {
-    font-size: 24px;
-    color: #173b6c;
-  }
+        /* Large Watermark Background Icon */
+        .strip-watermark {
+          position: absolute;
+          right: 40px;
+          bottom: -20px;
+          font-size: 120px;
+          color: #149ddd;
+          opacity: 0.03;
+          pointer-events: none;
+          transition: transform 0.8s ease;
+        }
 
-  .strip-title {
-    font-family: "Raleway", sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: #173b6c;
-    margin: 0;
-  }
-
-  .strip-plus {
-    font-size: 24px;
-    color: #149ddd;
-    transition: transform 0.5s ease, color 0.3s ease;
-  }
-
-  /* The Hidden Body */
-  .strip-body {
-    max-height: 0;
-    opacity: 0;
-    padding: 0 60px;
-    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, padding 0.5s ease;
-    position: relative;
-    z-index: 2;
-  }
-
-  .strip-body p {
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    line-height: 1.8;
-    color: #444;
-    max-width: 700px;
-    margin-bottom: 0;
-  }
-
-  /* Large Watermark Background Icon */
-  .strip-watermark {
-    position: absolute;
-    right: 40px;
-    bottom: -20px;
-    font-size: 120px;
-    color: #149ddd;
-    opacity: 0.03; 
-    pointer-events: none;
-    transition: transform 0.8s ease;
-  }
-
-  /* ====================================================================
+        /* ====================================================================
    * THE FIX: SEPARATING JS CLICK LOGIC FROM MOUSE HOVER LOGIC
    * ==================================================================== */
 
-  /* 1. This applies ONLY when the JS adds the class (Mobile Tap OR Desktop Click) */
-  .interest-strip.is-open {
-    background: #fcfcfc;
-    padding-bottom: 30px;
-  }
-  .interest-strip.is-open .strip-body {
-    max-height: 500px; /* Safe height for mobile text wrapping */
-    opacity: 1;
-    padding-bottom: 10px;
-  }
-  .interest-strip.is-open .strip-title-wrap {
-    transform: translateX(10px);
-  }
-  .interest-strip.is-open .strip-plus {
-    transform: rotate(45deg); /* Forms the X */
-    color: #173b6c; /* Turns dark to indicate close action */
-  }
-  .interest-strip.is-open .strip-watermark {
-    transform: translateY(-20px) rotate(-10deg);
-    opacity: 0.08;
-  }
-
-
-  /* 2. This applies ONLY on Desktop devices with a real mouse. 
-        It prevents "Sticky Hover" on mobile phones completely. */
-  @media (hover: hover) and (pointer: fine) {
-    
-    .interest-strip:hover {
-      background: #fcfcfc;
-      padding-bottom: 30px;
-    }
-    .interest-strip:hover .strip-body {
-      max-height: 500px;
-      opacity: 1;
-      padding-bottom: 10px;
-    }
-    .interest-strip:hover .strip-title-wrap {
-      transform: translateX(10px);
-    }
-    .interest-strip:hover .strip-plus {
-      transform: rotate(45deg);
-      color: #173b6c;
-    }
-    .interest-strip:hover .strip-watermark {
-      transform: translateY(-20px) rotate(-10deg);
-      opacity: 0.08;
-    }
-
-    /* Sibling Dimming (Only on desktop) */
-    .interests-editorial-stack:hover .interest-strip {
-      opacity: 0.4;
-    }
-    .interests-editorial-stack .interest-strip:hover {
-      opacity: 1;
-    }
-  }
-
-  /* --- MOBILE RESPONSIVE FIXES --- */
-  @media (max-width: 768px) {
-    .strip-header { padding: 20px 10px; }
-    .strip-title { font-size: 18px; }
-    .strip-title-wrap { gap: 15px; }
-    .strip-num { width: 30px; }
-    
-    /* Aligns text perfectly under the title on mobile */
-    .strip-body { padding: 0 10px 0 65px; } 
-    
-    .strip-watermark { font-size: 80px; right: 10px; }
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const strips = document.querySelectorAll('.interest-strip');
-
-    strips.forEach(strip => {
-      strip.addEventListener('click', function() {
-        // Check if the clicked strip is already open
-        const isOpen = this.classList.contains('is-open');
-
-        // Close all strips first
-        strips.forEach(s => s.classList.remove('is-open'));
-
-        // If it wasn't open, open it. If it was open, it safely closes.
-        if (!isOpen) {
-          this.classList.add('is-open');
+        /* 1. This applies ONLY when the JS adds the class (Mobile Tap OR Desktop Click) */
+        .interest-strip.is-open {
+          background: #fcfcfc;
+          padding-bottom: 30px;
         }
-      });
-    });
-  });
-</script>
+        .interest-strip.is-open .strip-body {
+          max-height: 500px; /* Safe height for mobile text wrapping */
+          opacity: 1;
+          padding-bottom: 10px;
+        }
+        .interest-strip.is-open .strip-title-wrap {
+          transform: translateX(10px);
+        }
+        .interest-strip.is-open .strip-plus {
+          transform: rotate(45deg); /* Forms the X */
+          color: #173b6c; /* Turns dark to indicate close action */
+        }
+        .interest-strip.is-open .strip-watermark {
+          transform: translateY(-20px) rotate(-10deg);
+          opacity: 0.08;
+        }
+
+        /* 2. This applies ONLY on Desktop devices with a real mouse. 
+        It prevents "Sticky Hover" on mobile phones completely. */
+        @media (hover: hover) and (pointer: fine) {
+          .interest-strip:hover {
+            background: #fcfcfc;
+            padding-bottom: 30px;
+          }
+          .interest-strip:hover .strip-body {
+            max-height: 500px;
+            opacity: 1;
+            padding-bottom: 10px;
+          }
+          .interest-strip:hover .strip-title-wrap {
+            transform: translateX(10px);
+          }
+          .interest-strip:hover .strip-plus {
+            transform: rotate(45deg);
+            color: #173b6c;
+          }
+          .interest-strip:hover .strip-watermark {
+            transform: translateY(-20px) rotate(-10deg);
+            opacity: 0.08;
+          }
+
+          /* Sibling Dimming (Only on desktop) */
+          .interests-editorial-stack:hover .interest-strip {
+            opacity: 0.4;
+          }
+          .interests-editorial-stack .interest-strip:hover {
+            opacity: 1;
+          }
+        }
+
+        /* --- MOBILE RESPONSIVE FIXES --- */
+        @media (max-width: 768px) {
+          .strip-header {
+            padding: 20px 10px;
+          }
+          .strip-title {
+            font-size: 18px;
+          }
+          .strip-title-wrap {
+            gap: 15px;
+          }
+          .strip-num {
+            width: 30px;
+          }
+
+          /* Aligns text perfectly under the title on mobile */
+          .strip-body {
+            padding: 0 10px 0 65px;
+          }
+
+          .strip-watermark {
+            font-size: 80px;
+            right: 10px;
+          }
+        }
+      </style>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const strips = document.querySelectorAll(".interest-strip");
+
+          strips.forEach((strip) => {
+            strip.addEventListener("click", function () {
+              // Check if the clicked strip is already open
+              const isOpen = this.classList.contains("is-open");
+
+              // Close all strips first
+              strips.forEach((s) => s.classList.remove("is-open"));
+
+              // If it wasn't open, open it. If it was open, it safely closes.
+              if (!isOpen) {
+                this.classList.add("is-open");
+              }
+            });
+          });
+        });
+      </script>
 
       <section id="contact" class="contact section-bg">
         <div class="container" data-aos="fade-up">
