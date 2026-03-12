@@ -186,7 +186,7 @@ h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+/* #header {
   position: fixed;
   top: 0;
   left: 0;
@@ -237,7 +237,7 @@ h6 {
       #333 1%,
       rgba(88, 84, 84, 0.959) 0%);
   overflow-y: auto;
-}
+} */
 
 
 #header .profile img {
@@ -1462,5 +1462,375 @@ body {
 @media (pointer: coarse) {
   .cursor, .cursor-follower {
       display: none;
+  }
+}
+
+/* =========================================================
+ * GOD LEVEL: QUANTUM HUD SIDEBAR
+ * ========================================================= */
+
+/* Forces the destruction of the old bubble background */
+#header.quantum-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 300px !important;
+  background: #02050a !important; /* Pure, deep architectural void */
+  background-image: none !important; /* KILLS THE BUBBLES */
+  border-right: 1px solid rgba(20, 157, 221, 0.15) !important;
+  z-index: 9997 !important;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+#header.quantum-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Microscopic Blueprint Grid */
+.q-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sidebar-core {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 50px 30px;
+}
+
+/* --- 1. THE GEOMETRIC FRAME PROFILE --- */
+.q-profile-module {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.q-frame-wrapper {
+  position: relative;
+  width: 130px;
+  height: 140px; /* Rectangular frame shape, strictly no circles */
+  margin-bottom: 25px;
+  cursor: crosshair;
+}
+
+/* Floating Wireframe offset to the back */
+.q-wireframe {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #149ddd; /* Theme primary blue */
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.5s ease;
+  z-index: 1;
+}
+
+.q-profile-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0; /* Ensures it is a sharp box */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: sepia(0.2) contrast(1.1); /* Cinematic color grading */
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), filter 0.5s ease;
+}
+
+/* Sci-fi targeting corners */
+.q-target-corners {
+  position: absolute;
+  inset: -5px;
+  background: 
+    linear-gradient(to right, #149ddd 2px, transparent 2px) 0 0,
+    linear-gradient(to right, #149ddd 2px, transparent 2px) 0 100%,
+    linear-gradient(to left, #149ddd 2px, transparent 2px) 100% 0,
+    linear-gradient(to left, #149ddd 2px, transparent 2px) 100% 100%,
+    linear-gradient(to bottom, #149ddd 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, #149ddd 2px, transparent 2px) 100% 0,
+    linear-gradient(to top, #149ddd 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, #149ddd 2px, transparent 2px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.5s ease, inset 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  pointer-events: none;
+}
+
+/* The Hover Physics */
+.q-frame-wrapper:hover .q-wireframe {
+  transform: translate(-10px, -10px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.q-frame-wrapper:hover .q-profile-img {
+  transform: translate(-5px, -5px);
+  filter: sepia(0) contrast(1);
+}
+.q-frame-wrapper:hover .q-target-corners {
+  opacity: 1;
+  inset: -12px;
+}
+
+/* Typography */
+.q-signature {
+  font-family: "Raleway", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+}
+
+.q-signature a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.q-signature a:hover {
+  color: #149ddd;
+}
+
+/* The LED Pulse Node */
+.q-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(20, 157, 221, 0.05);
+  border: 1px solid rgba(20, 157, 221, 0.2);
+  padding: 6px 12px;
+}
+
+.q-pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: #149ddd;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #149ddd;
+  animation: q-pulse 2s infinite;
+}
+
+@keyframes q-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.8); }
+}
+
+.q-status-txt {
+  font-family: "Poppins", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #149ddd;
+}
+
+
+/* --- 2. BRACKET-LOCK NAVIGATION --- */
+.q-nav-menu {
+  position: relative;
+  flex-grow: 1;
+  margin-top: 20px;
+}
+
+/* Structural spine line */
+.nav-track-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 0;
+}
+
+.q-nav-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  z-index: 1;
+}
+
+.q-nav-menu a {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.q-nav-menu i {
+  font-size: 18px;
+  margin-right: 25px;
+  background: #02050a; /* Cuts the track line */
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+/* The Bracket Elements */
+.n-text {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.n-text::before,
+.n-text::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #149ddd;
+  font-weight: 300;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.n-text::before {
+  content: '[';
+  left: -10px;
+}
+
+.n-text::after {
+  content: ']';
+  right: -10px;
+}
+
+/* Active & Hover States */
+.q-nav-menu a:hover,
+.q-nav-menu .active {
+  color: #ffffff;
+}
+
+.q-nav-menu a:hover i,
+.q-nav-menu .active i {
+  color: #149ddd;
+}
+
+/* Brackets clamp onto the text */
+.q-nav-menu a:hover .n-text::before,
+.q-nav-menu .active .n-text::before {
+  opacity: 1;
+  left: -5px;
+}
+
+.q-nav-menu a:hover .n-text::after,
+.q-nav-menu .active .n-text::after {
+  opacity: 1;
+  right: -5px;
+}
+
+
+/* --- 3. TACTICAL SOCIAL MODULE --- */
+.q-social-module {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.q-social-module a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Fills with solid geometric color, NO rounds */
+.q-social-module a:hover {
+  background: #149ddd;
+  border-color: #149ddd;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* --- MOBILE RESPONSIVENESS OVERRIDE --- */
+@media (max-width: 1199px) {
+  #header.quantum-sidebar {
+    left: -300px !important;
+  }
+  #main {
+    margin-left: 0;
+  }
+}
+/* Ensure Bootstrap's mobile active class still works */
+.mobile-nav-active #header.quantum-sidebar {
+  left: 0 !important;
+}
+
+/* =========================================================
+ * FIX: FOOTER COLLISION & QUANTUM THEME INTEGRATION
+ * ========================================================= */
+
+/* 1. Push the social icons up so they don't hide behind the footer */
+.sidebar-core {
+  /* Changed bottom padding from 30px to 100px */
+  padding: 50px 30px 100px 30px !important; 
+}
+
+/* 2. Upgrade the old template footer to match the Quantum Void theme */
+#footer {
+  background: #02050a !important; /* Matches the deep void background exactly */
+  border-top: 1px solid rgba(20, 157, 221, 0.15) !important; /* Architectural dividing line */
+  width: 300px !important;
+  padding: 20px 0 !important;
+  z-index: 9999 !important;
+}
+
+/* 3. Style the "Designed by" text to look like system data */
+#footer .credits {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 1px !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  text-transform: uppercase !important;
+}
+
+#footer .credits a {
+  color: #149ddd !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+#footer .credits a:hover {
+  color: #ffffff !important;
+}
+
+/* 4. Ensure it hides properly on mobile alongside the sidebar */
+@media (max-width: 1199px) {
+  #footer {
+    left: -300px !important;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) !important;
+  }
+  .mobile-nav-active #footer {
+    left: 0 !important;
   }
 }
