@@ -3514,23 +3514,281 @@
     </main>
     <!-- End #main -->
 
-    <!-- Popup Modal -->
-    <div id="popup-modal" class="popup-modal">
-      <div class="popup-content">
-        <span id="popup-close" class="popup-close">&times;</span>
-        <h2>Your visit = little joy moment</h2>
-        <p>Follow me on Github Or I’ll cry, dramatically… with love</p>
-        <a
-          href="https://github.com/Jayanth0124"
-          target="_blank"
-          class="popup-button"
-          >Follow Me</a
-        >
-        <p class="popup-timer">
-          Closing in <span id="popup-timer-count">10</span>s
-        </p>
+    <div id="popup-modal" class="tactical-hud-modal">
+      <div class="hud-content">
+        <div class="hud-header">
+          <span class="hud-sys">SYS.ALERT </span>
+          <button
+            id="popup-close"
+            class="hud-close"
+            aria-label="Close Protocol"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <div class="hud-body">
+          <h2 class="hud-title">Your visit = little joy moment.</h2>
+          <p class="hud-desc">
+            Follow me on GitHub or I’ll cry, dramatically… with love.
+          </p>
+
+          <a
+            href="https://github.com/Jayanth0124"
+            target="_blank"
+            class="hud-action-btn"
+          >
+            <span class="btn-text">Initiate Follow</span>
+            <span class="btn-icon"><i class="bi bi-github"></i></span>
+          </a>
+        </div>
+
+        <div class="hud-timer-track">
+          <div class="hud-timer-fill"></div>
+        </div>
+
+        <div class="hud-timer-text">
+          AUTO_DISCONNECT IN <span id="popup-timer-count">10</span>S
+        </div>
       </div>
     </div>
+
+    <style>
+      /* --- GOD OF FRONTEND: TACTICAL HUD CSS --- */
+
+      .tactical-hud-modal {
+        position: fixed;
+        bottom: 40px;
+        right: -500px; /* Hides exactly off-screen to the right by default */
+        width: 380px;
+        max-width: calc(100vw - 40px);
+        background: #ffffff;
+        border: 1px solid #173b6c; /* Theme dark blue */
+        border-left: 4px solid #149ddd; /* Architectural anchor */
+        box-shadow: 12px 12px 0px rgba(23, 59, 108, 0.05); /* Brutalist solid shadow */
+        z-index: 9999;
+        visibility: hidden;
+        transition:
+          right 0.6s cubic-bezier(0.19, 1, 0.22, 1),
+          visibility 0s linear 0.6s;
+      }
+
+      /* The Active State (Triggered by JS) */
+      .tactical-hud-modal.is-active {
+        right: 40px;
+        visibility: visible;
+        transition:
+          right 0.6s cubic-bezier(0.19, 1, 0.22, 1),
+          visibility 0s linear 0s;
+      }
+
+      /* Header */
+      .hud-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        border-bottom: 1px dashed rgba(23, 59, 108, 0.2);
+        background: rgba(23, 59, 108, 0.02);
+      }
+
+      .hud-sys {
+        font-family: "Poppins", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #149ddd;
+      }
+
+      .hud-close {
+        background: none;
+        border: none;
+        color: #173b6c;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 0;
+        transition:
+          transform 0.4s ease,
+          color 0.4s ease;
+      }
+
+      .hud-close:hover {
+        color: #149ddd;
+        transform: rotate(90deg); /* Satisfying mechanical click rotation */
+      }
+
+      /* Body */
+      .hud-body {
+        padding: 25px 20px;
+      }
+
+      .hud-title {
+        font-family: "Raleway", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #173b6c;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      .hud-desc {
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      /* Mechanical Button */
+      .hud-action-btn {
+        display: inline-flex;
+        align-items: stretch;
+        border: 1px solid rgba(23, 59, 108, 0.2);
+        text-decoration: none;
+        width: 100%;
+        transition: border-color 0.4s ease;
+      }
+
+      .hud-action-btn .btn-text {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #173b6c;
+        padding: 12px;
+        transition: color 0.4s ease;
+      }
+
+      .hud-action-btn .btn-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 15px;
+        border-left: 1px solid rgba(23, 59, 108, 0.2);
+        background: rgba(23, 59, 108, 0.03);
+        color: #173b6c;
+        font-size: 18px;
+        transition: all 0.4s ease;
+      }
+
+      .hud-action-btn:hover {
+        border-color: #173b6c;
+      }
+      .hud-action-btn:hover .btn-text {
+        color: #149ddd;
+      }
+      .hud-action-btn:hover .btn-icon {
+        background: #173b6c;
+        border-left-color: #173b6c;
+        color: #ffffff;
+      }
+
+      /* CSS Kinetic Timer */
+      .hud-timer-track {
+        width: 100%;
+        height: 3px;
+        background: rgba(23, 59, 108, 0.1);
+      }
+
+      .hud-timer-fill {
+        width: 100%;
+        height: 100%;
+        background: #149ddd;
+        transform-origin: left;
+      }
+
+      /* Triggers the 10 second physical shrink ONLY when the popup is active */
+      .tactical-hud-modal.is-active .hud-timer-fill {
+        animation: hud-shrink 10s linear forwards;
+      }
+
+      @keyframes hud-shrink {
+        from {
+          transform: scaleX(1);
+        }
+        to {
+          transform: scaleX(0);
+        }
+      }
+
+      .hud-timer-text {
+        text-align: right;
+        padding: 8px 20px;
+        font-family: "Poppins", sans-serif;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #888;
+        background: #fdfdfd;
+      }
+
+      /* --- MOBILE OPTIMIZATION --- */
+      @media (max-width: 768px) {
+        .tactical-hud-modal {
+          /* Changes from sliding in from the right, to sliding up from the bottom */
+          right: 20px;
+          left: 20px;
+          width: auto;
+          bottom: -500px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer shadow for mobile edges */
+          transition:
+            bottom 0.6s cubic-bezier(0.19, 1, 0.22, 1),
+            visibility 0s linear 0.6s;
+        }
+
+        .tactical-hud-modal.is-active {
+          bottom: 20px;
+          transition:
+            bottom 0.6s cubic-bezier(0.19, 1, 0.22, 1),
+            visibility 0s linear 0s;
+        }
+      }
+    </style>
+
+    <script>
+      /* --- GOD OF FRONTEND: TACTICAL HUD JS --- */
+      document.addEventListener("DOMContentLoaded", () => {
+        const popup = document.getElementById("popup-modal");
+        const closeBtn = document.getElementById("popup-close");
+        const timerDisplay = document.getElementById("popup-timer-count");
+
+        let countdown = 10;
+        let timerInterval;
+
+        // Launch the HUD 3 seconds after the page loads
+        setTimeout(() => {
+          popup.classList.add("is-active");
+
+          // Start the strict numerical countdown
+          timerInterval = setInterval(() => {
+            countdown--;
+            if (timerDisplay) {
+              timerDisplay.textContent = countdown;
+            }
+
+            if (countdown <= 0) {
+              closePopup();
+            }
+          }, 1000); // 1000ms = 1 second
+        }, 3000);
+
+        // Close logic
+        function closePopup() {
+          popup.classList.remove("is-active");
+          clearInterval(timerInterval);
+        }
+
+        // Manual close via X button
+        if (closeBtn) {
+          closeBtn.addEventListener("click", closePopup);
+        }
+      });
+    </script>
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
