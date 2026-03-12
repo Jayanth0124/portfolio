@@ -4,313 +4,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found | Jayanth Portfolio</title>
-    <meta name="description"
-        content="Oops! The page you're looking for on Jayanth's portfolio doesn’t exist. Return to the homepage or explore other sections.">
-    <meta name="keywords" content="Jayanth, 404, page not found, portfolio">
-    <meta name="author" content="Donavalli Jayanth">
-    <link rel="canonical" href="https://www.jayanth.site/404.html" />
-    <meta name="google-site-verification" content="RgDlIEHIkNAYH_iKQo5yOkA6BhKnkq2cjNAYhV8s9y0">
+    <title>404 - System Void | Jayanth Portfolio</title>
+    <meta name="description" content="The structural link you are attempting to access has been relocated or never existed.">
     <meta name="robots" content="noindex, follow">
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "404 Page Not Found",
-          "description": "The requested page on Jayanth's Portfolio was not found.",
-          "isPartOf": {
-            "@type": "WebSite",
-            "url": "https://www.jayanth.site/"
-          }
-        }
-        </script>
-        
-
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background: #0a0a0a;
+        /* --- GOD OF FRONTEND: ARCHITECTURAL SPLIT-BRUTALISM --- */
+        
+        :root {
+            --dark-bg: #173b6c;
+            --primary: #149ddd;
+            --light-bg: #ffffff;
+            --text-dark: #272829;
+            --text-light: #888888;
         }
 
-        canvas {
-            display: block;
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        /* 1. The Split Layout */
+        .split-architecture {
+            display: flex;
             width: 100vw;
             height: 100vh;
         }
 
-        #returnButton {
-            position: absolute;
-            bottom: 5vh;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 8px 16px;
-            background: none;
-            border: 2px solid #00ffcc;
-            color: #00ffcc;
-            font-family: 'Courier New', monospace;
-            font-size: clamp(12px, 2vw, 16px);
-            cursor: pointer;
-            z-index: 10;
-            white-space: nowrap;
+        /* --- LEFT SIDE: THE VISUAL VOID --- */
+        .split-visual {
+            flex: 1;
+            background: var(--dark-bg);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
 
-        #returnButton:hover {
-            background: rgba(0, 255, 204, 0.2);
+        /* Architectural Blueprint Grid Overlay */
+        .blueprint-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 1;
+        }
+
+        /* Pure CSS Infinite Marquee (Zero JS Lag) */
+        .marquee-wrapper {
+            position: absolute;
+            top: 50%;
+            left: -50%;
+            width: 200%;
+            transform: translateY(-50%) rotate(-15deg);
+            z-index: 2;
+            pointer-events: none;
+            display: flex;
+        }
+
+        .marquee-text {
+            font-family: "Raleway", sans-serif;
+            font-size: 15vw;
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+            animation: kinetic-scroll 40s linear infinite;
+        }
+
+        @keyframes kinetic-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* The Massive Wireframe 404 */
+        .giant-404 {
+            position: relative;
+            z-index: 5;
+            font-family: "Raleway", sans-serif;
+            font-size: clamp(10rem, 20vw, 25rem);
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1);
+            margin: 0;
+            line-height: 1;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            cursor: default;
+        }
+
+        /* Hover fills the wireframe with the primary brand blue */
+        .split-visual:hover .giant-404 {
+            color: var(--primary);
+            -webkit-text-stroke: 0px;
+            transform: scale(1.05);
+        }
+
+
+        /* --- RIGHT SIDE: EDITORIAL CONTENT --- */
+        .split-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            background: var(--light-bg);
+            position: relative;
+        }
+
+        .content-box {
+            max-width: 500px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: editorial-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes editorial-rise {
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Strict Technical Badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: rgba(20, 157, 221, 0.05);
+            border: 1px solid rgba(20, 157, 221, 0.2);
+            font-family: "Poppins", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Typography */
+        .error-title {
+            font-family: "Raleway", sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            line-height: 1.1;
+            margin: 0 0 20px 0;
+            letter-spacing: -1px;
+        }
+
+        .error-desc {
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin: 0 0 40px 0;
+        }
+
+        /* The Mechanical Button Component */
+        .mechanical-btn {
+            display: inline-flex;
+            align-items: stretch;
+            border: 1px solid rgba(23, 59, 108, 0.2);
+            text-decoration: none;
+            transition: border-color 0.4s ease;
+        }
+
+        .btn-text {
+            font-family: "Poppins", sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--dark-bg);
+            text-transform: uppercase;
+            padding: 16px 30px;
+            transition: color 0.4s ease;
+        }
+
+        .btn-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            border-left: 1px solid rgba(23, 59, 108, 0.2);
+            background: rgba(23, 59, 108, 0.02);
+            color: var(--dark-bg);
+            font-size: 20px;
+            transition: all 0.4s ease;
+        }
+
+        /* Physical shift on hover */
+        .mechanical-btn:hover {
+            border-color: var(--primary);
+        }
+
+        .mechanical-btn:hover .btn-text {
+            color: var(--primary);
+        }
+
+        .mechanical-btn:hover .btn-icon {
+            background: var(--primary);
+            border-left-color: var(--primary);
+            color: #ffffff;
+        }
+
+        .mechanical-btn:hover .btn-icon i {
+            transform: translateX(4px);
+            transition: transform 0.3s ease;
+        }
+
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 991px) {
+            .split-architecture {
+                flex-direction: column;
+            }
+
+            .split-visual {
+                flex: none;
+                height: 40vh; /* Takes up top portion */
+            }
+
+            .split-content {
+                flex: none;
+                height: 60vh;
+                padding: 10% 8%;
+                align-items: flex-start;
+            }
+
+            .giant-404 {
+                font-size: 35vw;
+            }
+
+            .error-title {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <button id="returnButton">Return to Home</button>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-            }
-        }
-    </script>
-    <script type="module">
-        import * as THREE from 'three';
-        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-        import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
-        import { FontLoader } from 'three/addons/loaders/FontLoader.js';
-        import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-        import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-        import { GlitchPass } from 'three/addons/postprocessing/GlitchPass.js';
 
-        // Scene Setup
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        document.body.appendChild(renderer.domElement);
+    <div class="split-architecture">
+        
+        <div class="split-visual">
+            <div class="blueprint-grid"></div>
+            
+            <div class="marquee-wrapper">
+                <div class="marquee-text">PAGE NOT FOUND &mdash; 404 &mdash; PAGE NOT FOUND &mdash; 404 &mdash; PAGE NOT FOUND &mdash; 404 &mdash;&nbsp;</div>
+            </div>
 
-        // Orbit Controls
-        const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.05;
+            <h1 class="giant-404">404</h1>
+        </div>
 
-        // Responsive Camera Position
-        function updateCameraPosition() {
-            const width = window.innerWidth;
-            camera.position.z = width < 600 ? 40 : 50;
-            camera.fov = width < 600 ? 90 : 75;
-            camera.updateProjectionMatrix();
-        }
-        updateCameraPosition();
+        <div class="split-content">
+            <div class="content-box">
+                <div class="status-badge">
+                    <span class="pulse-dot"></span>
+                    SYS.STATUS // ORPHANED_LINK
+                </div>
+                
+                <h2 class="error-title">Architectural anomaly detected.</h2>
+                <p class="error-desc">
+                    The structural coordinate you are attempting to access is outside the current digital scope. It has either been relocated, archived, or never existed within this framework.
+                </p>
+                
+                <a href="index.html" class="mechanical-btn">
+                    <span class="btn-text">Return to Origin</span>
+                    <div class="btn-icon">
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-        // Lighting
-        const ambientLight = new THREE.AmbientLight(0x404040);
-        scene.add(ambientLight);
-        const neonLight = new THREE.PointLight(0x00ffcc, 2, 100);
-        neonLight.position.set(0, 20, 20);
-        scene.add(neonLight);
+    </div>
 
-        // Responsive Scaling Factor
-        const scaleFactor = Math.min(window.innerWidth / 1200, 1);
-
-        // 404 Text
-        const loader = new FontLoader();
-        let textMesh404, textMeshError;
-        loader.load('https://threejs.org/examples/fonts/helvetiker_bold.typeface.json', (font) => {
-            // 404 Text
-            const textGeometry404 = new TextGeometry('404', {
-                font: font,
-                size: 20 * scaleFactor,
-                height: 2 * scaleFactor,
-                curveSegments: 12,
-            });
-            const textMaterial = new THREE.MeshPhongMaterial({ color: 0x00ffcc, emissive: 0x00ffcc, emissiveIntensity: 0.5 });
-            textMesh404 = new THREE.Mesh(textGeometry404, textMaterial);
-            textMesh404.position.set(-30 * scaleFactor, 10 * scaleFactor, 0);
-            textMesh404.name = '404';
-            scene.add(textMesh404);
-
-            // Glitch Animation for 404
-            gsap.to(textMesh404.position, {
-                x: `-=${5 * scaleFactor}`,
-                yoyo: true,
-                repeat: -1,
-                duration: 0.1,
-                ease: 'power1.inOut',
-                onRepeat: () => {
-                    if (Math.random() > 0.9) textMesh404.position.x += 10 * scaleFactor;
-                }
-            });
-
-            // "ERROR NOT FOUND" Text
-            const textGeometryError = new TextGeometry('ERROR NOT FOUND', {
-                font: font,
-                size: 8 * scaleFactor,
-                height: 1 * scaleFactor,
-                curveSegments: 12,
-            });
-            textMeshError = new THREE.Mesh(textGeometryError, textMaterial);
-
-            // Adjust position based on screen size
-            const errorTextX = window.innerWidth < 600 ? -40 * scaleFactor : -30 * scaleFactor;
-            textMeshError.position.set(errorTextX, -10 * scaleFactor, 0);
-            textMeshError.name = 'error';
-            scene.add(textMeshError);
-
-            // Slight Glitch Animation for "ERROR NOT FOUND"
-            gsap.to(textMeshError.position, {
-                x: `-=${3 * scaleFactor}`,
-                yoyo: true,
-                repeat: -1,
-                duration: 0.15,
-                ease: 'power1.inOut',
-                onRepeat: () => {
-                    if (Math.random() > 0.95) textMeshError.position.x += 6 * scaleFactor;
-                }
-            });
-        });
-
-        // Floating Cyber Panels
-        const panelGeometry = new THREE.PlaneGeometry(20 * scaleFactor, 10 * scaleFactor);
-        const panelMaterial = new THREE.MeshBasicMaterial({ color: 0x00ffcc, transparent: true, opacity: 0.3, side: THREE.DoubleSide });
-        const panels = [];
-        for (let i = 0; i < 3; i++) {
-            const panel = new THREE.Mesh(panelGeometry, panelMaterial);
-            panel.position.set(
-                (Math.random() * 50 - 25) * scaleFactor,
-                (Math.random() * 30 - 15) * scaleFactor,
-                (Math.random() * 20 - 10) * scaleFactor
-            );
-            scene.add(panel);
-            panels.push(panel);
-
-         
-            gsap.to(panel.position, {
-                y: `+=${5 * scaleFactor}`,
-                yoyo: true,
-                repeat: -1,
-                duration: 2 + Math.random(),
-                ease: 'sine.inOut'
-            });
-        }
-
-        const particleCount = window.innerWidth < 600 ? 200 : 500;
-        const particleGeometry = new THREE.BufferGeometry();
-        const positions = new Float32Array(particleCount * 3);
-        const particleBounds = 200; // Larger bounds for particles
-        for (let i = 0; i < particleCount * 3; i++) {
-            positions[i] = (Math.random() - 0.5) * particleBounds;
-        }
-        particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        const particleMaterial = new THREE.PointsMaterial({ color: 0x00ffcc, size: 0.5 * scaleFactor, transparent: true });
-        const particles = new THREE.Points(particleGeometry, particleMaterial);
-        scene.add(particles);
-
-        // Function to make particles appear infinite
-        function updateParticles() {
-            const positions = particles.geometry.attributes.position.array;
-            const cameraPos = camera.position;
-
-            for (let i = 0; i < particleCount; i++) {
-                const i3 = i * 3;
-                const x = positions[i3];
-                const y = positions[i3 + 1];
-                const z = positions[i3 + 2];
-
-                // Reposition particles if they are too far from the camera
-                if (Math.abs(x - cameraPos.x) > particleBounds / 2) {
-                    positions[i3] = x > cameraPos.x ? x - particleBounds : x + particleBounds;
-                }
-                if (Math.abs(y - cameraPos.y) > particleBounds / 2) {
-                    positions[i3 + 1] = y > cameraPos.y ? y - particleBounds : y + particleBounds;
-                }
-                if (Math.abs(z - cameraPos.z) > particleBounds / 2) {
-                    positions[i3 + 2] = z > cameraPos.z ? z - particleBounds : z + particleBounds;
-                }
-            }
-            particles.geometry.attributes.position.needsUpdate = true;
-        }
-
-        // Background Grid
-        const gridHelper = new THREE.GridHelper(200 * scaleFactor, 50, 0x00ffcc, 0x00ffcc);
-        gridHelper.position.z = -50 * scaleFactor;
-        gridHelper.material.opacity = 0.2;
-        gridHelper.material.transparent = true;
-        scene.add(gridHelper);
-
-        // Post-processing (Glitch Effect)
-        const composer = new EffectComposer(renderer);
-        const renderPass = new RenderPass(scene, camera);
-        composer.addPass(renderPass);
-        const glitchPass = new GlitchPass();
-        glitchPass.goWild = false;
-        composer.addPass(glitchPass);
-
-        // Interactive Hover Effects
-        const raycaster = new THREE.Raycaster();
-        const mouse = new THREE.Vector2();
-        window.addEventListener('mousemove', (event) => {
-            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-            raycaster.setFromCamera(mouse, camera);
-
-            const objectsToIntersect = [...panels];
-            if (textMesh404) objectsToIntersect.push(textMesh404);
-            if (textMeshError) objectsToIntersect.push(textMeshError);
-
-            const intersects = raycaster.intersectObjects(objectsToIntersect);
-            intersects.forEach((intersect) => {
-                gsap.to(intersect.object.scale, { x: 1.1, y: 1.1, z: 1.1, duration: 0.3, yoyo: true, repeat: 1 });
-            });
-        });
-
-        // Touch Support for Mobile
-        window.addEventListener('touchmove', (event) => {
-            const touch = event.touches[0];
-            mouse.x = (touch.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = -(touch.clientY / window.innerHeight) * 2 + 1;
-            raycaster.setFromCamera(mouse, camera);
-
-            const objectsToIntersect = [...panels];
-            if (textMesh404) objectsToIntersect.push(textMesh404);
-            if (textMeshError) objectsToIntersect.push(textMeshError);
-
-            const intersects = raycaster.intersectObjects(objectsToIntersect);
-            intersects.forEach((intersect) => {
-                gsap.to(intersect.object.scale, { x: 1.1, y: 1.1, z: 1.1, duration: 0.3, yoyo: true, repeat: 1 });
-            });
-        });
-
-        // Return Button Animation
-        const returnButton = document.getElementById('returnButton');
-        gsap.to(returnButton, { opacity: 0.7, yoyo: true, repeat: -1, duration: 1 });
-        returnButton.addEventListener('click', () => window.location.href = '/');
-
-        // Animation Loop
-        function animate() {
-            requestAnimationFrame(animate);
-            controls.update();
-            updateParticles(); // Update particles for infinite effect
-            composer.render();
-        }
-        animate();
-
-        // Responsive Resize
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            updateCameraPosition();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            composer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-            // Update "ERROR NOT FOUND" position on resize
-            if (textMeshError) {
-                const errorTextX = window.innerWidth < 600 ? -40 * scaleFactor : -30 * scaleFactor;
-                textMeshError.position.set(errorTextX, -10 * scaleFactor, 0);
-            }
-        });
-    </script>
 </body>
-
 </html>
