@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Jayanth Donavalli | Projects </title>
-    <meta name="title" content="Jayanth Donavalli | Projects ">
+    <title>Jayanth Donavalli | Projects</title>
+    <meta name="title" content="Jayanth Donavalli | Projects">
     <meta name="description" content="Explore the advanced web development, AI, and IoT project portfolio of Jayanth Donavalli. Discover responsive websites, dynamic applications, and elite frontend architecture.">
     <meta name="author" content="Jayanth Donavalli">
     <meta name="keywords" content="Jayanth Donavalli, Frontend Developer, Web Projects, React, JavaScript, UI/UX, AI Projects, Web Development Portfolio">
@@ -30,7 +30,8 @@
 
     <meta name="theme-color" content="#173b6c">
     <link href="assets/img/jayanth.png" rel="icon">
-    <link href="assets/img/jayanth.png" rel="apple-touch-icon"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="assets/img/jayanth.png" rel="apple-touch-icon"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -66,7 +67,7 @@
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #ffffff;
-            color: #444444; /* Soft text color */
+            color: #444444; 
             overflow-x: hidden;
             width: 100vw; 
             max-width: 100%;
@@ -74,16 +75,16 @@
 
         #main {
             overflow-x: hidden; 
+            /* Fixes the overlap issue by pushing content past the 300px sidebar */
+            margin-left: 300px;
         }
 
-        /* Header Section */
         .elite-header {
             padding: 80px 0 40px;
-            border-bottom: 1px solid rgba(23, 59, 108, 0.15); /* Theme faint line */
+            border-bottom: 1px solid rgba(23, 59, 108, 0.15); 
             margin-bottom: 80px;
         }
 
-        /* Architectural Typography */
         .mega-title {
             font-family: 'Raleway', sans-serif;
             font-size: clamp(3rem, 7vw, 5.5rem);
@@ -93,22 +94,20 @@
             letter-spacing: -2px;
             margin-bottom: 0;
             word-wrap: break-word;
-            color: #173b6c; /* Theme Dark Blue */
+            color: #173b6c; 
         }
 
         .mega-title .outline {
             color: transparent;
-            /* Wireframe text matching your brand */
             -webkit-text-stroke: 1.5px rgba(23, 59, 108, 0.3);
             transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
         .mega-title:hover .outline {
-            color: #149ddd; /* Fills with Primary Blue on hover */
+            color: #149ddd; 
             -webkit-text-stroke: 0px;
         }
 
-        /* Controls / Filters */
         .controls {
             display: flex;
             justify-content: space-between;
@@ -143,7 +142,6 @@
             -webkit-text-stroke: 1px #173b6c;
         }
 
-        /* Search Input matched to theme */
         .search-input {
             border: none;
             border-bottom: 2px solid rgba(23, 59, 108, 0.2);
@@ -158,19 +156,16 @@
             transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s ease;
         }
 
-        .search-input::placeholder {
-            color: rgba(23, 59, 108, 0.4);
-        }
+        .search-input::placeholder { color: rgba(23, 59, 108, 0.4); }
 
         .search-input:focus {
             outline: none;
             width: 350px;
             max-width: 100%;
-            border-bottom-color: #149ddd; /* Snaps to primary blue */
+            border-bottom-color: #149ddd; 
             box-shadow: none;
         }
 
-        /* Alternating Project Layout */
         .projects-wrapper {
             display: flex;
             flex-direction: column;
@@ -188,8 +183,6 @@
             transform: translateY(40px);
             transition: opacity 1s ease, transform 1s ease;
             width: 100%;
-            
-            /* Prepares the space for our custom divider */
             padding-bottom: 60px; 
             position: relative; 
         }
@@ -203,12 +196,6 @@
             flex-direction: row-reverse;
         }
 
-        /* =========================================================
-         * THE MASTERPIECE: BLUEPRINT CROSSHAIR NODE DIVIDER
-         * Uses pure CSS. Zero images. Zero page weight.
-         * ========================================================= */
-
-        /* 1. The Fading Track Line */
         .project-row:not(:last-child)::after {
             content: '';
             position: absolute;
@@ -216,39 +203,35 @@
             left: 0;
             width: 100%;
             height: 1px;
-            /* Fades out smoothly at the 0% and 100% edges */
             background: linear-gradient(90deg, transparent 0%, rgba(23, 59, 108, 0.15) 15%, rgba(23, 59, 108, 0.15) 85%, transparent 100%);
             z-index: 1;
         }
 
-        /* 2. The Kinetic Geometric Node */
         .project-row:not(:last-child)::before {
             content: '+';
             position: absolute;
-            bottom: -11px; /* Perfectly centers the crosshair vertically on the line */
+            bottom: -11px; 
             left: 50%;
             transform: translateX(-50%);
             font-family: 'Open Sans', sans-serif;
             font-size: 18px;
             font-weight: 300;
-            color: #149ddd; /* Theme primary blue */
-            background-color: #ffffff; /* 'Cuts' the line behind it */
-            padding: 0 20px; /* Creates beautiful negative space around the crosshair */
+            color: #149ddd; 
+            background-color: #ffffff; 
+            padding: 0 20px; 
             z-index: 2;
             transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), color 0.4s ease;
         }
 
-        /* The satisfying mechanical rotation on hover */
         .project-row:hover:not(:last-child)::before {
             transform: translateX(-50%) rotate(90deg);
-            color: #173b6c; /* Shifts to dark theme blue */
+            color: #173b6c; 
         }
 
         .project-image-container {
             width: 55%;
             position: relative;
             overflow: hidden;
-            /* Strict architectural border */
             border: 1px solid rgba(23, 59, 108, 0.1);
         }
 
@@ -260,23 +243,19 @@
             transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
-        /* Subtle image zoom on row hover */
         .project-row:hover .project-image-container img {
             transform: scale(1.03);
         }
 
-        .project-info {
-            width: 39%;
-        }
+        .project-info { width: 39%; }
 
-        /* Micro-typography for Tech Stack */
         .elite-tech-stack {
             font-family: 'Poppins', sans-serif;
             font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #149ddd; /* Theme primary blue */
+            color: #149ddd; 
             margin-bottom: 15px;
             display: flex;
             flex-wrap: wrap;
@@ -288,7 +267,7 @@
             font-family: 'Raleway', sans-serif;
             font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 800;
-            color: #173b6c; /* Theme dark blue */
+            color: #173b6c; 
             letter-spacing: -0.5px;
             margin-bottom: 20px;
             line-height: 1.1;
@@ -303,7 +282,6 @@
             margin-bottom: 35px;
         }
 
-        /* Elite Animated Links */
         .link-group {
             display: flex;
             flex-direction: column;
@@ -353,7 +331,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background-color: #149ddd; /* Sweeps in primary blue */
+            background-color: #149ddd; 
             transform: translateX(-101%);
             transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
         }
@@ -369,9 +347,13 @@
             color: #888;
         }
 
-        /* =========================================================
-         * PERFECT MOBILE COLLAPSE
-         * ========================================================= */
+        /* Mobile Collapse */
+        @media (max-width: 1199px) {
+            #main {
+                margin-left: 0;
+            }
+        }
+
         @media (max-width: 992px) {
             .elite-header {
                 padding: 40px 0 20px;
@@ -384,30 +366,22 @@
                 gap: 25px;
             }
 
-            .search-input, .search-input:focus {
-                width: 100%;
-            }
+            .search-input, .search-input:focus { width: 100%; }
 
-            .projects-wrapper {
-                gap: 40px; /* Reduced gap for mobile */
-            }
+            .projects-wrapper { gap: 40px; }
 
             .project-row, 
             .project-row:nth-child(even) {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 25px;
-                padding-bottom: 40px; /* Reduced bottom padding for the line on mobile */
+                padding-bottom: 40px; 
             }
 
-            .project-row:last-child {
-                padding-bottom: 0;
-            }
+            .project-row:last-child { padding-bottom: 0; }
 
             .project-image-container, 
-            .project-info {
-                width: 100%;
-            }
+            .project-info { width: 100%; }
         }
     </style>
 </head>
@@ -416,35 +390,47 @@
 
     <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-    <header id="header">
-        <div class="d-flex flex-column">
-            <div class="profile">
-                <img src="assets/img/dp1.jpg" alt="Headshot of Jayanth Donavalli" class="img-fluid square">
-                <h1 class="text-light"><a href="index.html">Jayanth</a></h1>
-                <div class="social-links mt-3 text-center">
-                    <a href="https://twitter.com/jayanth0124" class="twitter" aria-label="Visit Twitter profile"><i class="bx bxl-twitter"></i></a>
-                    <a href="https://www.facebook.com/jayanth0124" class="facebook" aria-label="Visit Facebook profile"><i class="bx bxl-facebook"></i></a>
-                    <a href="https://www.instagram.com/jayanth.chowdary__/" class="instagram" aria-label="Visit Instagram profile"><i class="bx bxl-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/jayanth-donavalli-b835491b1" class="linkedin" aria-label="Visit LinkedIn profile"><i class="bx bxl-linkedin"></i></a>
-                </div>
-            </div>
-
-            <nav id="navbar" class="nav-menu navbar">
-                <ul>
-                    <li><a href="index.html#hero" class="nav-link scrollto"><i class="bx bx-home"></i><span>Home</span></a></li>
-                    <li><a href="index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i><span>About</span></a></li>
-                    <li><a href="projects.html" class="nav-link scrollto active"><i class="bx bx-task"></i><span>Projects</span></a></li>
-                    <li><a href="index.html#education" class="nav-link scrollto"><i class="bx bx-book"></i><span>Education</span></a></li>
-                    <li><a href="index.html#awards" class="nav-link scrollto"><i class="bx bx-award"></i><span>Awards</span></a></li>
-                    <li><a href="index.html#interests" class="nav-link scrollto"><i class="bx bx-heart"></i><span>Interests</span></a></li>
-                    <li><a href="index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i><span>Contact</span></a></li>
-                </ul>
-            </nav>
+    <header id="header" class="quantum-sidebar">
+      <div class="q-grid-overlay"></div>
+      <div class="sidebar-core">
+        
+        <div class="q-profile-module">
+          <div class="q-frame-wrapper">
+            <div class="q-wireframe"></div>
+            <img src="assets/img/dp1.jpg" alt="Jayanth Donavalli" class="img-fluid q-profile-img">
+            <div class="q-target-corners"></div>
+          </div>
+          <h1 class="q-signature"><a href="index.html">Jayanth.</a></h1>
+          <div class="q-status-badge">
+            <span class="q-pulse-dot"></span>
+            <span class="q-status-txt">SYS.ARCHITECT // ACTIVE</span>
+          </div>
         </div>
+
+        <nav id="navbar" class="q-nav-menu">
+          <div class="nav-track-line"></div>
+          <ul>
+            <li><a href="index.html#hero" class="nav-link scrollto"><i class="bx bx-home"></i><span class="n-text">Home</span></a></li>
+            <li><a href="index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i><span class="n-text">About</span></a></li>
+            <li><a href="projects.html" class="nav-link scrollto active"><i class="bx bx-task"></i><span class="n-text">Projects</span></a></li>
+            <li><a href="index.html#education" class="nav-link scrollto"><i class="bx bx-book"></i><span class="n-text">Education</span></a></li>
+            <li><a href="index.html#awards" class="nav-link scrollto"><i class="bx bx-award"></i><span class="n-text">Awards</span></a></li>
+            <li><a href="index.html#interests" class="nav-link scrollto"><i class="bx bx-heart"></i><span class="n-text">Interests</span></a></li>
+            <li><a href="index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i><span class="n-text">Contact</span></a></li>
+          </ul>
+        </nav>
+
+        <div class="q-social-module">
+          <a href="https://twitter.com/jayanth0124" target="_blank" rel="noopener"><i class="bx bxl-twitter"></i></a>
+          <a href="https://www.facebook.com/jayanth0124" target="_blank" rel="noopener"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.instagram.com/jayanth.chowdary__/" target="_blank" rel="noopener"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/jayanth-donavalli" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+      </div>
     </header>
 
     <main id="main">
-
         <section id="portfolio-details" class="portfolio-details pt-0">
             <div class="container">
                 
@@ -469,7 +455,6 @@
 
             </div>
         </section>
-
     </main>
 
     <script src="assets/vendor/aos/aos.js"></script>
@@ -593,7 +578,6 @@
             const searchInput = document.getElementById('searchInput');
 
             function createProjectCard(project) {
-                // Theme-matched tech stack separator
                 const techStackHTML = project.techStack.map(t => `<span>${t}</span>`).join('<span style="color: rgba(23, 59, 108, 0.3);">/</span>');
                 
                 let buttonsHTML = '';
