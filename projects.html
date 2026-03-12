@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link href="assets/img/jayanth.png" rel="icon">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -24,39 +24,50 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
     <style>
-        /* --- ELITE MINIMAL OVERRIDES --- */
+        /* --- GOD-TIER THEME INTEGRATION --- */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background-color: #ffffff;
-            color: #000000;
+            color: #444444; /* Soft text color */
             overflow-x: hidden;
+            width: 100vw; 
+            max-width: 100%;
+        }
+
+        #main {
+            overflow-x: hidden; 
         }
 
         /* Header Section */
         .elite-header {
             padding: 80px 0 40px;
-            border-bottom: 1px solid #e5e5e5;
+            border-bottom: 1px solid rgba(23, 59, 108, 0.15); /* Theme faint line */
             margin-bottom: 80px;
         }
 
+        /* Architectural Typography */
         .mega-title {
-            font-family: 'Syne', sans-serif;
-            font-size: 5rem;
-            font-weight: 800;
-            line-height: 1;
+            font-family: 'Raleway', sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.05;
             text-transform: uppercase;
             letter-spacing: -2px;
             margin-bottom: 0;
+            word-wrap: break-word;
+            color: #173b6c; /* Theme Dark Blue */
         }
 
         .mega-title .outline {
             color: transparent;
-            -webkit-text-stroke: 1px #000;
-            transition: color 0.5s ease;
+            /* Wireframe text matching your brand */
+            -webkit-text-stroke: 1.5px rgba(23, 59, 108, 0.3);
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
         .mega-title:hover .outline {
-            color: #000;
+            color: #149ddd; /* Fills with Primary Blue on hover */
+            -webkit-text-stroke: 0px;
         }
 
         /* Controls / Filters */
@@ -71,41 +82,53 @@
 
         .filter-buttons {
             display: flex;
-            gap: 30px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .filter-btn {
             background: none;
             border: none;
             padding: 0;
-            font-family: 'Syne', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-weight: 700;
             color: transparent;
-            -webkit-text-stroke: 1px #aaa;
+            -webkit-text-stroke: 1px rgba(23, 59, 108, 0.4);
             text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.4s ease;
         }
 
         .filter-btn:hover, .filter-btn.active {
-            color: #000;
-            -webkit-text-stroke: 1px #000;
+            color: #173b6c;
+            -webkit-text-stroke: 1px #173b6c;
         }
 
+        /* Search Input matched to theme */
         .search-input {
             border: none;
-            border-bottom: 2px solid #000;
+            border-bottom: 2px solid rgba(23, 59, 108, 0.2);
             border-radius: 0;
             padding: 10px 0;
+            font-family: 'Poppins', sans-serif;
             font-size: 1rem;
+            color: #173b6c;
             width: 250px;
+            max-width: 100%;
             background: transparent;
-            transition: width 0.4s ease;
+            transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s ease;
+        }
+
+        .search-input::placeholder {
+            color: rgba(23, 59, 108, 0.4);
         }
 
         .search-input:focus {
             outline: none;
             width: 350px;
+            max-width: 100%;
+            border-bottom-color: #149ddd; /* Snaps to primary blue */
             box-shadow: none;
         }
 
@@ -113,18 +136,20 @@
         .projects-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 150px;
+            gap: 120px;
             padding-bottom: 100px;
+            width: 100%;
         }
 
         .project-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 5%;
+            gap: 6%;
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s ease, transform 1s ease;
+            width: 100%;
         }
 
         .project-row.visible {
@@ -132,56 +157,67 @@
             transform: translateY(0);
         }
 
-        /* Even items swap direction */
         .project-row:nth-child(even) {
             flex-direction: row-reverse;
         }
 
         .project-image-container {
-            width: 60%;
-            overflow: hidden;
+            width: 55%;
             position: relative;
+            overflow: hidden;
+            /* Added strict architectural border */
+            border: 1px solid rgba(23, 59, 108, 0.1);
         }
 
-        /* Static Image Styling */
         .project-image-container img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        /* Subtle image zoom on row hover */
+        .project-row:hover .project-image-container img {
+            transform: scale(1.03);
         }
 
         .project-info {
-            width: 35%;
+            width: 39%;
         }
 
         /* Micro-typography for Tech Stack */
         .elite-tech-stack {
-            font-size: 0.65rem;
-            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #888;
-            margin-bottom: 20px;
+            color: #149ddd; /* Theme primary blue */
+            margin-bottom: 15px;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
+            align-items: center;
         }
 
         .project-title {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.5rem;
+            font-family: 'Raleway', sans-serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 800;
-            letter-spacing: -1px;
+            color: #173b6c; /* Theme dark blue */
+            letter-spacing: -0.5px;
             margin-bottom: 20px;
             line-height: 1.1;
+            word-wrap: break-word;
         }
 
         .project-desc {
-            font-size: 1rem;
-            font-weight: 300;
-            color: #444;
-            line-height: 1.6;
-            margin-bottom: 40px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 35px;
         }
 
         /* Elite Animated Links */
@@ -196,26 +232,31 @@
             align-items: center;
             justify-content: space-between;
             width: max-content;
-            font-family: 'Syne', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #000;
+            max-width: 100%;
+            font-family: 'Raleway', sans-serif;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            font-weight: 700;
+            color: #173b6c;
             text-decoration: none;
             padding-bottom: 5px;
-            border-bottom: 2px solid #000;
+            border-bottom: 1px solid rgba(23, 59, 108, 0.2);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            gap: 20px;
+            gap: 15px;
+            white-space: normal;
         }
 
         .elite-link i {
             font-size: 1.2rem;
             transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            flex-shrink: 0;
+            color: #149ddd;
         }
 
         .elite-link:hover {
-            color: #000;
+            color: #149ddd;
+            border-bottom-color: transparent;
         }
 
         .elite-link:hover i {
@@ -225,36 +266,60 @@
         .elite-link::after {
             content: '';
             position: absolute;
-            bottom: -2px;
+            bottom: -1px;
             left: 0;
             width: 100%;
             height: 2px;
-            background-color: #fff;
+            background-color: #149ddd; /* Sweeps in primary blue */
             transform: translateX(-101%);
             transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
         .elite-link:hover::after {
-            transform: translateX(101%);
+            transform: translateX(0);
         }
 
         .github-stats {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 0.8rem;
-            font-weight: 400;
+            font-weight: 500;
             color: #888;
         }
 
+        /* =========================================================
+         * PERFECT MOBILE COLLAPSE
+         * ========================================================= */
         @media (max-width: 992px) {
-            .project-row, .project-row:nth-child(even) {
-                flex-direction: column;
-                gap: 30px;
+            .elite-header {
+                padding: 40px 0 20px;
+                margin-bottom: 50px;
             }
-            .project-image-container, .project-info {
+
+            .controls {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+            }
+
+            .search-input, .search-input:focus {
                 width: 100%;
             }
-            .mega-title { font-size: 3rem; }
-            .search-input { width: 100%; }
+
+            .projects-wrapper {
+                gap: 80px;
+            }
+
+            .project-row, 
+            .project-row:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+            }
+
+            .project-image-container, 
+            .project-info {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -440,12 +505,11 @@
             const searchInput = document.getElementById('searchInput');
 
             function createProjectCard(project) {
-                // High-end microscopic tech stack
-                const techStackHTML = project.techStack.map(t => `<span>${t}</span>`).join('<span style="color:#ddd;">/</span>');
+                // Theme-matched tech stack separator
+                const techStackHTML = project.techStack.map(t => `<span>${t}</span>`).join('<span style="color: rgba(23, 59, 108, 0.3);">/</span>');
                 
                 let buttonsHTML = '';
                 
-                // EXCLUSIVE LOGIC FOR ID 13 (The 2 Buttons remain the only structural difference)
                 if (project.id === 13) {
                     buttonsHTML = `
                         <a href="${project.demoUrl}" target="_blank" rel="noopener" class="elite-link">
@@ -508,12 +572,11 @@
             function renderProjects(projectsToRender = projects) {
                 const grid = document.getElementById('projectsGrid');
                 if (projectsToRender.length === 0) {
-                    grid.innerHTML = `<p style="text-align:center; width:100%; color:#888; font-size:1.5rem; font-family:'Syne', sans-serif;">No archive items found.</p>`;
+                    grid.innerHTML = `<p style="text-align:center; width:100%; color:#888; font-size:1.5rem; font-family:'Raleway', sans-serif;">No archive items found.</p>`;
                     return;
                 }
                 grid.innerHTML = projectsToRender.map(createProjectCard).join('');
 
-                // Staggered entrance animation
                 setTimeout(() => {
                     document.querySelectorAll('.project-row').forEach((row, i) => {
                         setTimeout(() => row.classList.add('visible'), i * 150);
