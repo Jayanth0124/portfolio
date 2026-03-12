@@ -3424,146 +3424,177 @@
           });
       </script>
 
-      <!-- Footer -->
       <footer class="footer">
-        <div class="social-card">
-          <a
-            href="https://www.facebook.com/jayanth0124"
-            class="Btn facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bx bxl-facebook"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/jayanth-donavalli"
-            class="Btn linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bx bxl-linkedin"></i>
-          </a>
-          <a
-            href="https://x.com/jayanth0124"
-            class="Btn twitter"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bx bxl-twitter"></i>
-          </a>
-          <a
-            href="https://github.com/jayanth0124"
-            class="Btn github"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bx bxl-github"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/jayanth.chowdary__"
-            class="Btn instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bx bxl-instagram"></i>
-          </a>
-          <a
-            href="mailto:jayanthdonavalli0124@gmail.com"
-            class="Btn email"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bx bxs-envelope"></i>
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=917207288496"
-            class="Btn whatsapp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bx bxl-whatsapp"></i>
-          </a>
-          <a
-            href="https://t.me/+917207288496"
-            class="Btn telegram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bx bxl-telegram"></i>
-          </a>
+        <div class="footer-container">
+          <div class="copyright-notice">
+            DONAVALLI JAYANTH <span class="separator">//</span> SOFTWARE
+            ENGINEER
+          </div>
+
+          <div class="social-card">
+            <a
+              href="https://www.facebook.com/jayanth0124"
+              class="Btn facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bx bxl-facebook"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jayanth-donavalli"
+              class="Btn linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bx bxl-linkedin"></i>
+            </a>
+            <!-- <a
+              href="https://x.com/jayanth0124"
+              class="Btn twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bx bxl-twitter"></i>
+            </a> -->
+            <a
+              href="https://github.com/jayanth0124"
+              class="Btn github"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bx bxl-github"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/jayanth.chowdary__"
+              class="Btn instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bx bxl-instagram"></i>
+            </a>
+            <a
+              href="mailto:jayanthdonavalli0124@gmail.com"
+              class="Btn email"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bx bxs-envelope"></i>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send?phone=917207288496"
+              class="Btn whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bx bxl-whatsapp"></i>
+            </a>
+            <a
+              href="https://t.me/+917207288496"
+              class="Btn telegram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bx bxl-telegram"></i>
+            </a>
+          </div>
+
+          <div class="footer-bottom-line">© 2026 ALL RIGHTS RESERVED</div>
         </div>
       </footer>
 
       <style>
-        /* Footer styling */
+        /* Base Footer Container */
         .footer {
-          background-color: #1f2937;
-          /* Dark background color for the footer */
-          padding: 20px 0;
+          background-color: #02050a; /* Matches your Sidebar dark theme */
+          padding: 60px 0 40px 0;
           text-align: center;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          margin-top: 0;
         }
 
+        .footer-container {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* Copyright Section Styling */
+        .copyright-notice {
+          font-family: "Poppins", sans-serif;
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: 4px;
+          color: #fff;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+        }
+
+        .copyright-notice .separator {
+          color: #149ddd; /* Your signature blue */
+          margin: 0 10px;
+          font-weight: 300;
+        }
+
+        /* Social Icons Grid */
         .social-card {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 20px;
-          padding: 10px;
-          border-radius: 14px;
+          gap: 15px;
+          flex-wrap: wrap;
+          margin-bottom: 40px;
         }
 
         .Btn {
-          width: 45px;
-          height: 45px;
+          width: 50px;
+          height: 50px;
           display: flex;
           align-items: center;
           justify-content: center;
-          border: none;
-          background-color: transparent;
-          position: relative;
-          border-radius: 50%;
-          cursor: pointer;
-          transition: all 0.3s;
-          font-size: 24px;
-          /* Adjust as needed */
+          background-color: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 4px; /* Professional square-ish look */
+          transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+          text-decoration: none;
         }
 
-        .Btn .bx {
-          color: white;
-          transition: color 0.3s;
+        .Btn i {
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 22px;
+          transition: 0.3s;
         }
 
-        .Btn:hover .bx {
-          color: #38bdf8;
-          /* Change to desired hover color */
+        /* Hover Effects - Modern Architectural Pop */
+        .Btn:hover {
+          background-color: #149ddd;
+          border-color: #149ddd;
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(20, 157, 221, 0.2);
         }
 
-        .facebook .Btn:hover .bx {
-          color: #1877f2;
+        .Btn:hover i {
+          color: #fff;
         }
 
-        .linkedin .Btn:hover .bx {
-          color: #0077b5;
+        /* Bottom Small Print */
+        .footer-bottom-line {
+          font-family: "Open Sans", sans-serif;
+          font-size: 10px;
+          letter-spacing: 2px;
+          color: rgba(255, 255, 255, 0.2);
+          margin-top: 20px;
         }
 
-        .twitter .Btn:hover .bx {
-          color: #1da1f2;
-        }
-
-        .github .Btn:hover .bx {
-          color: #181818;
-        }
-
-        .instagram .Btn:hover .bx {
-          color: #c13584;
-        }
-
-        .email .Btn:hover .bx {
-          color: #d44638;
-        }
-
-        .whatsapp .Btn:hover .bx {
-          color: #25d366;
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+          .copyright-notice {
+            font-size: 11px;
+            letter-spacing: 2px;
+          }
+          .Btn {
+            width: 40px;
+            height: 40px;
+          }
         }
       </style>
     </main>
@@ -3846,13 +3877,13 @@
     </script>
 
     <!-- ======= Footer ======= -->
-    <footer id="footer">
+    <!-- <footer id="footer">
       <div class="container">
         <div class="credits">
           Designed by <a href="https://github.com/Jayanth0124">Jayanth</a>
         </div>
       </div>
-    </footer>
+    </footer> -->
     <!-- End  Footer -->
 
     <a
