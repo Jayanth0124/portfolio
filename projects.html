@@ -441,7 +441,7 @@
                         <div class="filter-buttons" id="filterButtons">
                             <button class="filter-btn active" data-filter="all">All</button>
                             <button class="filter-btn" data-filter="web">Web</button>
-                            <button class="filter-btn" data-filter="ai">AI</button>
+                            <button class="filter-btn" data-filter="ai">API</button>
                             <button class="filter-btn" data-filter="iot">IoT</button>
                         </div>
                         <div>
@@ -471,6 +471,23 @@
         document.addEventListener("DOMContentLoaded", () => {
             const projects = [
                 {
+                    id: 8, title: "E-Commerce Webiste",
+                    description: "Full stack development project featuring Admin page and database connection with tailored aesthetics and smooth performance. This showcase highlights the ability to adapt tech stacks to different brand identities.",
+                    thumbnail: "assets/img/portfolio/vito.png",
+                    techStack: ["React", "GSAP", "Barba.js", "TypeScript","SupaBase"], category: ["web"],
+                    demoUrl: "https://vitogingliesstore.netlify.app/", githubUrl: "https://github.com/Jayanth0124/Clothing-store",
+                    githubRepo: "Jayanth0124/Clothing-store"
+                },
+                {
+                    id: 3, title: "E-Commerce Architecture",
+                    description: "A comprehensive front-end development project experiences with tailored aesthetics and smooth performance. ",
+                    thumbnail: "assets/img/portfolio/sree.png",
+                    techStack: ["React", "TypeScript","Node.js"], category: ["web"],
+                    demoUrl: "https://sreefiles.netlify.app/", githubUrl: "https://github.com/Jayanth0124/luxe-e-commerce",
+                    githubRepo: "Jayanth0124/luxe-e-commerce"
+                },
+                 
+                {
                     id: 1, title: "WhatsApp Chat Parser",
                     description: "Upload your exported WhatsApp chats to explore them in a WhatsApp-style interface with insights, media, and clear navigation — like revisiting your conversations in time.",
                     thumbnail: "assets/img/portfolio/wa.jpg",
@@ -478,13 +495,7 @@
                     demoUrl: "https://texttimemachine.netlify.app/", githubUrl: "https://github.com/Jayanth0124/whatsapp-chat-parser",
                     githubRepo: "Jayanth0124/whatsapp-chat-parser"
                 },
-                {
-                    id: 13, title: "E-Commerce Architecture",
-                    description: "A comprehensive front-end development project featuring two distinct e-commerce experiences with tailored aesthetics and smooth performance. This showcase highlights the ability to adapt tech stacks to different brand identities.",
-                    thumbnail: "assets/img/portfolio/ecom1.jpg",
-                    techStack: ["React", "GSAP", "Barba.js", "TypeScript"], category: ["web"],
-                    demoUrl: "https://sreefiles.netlify.app/", githubUrl: "https://vitogingliesstore.netlify.app/",
-                },
+                
                 {
                     id: 11, title: "Smart Composting Cap",
                     description: "An innovative, portable smart cap that automates composting by neutralizing odors and regulating temperature, making it easy to manage organic waste sustainably in any home.",
@@ -492,14 +503,7 @@
                     techStack: ["IoT", "C++", "Auto Cad"], category: ["iot"],
                     demoUrl: "assets/Composting.pdf", githubUrl: "assets/Composting.pdf",
                 },
-                {
-                    id: 12, title: "AI Stock Analyzer",
-                    description: "This is an AI-powered web app that predicts stock prices by combining technical chart analysis with real-time market news sentiment.",
-                    thumbnail: "assets/img/portfolio/stock.jpg",
-                    techStack: ["Python", "Streamlit", "Git"], category: ["ai", "python"],
-                    demoUrl: "https://nexttrade.streamlit.app/", githubUrl: "https://github.com/Jayanth0124/stock-analyzer",
-                    githubRepo: "Jayanth0124/stock-analyzer"
-                },
+               
                 {
                     id: 2, title: "MindoraGPT",
                     description: "Your friendly mental wellness chatbot offering supportive conversations, affirmations, and AI-powered care. Built with compassion, it blends technology and empathy to help you feel heard.",
@@ -508,14 +512,7 @@
                     demoUrl: "https://mindoragpt.netlify.app/", githubUrl: "https://github.com/Jayanth0124/mental-wellness-chatbot",
                     githubRepo: "Jayanth0124/mental-wellness-chatbot"
                 },
-                {
-                    id: 3, title: "BioPulse Music",
-                    description: "BioPulse transforms DNA sequences into musical compositions in real time, blending science with sound. Upload your sequence, watch it come alive, and explore genetic patterns.",
-                    thumbnail: "assets/img/portfolio/dna.jpg",
-                    techStack: ["Node.js", "TypeScript", "Vite.js", "HTML", "JavaScript"], category: ["web"],
-                    demoUrl: "https://bio-pulse.netlify.app/", githubUrl: "https://github.com/Jayanth0124/dna-to-music",
-                    githubRepo: "Jayanth0124/dna-to-music"
-                },
+                
                 {
                     id: 4, title: "VerinoxGPT Assistant",
                     description: "A professional, ChatGPT-like web application built with React and TypeScript that functions as an elite AI assistant powered by OpenAI's GPT-4.",
@@ -548,30 +545,8 @@
                     demoUrl: "https://dreamrender.netlify.app/", githubUrl: "https://github.com/Jayanth0124/image-generator",
                     githubRepo: "Jayanth0124/image-generator"
                 },
-                {
-                    id: 8, title: "Guess to Freedom",
-                    description: "A thrilling Hangman-style word game where you must guess the word before running out of attempts. Every round brings a new word & hint challenge.",
-                    thumbnail: "assets/img/portfolio/projectA.webp",
-                    techStack: ["HTML", "CSS", "JavaScript"], category: ["web"],
-                    demoUrl: "https://lettermind.netlify.app/", githubUrl: "https://github.com/Jayanth0124/Hangman-game/",
-                    githubRepo: "Jayanth0124/Hangman-game/"
-                },
-                {
-                    id: 9, title: "Wordsage Dictionary",
-                    description: "A powerful dictionary powered by APIs, providing word meanings, Wikipedia content, and related images. Users enjoy a smooth, premium experience.",
-                    thumbnail: "assets/img/portfolio/projectB.webp",
-                    techStack: ["TypeScript", "Tailwind CSS", "API"], category: ["web"],
-                    demoUrl: "https://wordsage.netlify.app/", githubUrl: "https://github.com/Jayanth0124/dictionary",
-                    githubRepo: "Jayanth0124/dictionary"
-                },
-                {
-                    id: 10, title: "TrackMyGains",
-                    description: "A user-friendly app for logging workouts, monitoring health metrics, and tracking your fitness journey. Stay motivated with progress insights.",
-                    thumbnail: "assets/img/portfolio/p9.jpg",
-                    techStack: ["Python", "Streamlit", "Git"], category: ["python"],
-                    demoUrl: "https://trackmygains.streamlit.app/", githubUrl: "https://github.com/Jayanth0124/fitness-tracker",
-                    githubRepo: "Jayanth0124/fitness-tracker"
-                }
+                
+                
             ];
 
             const filterButtons = document.getElementById('filterButtons');
